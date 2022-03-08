@@ -1,0 +1,43 @@
+.Results {
+    margin-top: 4rem;
+
+}
+
+.Results h1 {
+    line-height: 64px;
+    margin-bottom: 3rem;
+}
+
+.Results p, .ShareText{
+    font-family: Roboto Mono, sans-serif;
+}
+
+.Text {
+    font-size: 24px;
+    
+}
+
+.Type {
+    display: inline;
+}
+
+.ShareWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.ShareText {
+    background-color: #2e2d2d0d;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 2rem;
+}
+
+.Mint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+

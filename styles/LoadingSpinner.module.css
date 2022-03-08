@@ -1,0 +1,25 @@
+.Loading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Hourglass {
+    transform-origin: center;
+    animation: spin 1s ease infinite;
+}
+
+.Loading p{
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(720deg);
+    }
+}
