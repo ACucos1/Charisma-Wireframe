@@ -51,10 +51,11 @@
     transition: all 0.25s ease;
 }
 
-.NavLink:hover {
+.NavLink:nth-child(1):hover, .NavLink:nth-child(2):hover, .NavLink:nth-child(3):hover {
     color: #50b1f2;
     transform: scale(1.1);
 }
+
 
 .connect {
     min-width: 190px;

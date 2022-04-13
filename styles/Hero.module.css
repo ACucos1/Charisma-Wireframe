@@ -27,6 +27,10 @@
 
 }
 
+.SearchWrapper {
+    display: flex;
+}
+
 .SearchWrapper > * {
     font-family: 'DM Mono', monospace;
     font-weight: 500;
