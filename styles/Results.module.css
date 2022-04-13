@@ -1,43 +1,42 @@
-.Results {
+.results {
+    height: calc(100vh - 100px);
+}
+
+
+
+.resultsWrapper{
+    display: flex;
+    /* margin-top: 3rem; */
+    /* justify-content: space-between; */
+
+}
+
+
+
+.resultExplanation {
+    margin-left: 3rem;
     margin-top: 4rem;
-
+    max-width: 600px;
 }
 
-.Results h1 {
-    line-height: 64px;
-    margin-bottom: 3rem;
-}
-
-.Results p, .ShareText{
-    font-family: Roboto Mono, sans-serif;
-}
-
-.Text {
-    font-size: 24px;
-    
-}
-
-.Type {
-    display: inline;
-}
-
-.ShareWrapper {
+.share {
+    margin-top: 2rem;
     display: flex;
     align-items: center;
-    margin-top: 1rem;
 }
 
-.ShareText {
-    background-color: #2e2d2d0d;
+.shareText{
+    background-color: rgba(46, 45, 45, 0.05);
     height: 40px;
-    line-height: 40px;
-    padding: 0 2rem;
-}
-
-.Mint {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 5rem;
+    border-radius: 25px;
+    padding: 0 3rem;
+    width: 500px;
 }
+
+.shareBtn {
+    margin-left: -3rem;
+}
+
 

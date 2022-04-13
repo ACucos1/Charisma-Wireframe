@@ -8,28 +8,55 @@
 
 }
 
+.LogoWrapper{
+    display: flex;
+    align-items: center;
+    color: #50b1f291;
+    font-size: 24.4px;
+    font-weight: 100;
+}
+
 .LogoWrapper > div:nth-child(2){
-    font-family: Roboto Mono, sans-serif;
+    font-family: 'DM Mono', sans-serif;
+    text-transform: uppercase;
+    border: 1px solid #50b1f2;
+    border-radius: 100px;
+    line-height: 15px;
+    padding: .8rem 2rem;
+    margin-top: 30px;
+
 }
 
 .Logo{
-    font-size: 40px;
     color: #3C64B1;
-    font-weight: 650;
-    background-color: #ff720e10;
-    font-family: Roboto, sans-serif;
+    height: 80px;
+    /* margin-bottom: 20px; */
+    margin-right: 40px;
 }   
-
 
 
 .NavLinks{
     display: flex;
     align-items: center;
+    
 }
 
 .NavLink{
-    color: #808080;
-    font-weight: 700;
+    color: #F9F8F4;
+    font-weight: 500;
     margin-left: 1rem;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 0 3rem;
+    font-family: 'DM Mono', sans-serif;
+    transition: all 0.25s ease;
+}
+
+.NavLink:hover {
+    color: #50b1f2;
+    transform: scale(1.1);
+}
+
+.connect {
+    min-width: 190px;
+    font-family: 'DM Mono', sans-serif;
 }

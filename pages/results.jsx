@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import ResultCard from '../components/ResultCard'
+import ResultDisplay from '../components/ResultDisplay'
 import LoadingSpinner from '../components/LoadingSpinner'
 import styles from '../styles/Results.module.css'
 
@@ -14,32 +13,30 @@ export default function Results() {
   }, [])
 
   return (
-    <main className="container"> 
+    <main className={`container ${styles.results}`}> 
       {loading ? 
       <LoadingSpinner /> 
       :
       <>
-        <div className={styles.Results}>
-          <h1>Sweet, Thanks. <br /> The results are in.</h1>
-          <p className={styles.Text}>Your wallet personality type is <h1 className={styles.Type}>DEOS</h1></p>
-
-          <div className={styles.ShareWrapper}>
-              <div className={styles.ShareText}>
-                  I’m a DEOS 💎🌅📈🍼 → Charisma.xyz
-              </div>
-              <button className="btn-primary">Share</button>
-          </div>
-
-          <div className="ResultCards">
-            <ResultCard />
-            <ResultCard />
-            <ResultCard />
-            <ResultCard />
-          </div>
-        </div>
-        <div className={styles.Mint}>
-          <button className={`btn-secondary`}>Connect Wallet to Mint</button> 
-        </div> 
+         <h1>The results are in. <br/> Your wallet personailty Type is</h1>
+         <div className={styles.resultsWrapper}>
+           <ResultDisplay result={null}/>
+           <div className={styles.resultExplanation}>
+            <h1>DEOS</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Consequat ultrices dolor eu quis velit tempor. 
+              Amet justo, sit vulputate turpis tempor. Sagittis, bibendum egestas mauris malesuada eget. 
+              Aliquet nullam mauris ante nisi, felis ultrices. Morbi facilisi tellus nibh blandit. 
+              Donec elit cum morbi ut sapien varius suscipit suspendisse urna.
+            </p>
+            <div className={styles.share}>
+              <div className={styles.shareText}>I’m a DEOS 💎🌅📈🍼 → Charisma.xyz</div>
+              <button className={`btn-secondary ${styles.shareBtn}`}>Share</button>
+            </div>
+           </div>
+         </div>
+         
       </>  
       }
     </main>

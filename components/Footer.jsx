@@ -17,17 +17,21 @@ export default function Footer() {
                     about your own wallet, let us know.
                  </p>
             </div>
-            <button className="btn-primary">Methodology Page</button> 
+            <button className={`btn-secondary ${styles.learnMore}`}>LEARN MORE</button> 
         </div>
         
 
         <div className={styles.ContentWrapper}>
             <div className={styles.Content1}>
                 <Badge />
-                <button className="btn-primary">Methodology Page</button>
             </div>
 
-            <p>Built by Joyce, Lexi, David, and Alex</p>
+            <ul className={styles.footerNav}>
+              <li>COMMUNITY</li>
+              <li>METHODOLOGY</li>
+              <li>TEAM</li>
+              <li>DISCORD</li>
+            </ul>
         </div>
     </div>
   )

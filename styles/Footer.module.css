@@ -3,7 +3,9 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #828282;
+    /* background-color: #bdbdbd; */
+    background-color: rgba(46, 45, 45, 0.02);;
+    padding-top: 3rem;
 }
 
 .Explanation {
@@ -16,6 +18,10 @@
     justify-content: space-between;
     margin: 1rem;
     padding: 3rem;
+}
+
+.learnMore {
+    padding: 0 3rem;
 }
 
 .TextWrapper h2 {
@@ -50,4 +56,14 @@
     
 }
 
- 
+ .footerNav{
+     text-align: right; 
+ }
+
+ .footerNav li:first-child{
+     margin: 0;
+ }
+
+ .footerNav li {
+     margin: 1rem 0; 
+ }

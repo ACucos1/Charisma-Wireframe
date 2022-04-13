@@ -4,31 +4,41 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* position: relative; */
+    /* background-color: red; */
     
-    position: relative;
 }
 
-.Hero > * {
+.Hero > h1, .Hero > p .Hero > .SearchWrapper {
     margin-bottom: 2rem;
 }
 
 .TagLine {
     line-height: 64px;
+    font-weight: 300;
 }
 
 .Desc{
-    font-family: Roboto Mono, sans-serif;
-    color: #2E2D2D;
-    font-weight: 400;
-    font-size: 24px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    color: #F9F8F4;
+    font-size: 16px;
+    margin-bottom: 4rem;
 
+}
+
+.SearchWrapper > * {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
 }
 
 .SearchInput{
     height: 40px;
-    width: 490px;
+    width: 590px;
     color: gray;
-    border: 1px solid #D9D9D9;
+    background-color: #f9f8f40c;
+    /* border: 1px solid #D9D9D9; */
+    border: none;
     border-radius: 25px 0 0 25px;
     padding: 0 .5rem;
 
@@ -38,12 +48,94 @@
     outline: none;
 }
 
-.SearchWrapper button {
-    border-radius: 0 25px 25px 0;
+.searchBtn{
+    /* border-radius: 0 25px 25px 0; */
+    border-radius: 25px;
+    margin-left: -30px;
 }
 
 .BadgeWrapper {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+
+.imagesWrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.doodle {
+    position: absolute;
+    width: 150px;
+    z-index: -1;
+}
+
+.greensquig {
+    left: 0;
+    top: 150px;
+    width: 100px;
+}
+
+.diamond {
+    width: 200px;
+    left: 250px;
+    top: 200px;
+}
+
+.yellowsquig {
+    top: 90px;
+    left: 500px;
+    display: none;
+}
+
+.upchart {
+    top: 50px;
+    left: 800px;
+}
+
+.foot{
+    right: 50px;
+    top: 200px;
+    width: 100px;
+}
+
+.bluesquig {
+    right: 0;
+    top: 400px;
+    width: 100px;
+}
+
+.pokerchip {
+    right: 100px;
+    bottom: 300px;
+}
+
+.pot {
+    bottom: 0;
+    right: 400px;
+}
+
+.sunset {
+    bottom: 75px;
+    left: 200px;
+}
+
+.star {
+    bottom: 200px;
+    left: 50px;
+    width: 50px;
+    
+}
+
+.toiletpaper {
+    left: 50px;
+    top: 500px;
+    top: center;
 }

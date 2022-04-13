@@ -1,11 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+@font-face {
+  font-family: "Henrietta";
+  src: url("../public/fonts/VCHenrietta-Medium.woff") format('woff');
+}
+
+@font-face {
+  font-family: "Henrietta";
+  src: url("../public/fonts/VCHenrietta-Bold.woff") format('woff');
+  font-weight: bold;
+}
+
+:root {
+  --background-color: #181818;
+  --text-color: #F9F8F4;
+}
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, sans-serif;
+  font-family: 'Henrietta', sans-serif;
+  
 }
+
+body {
+  background-color: var(--background-color);
+}
+
+h1, p {
+  color: var(--text-color);
+}
+
 
 h1 {
   font-size: 64px;
@@ -35,20 +61,39 @@ ul{
   border: none;
   height: 40px;
   padding: 0 1rem;
-  background-color: #1890FF;
+  /* background-color: #1890FF; */
+  background: linear-gradient(94.05deg, #ED485D 0%, #F4900C 36%);
   color: #fff;
-  transition: all .2s ease;
+  transition: all .4s ease;
   border-radius: 2px;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
+  background-size: 300% 100%;
 }
 
 .btn-primary:hover {
-  background-color: #1568b6;
+  background-position: 100% 0;
 }
 
 .btn-secondary {
+  height: 40px;
+  border: none;
+  color: var(--background-color);
+  font-size: 20px;
+  border-radius: 100px;
+  background-color:  #8EC3E6;
+  padding: 0 1em;
+  transition: all .2s ease;
+}
+
+.btn-secondary:hover{
+  background-color:  #516f83;
+}
+
+
+
+.btn-err {
   height: 80px;
   border: none;
   color: white;
@@ -59,6 +104,6 @@ ul{
   transition: all .2s ease;
 }
 
-.btn-secondary:hover {
+.btn-err:hover {
   background-color: #883636;
 }

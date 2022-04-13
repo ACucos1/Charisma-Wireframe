@@ -1,0 +1,83 @@
+.resultDisplayWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.resultDisplay{
+    min-width: 465px;
+    height: 382px;
+    background-color: rgb(219, 219, 219);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 12px;
+    flex-shrink: none;
+}
+
+.descriptionSmall {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    position: relative;
+    color:rgb(163, 163, 163)
+    
+}
+
+.cell:nth-child(1){
+    
+}
+
+.cell::before, .cell::after{
+    background-color: rgb(163, 163, 163);
+}
+
+.cell:nth-child(2n-1)::after {
+    content: "";
+    position: absolute;
+    height: 164.5px;
+    width: 1px;
+    right: 0;
+    /* border-right: 1px solid black; */
+}
+
+.cell:nth-child(1)::after {
+    bottom: 0;
+}
+
+.cell:nth-child(3)::after {
+    top: 0;
+}
+
+.cell:nth-child(1)::before, .cell:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    width: 164.5px;
+    height: 1px;
+    bottom: 0;
+    /* border-bottom: 1px solid black; */
+}
+
+.cell:nth-child(1)::before {
+    right: 0;
+}
+
+.cell:nth-child(2)::before {
+    left: 0;
+}
+
+.mintBtn {
+    width: 390px;
+    height: 60px;
+    font-size: 27px;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    align-self: center;
+}
