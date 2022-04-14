@@ -15,7 +15,7 @@ export default function Navbar() {
             <ul className={styles.NavLinks}>
                 <li className={styles.NavLink}>COMMUNITY</li>
                 <li className={styles.NavLink}>METHODOLOGY</li>
-                <li className={styles.NavLink}>FAQ</li>
+                <li className={styles.NavLink}>PARTNERSHIPS</li>
                 <li className={styles.NavLink}><button className={`btn-secondary ${styles.connect}`}>Connect Wallet</button></li>
             </ul>
         </div>

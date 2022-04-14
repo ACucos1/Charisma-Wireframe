@@ -20,6 +20,10 @@ export default function Hero() {
             through your NFT holdings and onchain activity.
         </p>
 
+        <div className={styles.bigConnect}>
+          <button className={`btn-secondary ${styles.connectBtn}`}>CONNECT WALLET TO FIND OUT</button>
+        </div>
+
         <div className={styles.SearchWrapper}>
             <input className={styles.SearchInput} type="text" placeholder="Enter ENS domain or Ethereum address here"/>
             <button className={`btn-secondary ${styles.searchBtn}`} onClick={handleSearch}>Find out</button>

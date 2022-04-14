@@ -10,9 +10,10 @@
 
 .LogoWrapper{
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     color: #50b1f291;
-    font-size: 24.4px;
+    /* font-size: 24.4px; */
     font-weight: 100;
 }
 
@@ -23,13 +24,13 @@
     border-radius: 100px;
     line-height: 15px;
     padding: .8rem 2rem;
-    margin-top: 30px;
+    margin-top: 15px;
 
 }
 
 .Logo{
     color: #3C64B1;
-    height: 80px;
+    height: 50px;
     /* margin-bottom: 20px; */
     margin-right: 40px;
 }   
@@ -48,8 +49,9 @@
     color: #F9F8F4;
     font-weight: 500;
     margin-left: 1rem;
-    font-size: 16px;
-    padding: 0 3rem;
+    font-size: 14px;
+    padding: 0 1.5rem;
+    text-transform: capitalize;
     font-family: 'DM Mono', sans-serif;
     transition: all 0.25s ease;
 }
@@ -61,6 +63,6 @@
 
 
 .connect {
-    min-width: 190px;
+    width: 250px;
     font-family: 'DM Mono', sans-serif;
 }

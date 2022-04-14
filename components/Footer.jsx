@@ -10,11 +10,11 @@ export default function Footer() {
             <div className={styles.TextWrapper}>
                  <h2>See our methodology.</h2>
                  <p>
-                    Who came up with these personality <br /> 
-                    types? Why did we choose these<br />
-                    traits? If you&apos;re curious, or have <br />
-                    ideas for insights you&apos;d like to see <br />
-                    about your own wallet, let us know.
+                    Who came up with these personality types? 
+                    <br />  
+                    Why did we choose these traits? 
+                    <br />
+                    Community created algorithms
                  </p>
             </div>
             <button className={`btn-secondary ${styles.learnMore}`}>LEARN MORE</button> 
