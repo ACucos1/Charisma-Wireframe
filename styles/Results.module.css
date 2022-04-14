@@ -94,3 +94,47 @@
     
 }
 
+
+.errorWrapper {
+    background-color: #53190C;
+    border: 1px solid #FC0000;
+    border-radius: 12px;
+    height: 100px;
+    display: flex;
+    align-items: center;    
+    /* justify-content: center; */
+    color: #F24822;
+    padding: 0 6rem;
+    visibility: hidden;
+    animation: shake .2s ease forwards;
+}
+
+.errorWrapper > * {
+    font-family: "DM Mono", monospace;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@keyframes shake {
+    0%{
+        visibility: hidden;
+        margin-left: 0;
+        margin-right: 0;  
+    }
+    
+    25% {
+        margin-left: -1rem;
+        margin-right: 1rem;        
+    }
+
+    50% {
+        margin-left: 1rem;
+        margin-right: -1rem;  
+    }
+
+    100%{
+        visibility: visible;
+        margin-left: 0;
+        margin-right: 0;  
+    }
+}

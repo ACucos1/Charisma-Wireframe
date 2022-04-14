@@ -46,6 +46,10 @@ export default function Results() {
             <button className={`btn-secondary ${styles.shareBtn}`}>Share</button>
           </div>         
          </div>
+         <div className={styles.errorWrapper}>
+           <h3>The wallet you connected does not match the one we analyzed. <br /> 
+                Try again with a different wallet.</h3>
+         </div>
           
       </>  
       }
