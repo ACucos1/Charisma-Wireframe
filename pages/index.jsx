@@ -1,15 +1,13 @@
+import React, { useState, useEffect, useRef } from 'react'
+
 import { gsap, Power1 } from 'gsap'
-import { useEffect, useState } from 'react' 
 import Hero from '../components/Hero'
-import LoadingSpinner from '../components/LoadingSpinner'
-import Router from 'next/router'
-
-
-
 
 
 
 export default function Home() {
+  
+
   
   useEffect(() => {
 

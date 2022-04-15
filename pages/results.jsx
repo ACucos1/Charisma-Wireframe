@@ -1,16 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import ResultDisplay from '../components/ResultDisplay'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { Web3Context } from '../contexts/Web3Context'
 import styles from '../styles/Results.module.css'
+import Router from 'next/router'
 
 export default function Results() {
   const [loading, setLoading] = useState(true)
-
+  const {handleConnectClick, address, searchAddr, setSearchAddr} = useContext(Web3Context)
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 1500)
   }, [])
+
+  useEffect(() => {
+    if(!address && !searchAddr){
+      Router.push("/")
+    }
+  }, [])
+
+  useEffect(() => {
+    if(!searchAddr)
+      setSearchAddr(address)
+  }, [address, setSearchAddr])
+  
+  const handleWhitelistClick = () => {
+    if(!address){
+      handleConnectClick()
+    }
+    console.log(searchAddr);
+  }
+
 
   return (
     <main className={`container ${styles.results}`}> 
@@ -40,16 +61,16 @@ export default function Results() {
            </div>
          </div>
          <div className={styles.interactWrapper}>
-          <button className={`btn-secondary ${styles.mintBtn}`}>Connect Wallet to Verify</button>
+          <button className={`btn-secondary ${styles.mintBtn}`} onClick={handleWhitelistClick}>{address ? "Verify your address and join the whitelist" : "Connect Wallet to Verify"}</button>
           <div className={styles.share}>
             <div className={styles.shareText}>I’m a DEOS 💎🌅📈🍼 → Charisma.xyz</div>
             <button className={`btn-secondary ${styles.shareBtn}`}>Share</button>
           </div>         
          </div>
-         <div className={styles.errorWrapper}>
+         {(searchAddr && address && address !== searchAddr) && <div className={styles.errorWrapper}>
            <h3>The wallet you connected does not match the one we analyzed. <br /> 
                 Try again with a different wallet.</h3>
-         </div>
+         </div>}
           
       </>  
       }

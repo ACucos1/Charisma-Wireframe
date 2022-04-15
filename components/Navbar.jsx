@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Web3Context } from '../contexts/Web3Context'
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.css'
 
 export default function Navbar() {
+  const {handleConnectClick, address} = useContext(Web3Context)
+
+
   return (
     <div className={styles.Navbar}>
         <div className={styles.LogoWrapper}>
@@ -16,7 +20,7 @@ export default function Navbar() {
                 <li className={styles.NavLink}>COMMUNITY</li>
                 <li className={styles.NavLink}>METHODOLOGY</li>
                 <li className={styles.NavLink}>PARTNERSHIPS</li>
-                <li className={styles.NavLink}><button className={`btn-secondary ${styles.connect}`}>Connect Wallet</button></li>
+                <li className={styles.NavLink}><button className={`btn-secondary ${styles.connect}`} onClick={handleConnectClick} >{address ? address : "Connect Wallet"}</button></li>
             </ul>
         </div>
     </div>
