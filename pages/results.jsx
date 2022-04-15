@@ -13,7 +13,7 @@ export default function Results() {
     if(!address){
       handleConnectClick()
     }
-    console.log(searchAddr);
+    console.log(searchAddr, address);
   }
 
 
@@ -69,7 +69,7 @@ export default function Results() {
             <button className={`btn-secondary ${styles.shareBtn}`}>Share</button>
           </div>         
          </div>
-         {(searchAddr && address && address !== searchAddr) && <div className={styles.errorWrapper}>
+         {(searchAddr && address && address.toLowerCase() !== searchAddr.toLowerCase()) && <div className={styles.errorWrapper}>
            <h3>The wallet you connected does not match the one we analyzed. <br /> 
                 Try again with a different wallet.</h3>
          </div>}
