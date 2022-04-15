@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { ethers, Contract, providers } from 'ethers'
 import { Web3Context } from '../contexts/Web3Context';
 import Web3Modal from 'web3modal'
@@ -62,6 +62,31 @@ function MyApp({ Component, pageProps }) {
     }
     await connectWallet()
   }
+
+
+  // useEffect(() => {
+  //   if(signer?.on){
+  //     const handleAccountsChanged = (accounts) => {
+  //       if(accounts) 
+  //         setAddress(accounts[0])
+  //     }
+
+  //     signer.on("accountsChanged", handleAccountsChanged)
+  //   }
+
+  //   return () => {
+  //     if(signer.removeListener){
+  //       signer.removeListener("accountsChanged", handleAccountsChanged)
+  //     }
+  //   }
+  // }, [signer])
+  useEffect(() => {
+    if(window.ethereum){
+      window.ethereum.on("accountsChanged", (accounts) => {
+        setAddress(accounts[0])
+      })
+    }
+  }, [])
   
   return (
     <>
