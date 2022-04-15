@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Web3Context } from '../contexts/Web3Context'
 import Link from 'next/link'
+import truncateAddress from '../utils'
 import styles from '../styles/Navbar.module.css'
 
 export default function Navbar() {
@@ -20,7 +21,7 @@ export default function Navbar() {
                 <li className={styles.NavLink}>COMMUNITY</li>
                 <li className={styles.NavLink}>METHODOLOGY</li>
                 <li className={styles.NavLink}>PARTNERSHIPS</li>
-                <li className={styles.NavLink}><button className={`btn-secondary ${styles.connect}`} onClick={handleConnectClick} >{address ? address : "Connect Wallet"}</button></li>
+                <li className={styles.NavLink}><button className={`btn-secondary ${styles.connect}`} onClick={handleConnectClick} >{address ? truncateAddress(address) : "Connect Wallet"}</button></li>
             </ul>
         </div>
     </div>

@@ -8,6 +8,15 @@ import Router from 'next/router'
 export default function Results() {
   const [loading, setLoading] = useState(true)
   const {handleConnectClick, address, searchAddr, setSearchAddr} = useContext(Web3Context)
+  
+  const handleWhitelistClick = () => {
+    if(!address){
+      handleConnectClick()
+    }
+    console.log(searchAddr);
+  }
+
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
@@ -24,13 +33,6 @@ export default function Results() {
     if(!searchAddr)
       setSearchAddr(address)
   }, [address, setSearchAddr])
-  
-  const handleWhitelistClick = () => {
-    if(!address){
-      handleConnectClick()
-    }
-    console.log(searchAddr);
-  }
 
 
   return (

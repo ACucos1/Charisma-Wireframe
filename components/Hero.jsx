@@ -4,6 +4,7 @@ import { Web3Context } from '../contexts/Web3Context'
 import Badge from '../components/Badge'
 import styles from '../styles/Hero.module.css'
 import Router from 'next/router'
+import truncateAddress  from '../utils.js'
 
 export default function Hero() {
   const {handleConnectClick, address, searchAddr, setSearchAddr} = useContext(Web3Context);
@@ -43,7 +44,7 @@ export default function Hero() {
         </p>
         
         <div className={styles.bigConnect}>
-          <button className={`btn-secondary ${styles.connectBtn}`} onClick={handleWalletSearch}>{address != null ? address : "CONNECT WALLET TO FIND OUT"}</button>
+          <button className={`btn-secondary ${styles.connectBtn}`} onClick={handleWalletSearch}>{address != null ? truncateAddress(address) : "CONNECT WALLET TO FIND OUT"}</button>
         </div>
 
         <div className={styles.SearchWrapper}>
