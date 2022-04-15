@@ -29,6 +29,9 @@ export default function Hero() {
       Router.push("/results")
   }
 
+  useEffect(() => {
+    setSearchAddr(null)
+  }, [])
   
 
   return (
