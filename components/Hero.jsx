@@ -7,7 +7,7 @@ import Router from 'next/router'
 import truncateAddress  from '../utils.js'
 
 export default function Hero() {
-  const {handleConnectClick, address, searchAddr, setSearchAddr} = useContext(Web3Context);
+  const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr} = useContext(Web3Context);
   
   const handleSearchChange = (e) => {
     console.log(e.target.value)
@@ -32,8 +32,11 @@ export default function Hero() {
 
   useEffect(() => {
     setSearchAddr(null)
-  }, [])
+  }, [setSearchAddr])
   
+  useEffect(() => {
+    setSearchAddr(address)
+  }, [signInAddr, setSearchAddr, address])
 
   return (
     <div className={`${styles.Hero} full-screen`}>
@@ -44,11 +47,11 @@ export default function Hero() {
         </p>
         
         <div className={styles.bigConnect}>
-          <button className={`btn-secondary ${styles.connectBtn}`} onClick={handleWalletSearch}>{address != null ? truncateAddress(address) : "CONNECT WALLET TO FIND OUT"}</button>
+          {/* <button className={`btn-secondary ${styles.connectBtn}`} onClick={handleWalletSearch}>{address != null ? truncateAddress(address) : "CONNECT WALLET TO FIND OUT"}</button> */}
         </div>
-
+        {/* <span className={styles.Desc}>OR</span> */}
         <div className={styles.SearchWrapper}>
-            <input className={styles.SearchInput} onChange={handleSearchChange} type="text" placeholder="Enter ENS domain or Ethereum address here" />
+            <input className={styles.SearchInput} onChange={handleSearchChange} value={searchAddr} type="text" placeholder="ENS domain or Eth address" />
             <button className={`btn-secondary ${styles.searchBtn}`} onClick={handleSearch} >Find out</button>
         </div>
         <div className={styles.imagesWrapper}>

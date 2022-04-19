@@ -6,7 +6,7 @@
     text-align: center;
     /* position: relative; */
     /* background-color: red; */
-    min-height: 600px;
+    min-height: 700px;
 }
 
 .Hero > h1, .Hero > p .Hero > .SearchWrapper {
@@ -27,7 +27,8 @@
 }
 
 .connectBtn {
-    width: 500px;
+    min-width: 300px;
+    max-width: 500px;
     height: 75px;
     letter-spacing: 3px;
 }
@@ -43,6 +44,7 @@
 
 .SearchWrapper {
     display: flex;
+    /* flex-direction: column; */
 }
 
 .SearchWrapper > * {
@@ -52,7 +54,8 @@
 
 .SearchInput{
     height: 40px;
-    width: 590px;
+    min-width: 500px;
+    max-width: 590px;
     color: gray;
     background-color: #f9f8f40c;
     /* border: 1px solid #D9D9D9; */
@@ -156,5 +159,51 @@
 .toiletpaper {
     left: 50px;
     top: 500px;
-    top: center;
+}
+
+
+@media screen and (max-width: 820px){
+
+}
+
+
+@media screen and (max-width: 420px){
+    .TagLine{
+        font-size: 48px;
+    }
+
+    .SearchInput{
+        max-width: 200px;
+    }
+
+    .foot {
+        top: 60px;
+        right: 10px;
+    }
+
+    .diamond {
+        left: unset;
+        right: 35px;
+    }
+
+    .bluesquig {
+        display: none;
+    }
+
+    .pokerchip {
+        bottom: 200px;
+    }
+
+    .toiletpaper {
+        top: 450px;
+    }
+
+    .pot {
+        right: 300px;
+        bottom: -25px;
+    }
+
+    .star {
+        display: none;
+    }
 }

@@ -15,9 +15,12 @@ function MyApp({ Component, pageProps }) {
   const [address, setAddress] = useState(null)
   const [signer, setSigner] = useState(false)
   const [searchAddr, setSearchAddr] = useState(null)
+  const [signInAddr, setSigninAddr] = useState(null)
 
   const web3ModalRef = useRef()
 
+
+  
   const getSigner = async () => {
     const provider = await web3ModalRef.current.connect()
     console.log(provider);
@@ -47,6 +50,12 @@ function MyApp({ Component, pageProps }) {
 
   }
 
+  const handleSignedinClick = () => {
+    setSigninAddr(address)
+  }
+
+
+
   const handleConnectClick = async() => {
     if(!walletConnected){
       web3ModalRef.current = new Web3Modal({
@@ -60,7 +69,12 @@ function MyApp({ Component, pageProps }) {
         cacheProvider: true
       })
     }
-    await connectWallet()
+    if(!address){
+      await connectWallet()
+    }
+    else {
+      handleSignedinClick()
+    }
   }
 
 
@@ -95,7 +109,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Wallet Personality Analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr}}>
+      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr}}>
         <Navbar />
         <Component {...pageProps }/>
         {pathname !== '/' ? <Footer /> : <></>}

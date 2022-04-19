@@ -20,7 +20,7 @@ export default function Results() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 1500)
+    }, 2500)
   }, [])
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function Results() {
            </div>
          </div>
          <div className={styles.interactWrapper}>
-          <button className={`btn-secondary ${styles.mintBtn}`} onClick={handleWhitelistClick}>{address ? "Verify your address and join the whitelist" : "Connect Wallet to Verify"}</button>
+          <button className={`btn-secondary ${styles.mintBtn}`} onClick={handleWhitelistClick}>{address ? "Prove your OG status" : "Connect to be Charisma OG"}</button>
           <div className={styles.share}>
             <div className={styles.shareText}>I’m a DEOS 💎🌅📈🍼 → Charisma.xyz</div>
             <button className={`btn-secondary ${styles.shareBtn}`}>Share</button>
