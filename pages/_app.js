@@ -12,10 +12,10 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter()
   const [walletConnected, setWalletConnected] = useState(false)
-  const [address, setAddress] = useState(null)
+  const [address, setAddress] = useState("")
   const [signer, setSigner] = useState(false)
-  const [searchAddr, setSearchAddr] = useState(null)
-  const [signInAddr, setSigninAddr] = useState(null)
+  const [searchAddr, setSearchAddr] = useState("")
+  const [signInAddr, setSigninAddr] = useState("")
 
   const web3ModalRef = useRef()
 

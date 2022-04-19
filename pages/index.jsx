@@ -9,39 +9,39 @@ export default function Home() {
   
 
   
-  useEffect(() => {
+  // useEffect(() => {
 
-    const fadeInTl = gsap.timeline()
-      fadeInTl.from("body > *", {
-        opacity: 0,
-        duration: 1
-      })
+  //   const fadeInTl = gsap.timeline()
+  //     fadeInTl.from("body > *", {
+  //       opacity: 0,
+  //       duration: 1
+  //     })
 
-    const doodles = gsap.utils.toArray(".doodle")
-    // console.log(doodles);
+  //   const doodles = gsap.utils.toArray(".doodle")
+  //   // console.log(doodles);
     
 
-    doodles.forEach((doodle, idx) => {
-      const num = Math.random(idx)
-      const floatTl = gsap.timeline({repeat:-1, repeatDelay: 0});
-      floatTl.to(doodle, {
-        y:'+=5',
-        // x:'-=20',
-        // rotation:"-=5", 
-        ease: Power1.easeInOut,
-        duration: 3 + num,
-      })
-      .to(doodle, {
-        y:'-=5', 
-        // x:'+=20', 
-        // rotation:'+=5', 
-        ease: Power1.easeInOut,
-        duration: 2 + num,
-      })
+  //   doodles.forEach((doodle, idx) => {
+  //     const num = Math.random(idx)
+  //     const floatTl = gsap.timeline({repeat:-1, repeatDelay: 0});
+  //     floatTl.to(doodle, {
+  //       y:'+=5',
+  //       // x:'-=20',
+  //       // rotation:"-=5", 
+  //       ease: Power1.easeInOut,
+  //       duration: 3 + num,
+  //     })
+  //     .to(doodle, {
+  //       y:'-=5', 
+  //       // x:'+=20', 
+  //       // rotation:'+=5', 
+  //       ease: Power1.easeInOut,
+  //       duration: 2 + num,
+  //     })
 
 
-    });
-  }, []);
+  //   });
+  // }, []);
 
   return (
     <div>

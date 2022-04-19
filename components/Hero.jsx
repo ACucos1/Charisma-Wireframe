@@ -4,7 +4,7 @@ import { Web3Context } from '../contexts/Web3Context'
 import Badge from '../components/Badge'
 import styles from '../styles/Hero.module.css'
 import Router from 'next/router'
-import truncateAddress  from '../utils.js'
+import PasswordModal from './PasswordModal'
 
 export default function Hero() {
   const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr} = useContext(Web3Context);
@@ -31,7 +31,7 @@ export default function Hero() {
   }
 
   useEffect(() => {
-    setSearchAddr(null)
+    setSearchAddr("")
   }, [setSearchAddr])
   
   useEffect(() => {
@@ -40,6 +40,8 @@ export default function Hero() {
 
   return (
     <div className={`${styles.Hero} full-screen`}>
+
+        <PasswordModal />
         <h1 className={styles.TagLine}>What does your wallet <br /> say about you?</h1>
         <p className={styles.Desc}>
             Charisma is a tool that analyzes your personality
