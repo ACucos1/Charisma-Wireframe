@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { ethers, Contract, providers } from 'ethers'
 import { Web3Context } from '../contexts/Web3Context';
+import axios from 'axios'
+const crypto = require("crypto")
 import Web3Modal from 'web3modal'
 import Authereum from "authereum";
 import Head from 'next/head'
@@ -9,13 +11,59 @@ import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
 import '../styles/globals.css'
 
+const apiUrl = "https://api.charismasocial.xyz"
+
+axios.interceptors.request.use(config => {
+  const {origin} = new URL(config.url);
+  const allowedOrigins = [apiUrl];
+  const token = localStorage.getItem('token');
+  if(allowedOrigins.includes(origin)){
+    config.headers.authorization = `Bearer ${token}`;
+  }
+  return config;
+},
+err => {
+  return Promise.reject(err);
+})
+
+
 function MyApp({ Component, pageProps }) {
+  
+  const storedJwt = null;
   const { pathname } = useRouter()
   const [walletConnected, setWalletConnected] = useState(false)
   const [address, setAddress] = useState("")
   const [signer, setSigner] = useState(false)
   const [searchAddr, setSearchAddr] = useState("")
   const [signInAddr, setSigninAddr] = useState("")
+  const [jwtToken, setJwtToken] = useState(storedJwt || null)
+  const [wpi, setWpi] = useState({})
+
+
+  const getJwt = async () => {
+    const headers =  {
+      'Content-Type': 'application-x-www-form-urlencoded'
+    }
+    const loginFormData = new FormData();
+    loginFormData.append("username", "charisma")
+    loginFormData.append("password", "password");
+
+    const { data } = await axios.post(`${apiUrl}/token`, loginFormData, {headers});
+    window.localStorage.setItem("token", data.access_token)
+    setJwtToken(data.access_token)
+    console.log(data.access_token);
+  }
+
+  const getWpi = async(addr) => {
+    try {
+      const { data } = await axios.post(`${apiUrl}/analyze/${addr}`)
+      setWpi(data)
+      console.log(data);
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
 
   const web3ModalRef = useRef()
 
@@ -77,28 +125,18 @@ function MyApp({ Component, pageProps }) {
     }
   }
 
-
-  // useEffect(() => {
-  //   if(signer?.on){
-  //     const handleAccountsChanged = (accounts) => {
-  //       if(accounts) 
-  //         setAddress(accounts[0])
-  //     }
-
-  //     signer.on("accountsChanged", handleAccountsChanged)
-  //   }
-
-  //   return () => {
-  //     if(signer.removeListener){
-  //       signer.removeListener("accountsChanged", handleAccountsChanged)
-  //     }
-  //   }
-  // }, [signer])
   useEffect(() => {
     if(window.ethereum){
       window.ethereum.on("accountsChanged", (accounts) => {
         setAddress(accounts[0])
       })
+    }
+    const jwt = localStorage.getItem('token')
+    if(jwt){
+      setJwtToken(jwt)
+    }
+    else {
+      getJwt()
     }
   }, [])
   
@@ -109,7 +147,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Wallet Personality Analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr}}>
+      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, getWpi}}>
         <Navbar />
         <Component {...pageProps }/>
         {pathname !== '/' ? <Footer /> : <></>}

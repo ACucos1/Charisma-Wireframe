@@ -7,7 +7,7 @@ import Router from 'next/router'
 import PasswordModal from './PasswordModal'
 
 export default function Hero() {
-  const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr} = useContext(Web3Context);
+  const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr, getWpi} = useContext(Web3Context);
   
   const handleSearchChange = (e) => {
     console.log(e.target.value)
@@ -26,6 +26,7 @@ export default function Hero() {
   }
   
   const handleSearch = () => {
+    getWpi()
     if(searchAddr)
       Router.push("/results")
   }

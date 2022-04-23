@@ -1,5 +1,5 @@
 .results {
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
 }
 
 .resultsWrapper{
@@ -13,8 +13,8 @@
 .resultExplanation {
     margin-left: 3rem;
     /* margin-top: 4rem; */
-    height: 382px;
-    /* max-width: 600px; */
+    min-height: 382px;
+    max-width: 600px;
     border: 2px solid #444444;
     border-radius: 25px;
     padding: 2rem;
@@ -99,7 +99,7 @@
     background-color: #53190C;
     border: 1px solid #FC0000;
     border-radius: 12px;
-    height: 100px;
+    min-height: 100px;
     display: flex;
     align-items: center;    
     /* justify-content: center; */
@@ -107,6 +107,8 @@
     padding: 0 6rem;
     visibility: hidden;
     animation: shake .2s ease forwards;
+    
+    
 }
 
 .errorWrapper > * {
@@ -136,5 +138,64 @@
         visibility: visible;
         margin-left: 0;
         margin-right: 0;  
+    }
+}
+
+@media screen and (max-width: 920px){
+    .resultsWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resultExplanation {
+        margin-top: 3rem;
+    }
+
+    .interactWrapper{
+        flex-direction: column;
+    }
+
+}
+
+
+@media screen and (max-width: 420px){
+    .resultExplanation {
+        margin: 2rem;
+    }
+    
+    .share{
+        /* background-color: #fff; */
+        margin: 0;
+        width: 80%;
+        margin-left: 1rem;
+    }
+
+    .shareText {
+        width: 80%;
+        
+    }
+
+    .shareBtn {
+        /* margin: 0; */
+    }
+    
+    .mintBtn {
+        font-size: 24px;
+        width: 90%;
+    }
+
+    .interactWrapper{
+        flex-direction: column;
+    }
+
+    .resultsWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .errorWrapper {
+        width: 80%;
+        margin: 2rem auto !important;
+        padding: 1rem;
     }
 }

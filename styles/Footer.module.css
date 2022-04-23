@@ -77,3 +77,16 @@
      font-size: 14px;
     font-family: "DM Mono", monospace;
  }
+
+
+ @media screen and (max-width: 420px){
+     .Explanation {
+         flex-direction: column;
+         
+     }
+
+     .TextWrapper > p{
+         font-size: 14px;
+     }
+
+ }

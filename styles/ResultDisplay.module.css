@@ -87,3 +87,28 @@
     transform: scaleX(-1);
 }
 
+/* @media screen and (max-width: 920px){
+    .resultDisplay{
+        flex-direction: column;
+    }
+} */
+
+@media screen and (max-width: 420px){
+    .resultDisplay{
+        /* min-width: 350px; */
+        min-width: unset;
+    }
+
+    .img2 {
+        left: 100px;
+    }
+
+    .img3 {
+        right: 70px;
+    }
+
+    .img4 {
+        right: 40px;
+    }
+}
+

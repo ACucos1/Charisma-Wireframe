@@ -86,8 +86,9 @@
 .imagesWrapper {
     position: absolute;
     width: 100vw;
-    height: 100vh;
-    top: 0;
+    height: calc(100vh - 100px);
+    /* top: 100px;*/
+    bottom: 0;
     left: 0;
     overflow: hidden;
     z-index: -1;
@@ -163,7 +164,7 @@
 }
 
 
-@media screen and (max-width: 820px){
+@media screen and (max-width: 920px){
 
 }
 
@@ -173,8 +174,19 @@
         font-size: 48px;
     }
 
+    .SearchWrapper {
+        flex-direction: column;
+    }
+
     .SearchInput{
-        max-width: 200px;
+        min-width: 300px;
+        max-width: 100px;
+        border-radius: 25px 25px 25px 25px;
+        margin-right: 0;
+    }
+
+    .searchBtn{
+        margin: 2rem 2rem 0 2rem;        
     }
 
     .foot {
@@ -196,7 +208,7 @@
     }
 
     .toiletpaper {
-        top: 450px;
+        top: 550px;
     }
 
     .pot {
@@ -208,3 +220,26 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 375px){
+    .Hero {
+        justify-content: flex-start;
+        min-height: unset;
+    }
+    .Hero > h1 {
+      margin-top: 0;
+      /* font-size: 18px; */
+    }
+  
+    .TagLine {
+      font-size: 32px;
+    }
+    .toiletpaper {
+        display: none;
+    }
+
+    .foot {
+        top: 80px;
+        right: 0px;
+    }
+  }

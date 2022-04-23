@@ -47,15 +47,16 @@ ul{
 
 input[type="text"]{
     height: 40px;
-    min-width: 500px;
+    /* min-width: 500px; */
     max-width: 590px;
     color: gray;
     background-color: #f9f8f40c;
     /* border: 1px solid #D9D9D9; */
     border: none;
-    border-radius: 25px 0 0 25px;
+    /* border-radius: 25px 0 0 25px; */
     padding: 0 .5rem;
-    margin-right: -50px;
+    /* margin-right: -50px; */
+    
 }
 
 input[type="text"]:focus {
@@ -124,3 +125,12 @@ input[type="text"]:focus {
 .btn-err:hover {
   background-color: #883636;
 }
+
+
+@media screen and (max-width: 420px) {
+  .full-screen{
+    padding-bottom: 0;
+    height: unset;
+  }
+}
+
