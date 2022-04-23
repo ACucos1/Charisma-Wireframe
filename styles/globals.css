@@ -45,7 +45,7 @@ ul{
   list-style: none;
 }
 
-input[type="text"]{
+input[type="text"], input[type="password"]{
     height: 40px;
     /* min-width: 500px; */
     max-width: 590px;
@@ -59,7 +59,7 @@ input[type="text"]{
     
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,input[type="password"]:focus {
   outline: none;
 }
 

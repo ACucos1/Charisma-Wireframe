@@ -3,6 +3,7 @@ import styles from "../styles/Passwordmodal.module.css";
 
 export default function PasswordModal() {
     const [input, setInput] = useState("")
+    const [showWrongPwd, setShowWrongPwd] = useState(false)
     const modalRef = useRef()
     const pwd = "123"
     
@@ -11,6 +12,13 @@ export default function PasswordModal() {
         if(input === pwd){
             modalRef.current.style.display = "none";
             window.localStorage.setItem("loggedIn", "loggedin")
+        }
+        else {
+            setShowWrongPwd(true)
+            setInput("")
+            setTimeout(() => {
+                setShowWrongPwd(false)
+            }, 3000)
         }
     }
 
@@ -32,11 +40,11 @@ export default function PasswordModal() {
                     Whoa there partner! <br /> You need a password to enter this site.
                 </h1>
                 <div className={styles.inputWrapper}>
-                    <input type="text" onChange={handleChange} value={input}/>
+                    <input type="password" onChange={handleChange} value={input}/>
                     <button className="btn-secondary" onClick={handlePasswordEnter}>Enter</button>
                 </div>
                 <span className={styles.error}>
-                    Incorrect password. Better luck next time, nerd!!
+                    {showWrongPwd && "Incorrect password. Better luck next time, nerd!!"}
                 </span>
             </div>
         </div>
