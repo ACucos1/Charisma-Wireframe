@@ -155,7 +155,7 @@
     bottom: 200px;
     left: 50px;
     width: 50px;
-    
+    display: none;
 }
 
 .toiletpaper {
@@ -180,7 +180,7 @@
     }
     
     .TagLine{
-        font-size: 48px;
+        font-size: 36px;
     }
 
     .SearchWrapper {
@@ -199,7 +199,7 @@
     }
 
     .foot {
-        top: 60px;
+        top: 0px;
         right: 10px;
     }
 

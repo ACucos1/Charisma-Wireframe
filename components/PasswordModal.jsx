@@ -37,14 +37,14 @@ export default function PasswordModal() {
             <div className={styles.modalWrapper}>
                 <img src="./images/EYE.svg" alt="" />
                 <h1>
-                    Whoa there partner! <br /> You need a password to enter this site.
+                    Whoa there, partner! <br /> You need a password to enter this site.
                 </h1>
                 <div className={styles.inputWrapper}>
                     <input type="password" onChange={handleChange} value={input}/>
                     <button className="btn-secondary" onClick={handlePasswordEnter}>Enter</button>
                 </div>
                 <span className={styles.error}>
-                    {showWrongPwd && "Incorrect password. Better luck next time, nerd!!"}
+                    {showWrongPwd && "Incorrect password. Better luck next time!!"}
                 </span>
             </div>
         </div>

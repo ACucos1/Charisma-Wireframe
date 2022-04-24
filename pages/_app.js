@@ -51,18 +51,25 @@ function MyApp({ Component, pageProps }) {
     const { data } = await axios.post(`${apiUrl}/token`, loginFormData, {headers});
     window.localStorage.setItem("token", data.access_token)
     setJwtToken(data.access_token)
-    console.log(data.access_token);
+    console.log("Jwt: " + data.access_token);
   }
 
-  const getWpi = async(addr) => {
+  const startWpi = async(addr) => {
     try {
       const { data } = await axios.post(`${apiUrl}/analyze/${addr}`)
-      setWpi(data)
       console.log(data);
     }
     catch(err){
       console.log(err);
     }
+  }
+
+  const getResult = async(addr) => {
+    const { data } = await axios.get(`${apiUrl}/result/${addr}`)
+    console.log(Object.keys(data).length);
+    if(Object.keys(data).length > 1)
+      setWpi(data)
+    console.log(data);
   }
 
   const web3ModalRef = useRef()
@@ -133,6 +140,7 @@ function MyApp({ Component, pageProps }) {
     }
     const jwt = localStorage.getItem('token')
     if(jwt){
+      console.log("jwt from localStorage " + jwt);
       setJwtToken(jwt)
     }
     else {
@@ -147,7 +155,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Wallet Personality Analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, getWpi}}>
+      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi}}>
         <Navbar />
         <Component {...pageProps }/>
         {pathname !== '/' ? <Footer /> : <></>}

@@ -36,6 +36,20 @@
     color: rgb(170, 170, 170);
 }
 
+.selected{
+    transform: scale(1.2);
+}
+
+.trait {
+    cursor: pointer;
+    display: inline-block;
+    transition: all .2s ease;
+}
+
+.trait:hover {
+    transform: scale(1.2);
+}
+
 .trait1 {
     color: #50B2F2;
 }

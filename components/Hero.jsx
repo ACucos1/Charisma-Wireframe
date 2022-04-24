@@ -7,26 +7,32 @@ import Router from 'next/router'
 import PasswordModal from './PasswordModal'
 
 export default function Hero() {
-  const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr, getWpi} = useContext(Web3Context);
+  const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr, startWpi, getResult, wpi} = useContext(Web3Context);
   
   const handleSearchChange = (e) => {
     console.log(e.target.value)
     setSearchAddr(e.target.value)
   }
 
-  const handleWalletSearch = async () => {
-    await handleConnectClick()
+  // const handleWalletSearch = async () => {
+  //   await handleConnectClick()
 
-    // console.log(address)
-    setSearchAddr(address)
-    setTimeout(() => {
-      Router.push("/results")
-    }, 500)
-    //TODO: make api request
-  }
+  //   // console.log(address)
+  //   setSearchAddr(address)
+  //   setTimeout(() => {
+  //     Router.push("/results")
+  //   }, 500)
+  //   //TODO: make api request
+  // }
   
   const handleSearch = () => {
-    getWpi()
+    startWpi(searchAddr)
+    const resultCheck = setInterval(async () => {
+      await getResult(searchAddr)
+      if(wpi){
+        clearInterval(resultCheck)
+      }
+    }, 1000)
     if(searchAddr)
       Router.push("/results")
   }
@@ -45,7 +51,7 @@ export default function Hero() {
         <PasswordModal />
         <h1 className={styles.TagLine}>What does your wallet <br /> say about you?</h1>
         <p className={styles.Desc}>
-            Charisma is a tool that analyzes your personality
+           Analyze your personality
             through your NFT holdings and onchain activity.
         </p>
         
