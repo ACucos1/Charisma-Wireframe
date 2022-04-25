@@ -81,7 +81,52 @@
     bottom: 0;
     left: 0;
 }
+.placeHolder {
+    min-height: 50px;
+    margin-top: 1rem;
+}
 
+.error {
+    font-family: "DM Mono", sans-serif;
+    margin-top: 1rem;
+    background-color: #53190C;
+    border: 1px solid #FC0000;
+    border-radius: 12px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;    
+    /* justify-content: center; */
+    color: #F24822;
+    padding: 0 6rem;
+    opacity: 0;
+    animation: shake .2s ease forwards;
+}
+
+@keyframes shake {
+    0%{
+        opacity: 0;
+        margin-left: 0;
+        margin-right: 0;  
+    }
+    
+    25% {
+        opacity: 0.5;
+        margin-left: -1rem;
+        margin-right: 1rem;        
+    }
+
+    50% {
+        opacity: 0.75;
+        margin-left: 1rem;
+        margin-right: -1rem;  
+    }
+
+    100%{
+        opacity: 1;
+        margin-left: 0;
+        margin-right: 0;  
+    }
+}
 
 .imagesWrapper {
     position: absolute;
@@ -196,6 +241,15 @@
 
     .searchBtn{
         margin: 2rem 2rem 0 2rem;        
+    }
+
+    .placeHolder{
+        margin-top: 2rem;
+    }
+
+    .error{
+        width: 80%;
+
     }
 
     .foot {

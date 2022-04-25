@@ -28,14 +28,12 @@ export default function Results() {
     //   setLoading(false)
     // }, 2500)
     let seconds = 0;
-    const checkWpi = setInterval(() => {
+    const checkWpiInterval = setInterval(() => {
       if(wpi && seconds >= 3){
+        console.log(`Results.jsx: WPI is ${wpi}`);
+        console.log("Done Loading");
         setLoading(false)
-        setResult(wpi)
-        
-        // console.log(wpi);
-        clearInterval(checkWpi)
-        
+        clearInterval(checkWpiInterval)
       }
       seconds+= 0.5
     }, 500)
@@ -45,7 +43,7 @@ export default function Results() {
     setTimeout(() => {
       const preview = setInterval(() => {
         setSelectedTrait(prev => {
-          if(prev == 2){
+          if(prev >= 2){
             clearInterval(preview)
             return 1
           }
@@ -61,12 +59,12 @@ export default function Results() {
     if(!address && !searchAddr){
       Router.push("/")
     }
-  }, [])
+  }, [address, searchAddr])
 
   useEffect(() => {
     if(!searchAddr)
       setSearchAddr(address)
-  }, [address, setSearchAddr])
+  }, [address, setSearchAddr, searchAddr])
 
 
   return (

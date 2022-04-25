@@ -10,6 +10,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
 import '../styles/globals.css'
+import { resolve } from 'path';
 
 const apiUrl = "https://api.charismasocial.xyz"
 
@@ -38,7 +39,7 @@ function MyApp({ Component, pageProps }) {
   const [signInAddr, setSigninAddr] = useState("")
   const [jwtToken, setJwtToken] = useState(storedJwt || null)
   const [wpi, setWpi] = useState({})
-
+  const [searchStarted, setSearchStarted] = useState(false)
 
   const getJwt = async () => {
     const headers =  {
@@ -56,11 +57,13 @@ function MyApp({ Component, pageProps }) {
 
   const startWpi = async(addr) => {
     try {
-      const { data } = await axios.post(`${apiUrl}/analyze/${addr}`)
-      console.log(data);
-    }
-    catch(err){
-      console.log(err);
+      const res = await axios.post(`${apiUrl}/analyze/${addr}`)
+      return res.status
+    } catch (err) {
+      // console.log(Object.keys(err));
+      console.log(err.response.status, err.response.statusText);
+      throw {err: err.response.status, text: err.response.statusText}
+      // setStatus(err.response.status)
     }
   }
 
@@ -82,9 +85,8 @@ function MyApp({ Component, pageProps }) {
     const web3Provider = new providers.Web3Provider(provider)
 
     const { chainId } = await web3Provider.getNetwork()
-    if(chainId != 4){
-      alert("Please Connect To Rinkeby")
-      throw new Error("Please Connect To Rinkeby")
+    if(chainId != 1){
+      alert("Please Connect To Ethereum Mainnet")
     }
     
     const signer = web3Provider.getSigner()
@@ -114,7 +116,7 @@ function MyApp({ Component, pageProps }) {
   const handleConnectClick = async() => {
     if(!walletConnected){
       web3ModalRef.current = new Web3Modal({
-        network: "rinkeby",
+        network: "mainnet",
         providerOptions: {
           authereum: {
             package: Authereum
@@ -131,6 +133,30 @@ function MyApp({ Component, pageProps }) {
       handleSignedinClick()
     }
   }
+
+  useEffect(() => {
+    if(searchStarted === true){
+      const resultCheckInterval = setInterval(async() => {
+        
+        
+        const { data } = await axios.get(`${apiUrl}/result/${searchAddr}`)
+        console.log(Object.keys(data).length);
+        console.log(data);
+        if(Object.keys(data).length > 1 ){
+          console.log("setting wpi");
+          setWpi(data)
+          clearInterval(resultCheckInterval)
+        }
+        // await getResult(searchAddr)
+        
+      }, 1000)
+      setSearchStarted(false)
+    }
+  }, [searchStarted, wpi, searchAddr])
+
+  useEffect(() => {
+    console.log("UseEffect App.js: " + wpi)
+  }, [wpi])
 
   useEffect(() => {
     if(window.ethereum){
@@ -155,7 +181,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Wallet Personality Analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi}}>
+      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi, setSearchStarted, searchStarted}}>
         <Navbar />
         <Component {...pageProps }/>
         {pathname !== '/' ? <Footer /> : <></>}
