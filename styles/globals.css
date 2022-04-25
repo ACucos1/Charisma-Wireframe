@@ -27,6 +27,12 @@ body {
   background-color: var(--background-color);
 }
 
+a{
+  text-decoration: none;
+  font-family: "DM Mono", sans-serif;
+  color: unset;
+}
+
 h1, p {
   color: var(--text-color);
 }

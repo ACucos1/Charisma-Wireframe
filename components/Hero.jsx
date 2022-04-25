@@ -7,43 +7,46 @@ import Router from 'next/router'
 import PasswordModal from './PasswordModal'
 
 export default function Hero() {
-  const {address, searchAddr, setSearchAddr, signInAddr, startWpi, getResult, wpi, setSearchStarted} = useContext(Web3Context);
+  const {address, searchAddr, setSearchAddr, signInAddr, startWpi, getResult, wpi, setSearchStarted, resolveEnsDomain} = useContext(Web3Context);
   const [err, setErr] = useState("")
   const handleSearchChange = (e) => {
     console.log(e.target.value)
     setSearchAddr(e.target.value)
   }
 
-  // const handleWalletSearch = async () => {
-  //   await handleConnectClick()
-
-  //   // console.log(address)
-  //   setSearchAddr(address)
-  //   setTimeout(() => {
-  //     Router.push("/results")
-  //   }, 500)
-  //   //TODO: make api request
-  // }
+  const startSearch = (query) => {
+    startWpi(query)
+          .then((status) => {
+            console.log(status);
+            if(status === 200 || status === 322){
+              setSearchStarted(true)
+              if(searchAddr){
+                Router.push("/results")
+              }
+            }
+          })
+          .catch(({err, text}) => {
+            console.log("Error: ", err, text);
+            setErr(`Error: ${err}, ${text}`);
+            setTimeout(() => {
+              setErr("")
+            }, 2000)
+          })
+  }
   
   const handleSearch = () => {
     if(searchAddr){
-      startWpi(searchAddr)
-      .then((status) => {
-        console.log(status);
-        if(status === 200 || status === 322){
-          setSearchStarted(true)
-          if(searchAddr){
-            Router.push("/results")
-          }
-        }
-      })
-      .catch(({err, text}) => {
-        console.log("Error: ", err, text);
-        setErr(`Error: ${err}, ${text}`);
-        setTimeout(() => {
-          setErr("")
-        }, 2000)
-      })
+      if(searchAddr.length != 42 || searchAddr.match(/\s/)){
+        resolveEnsDomain(searchAddr).then(addr => {
+          // console.log(addr);
+          setSearchAddr(addr)
+          startSearch(addr)
+        })
+      }
+      else {
+        startSearch(searchAddr)
+      }
+
     }
   }
 

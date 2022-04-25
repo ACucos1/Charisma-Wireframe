@@ -81,6 +81,11 @@ function MyApp({ Component, pageProps }) {
 
   const web3ModalRef = useRef()
 
+  const resolveEnsDomain = async (ensDomain) => {
+    const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/4573dc7eefa641249c73db4a48c47f87")
+    const resolvedAddr = await provider.resolveName(ensDomain)
+    return resolvedAddr
+  }
 
   
   const getSigner = async () => {
@@ -185,10 +190,11 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Wallet Personality Analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi, setSearchStarted, searchStarted}}>
+      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi, setSearchStarted, searchStarted, resolveEnsDomain}}>
         <Navbar />
         <Component {...pageProps }/>
-        {pathname !== '/' ? <Footer /> : <></>}
+        {/* {pathname !== '/' ? <Footer /> : <></>} */}
+        <Footer/>
       </Web3Context.Provider>
       
     </>

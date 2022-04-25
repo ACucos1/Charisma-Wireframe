@@ -17,7 +17,7 @@
     font-weight: 100;
 }
 
-.LogoWrapper > div:nth-child(2){
+.LogoWrapper > a{
     font-family: 'DM Mono', sans-serif;
     text-transform: uppercase;
     border: 1px solid #50b1f2;
@@ -26,6 +26,10 @@
     padding: .8rem 2rem;
     margin-top: 15px;
 
+}
+
+.LogoWrapper > * > * {
+    font-family: "DM Mono", sans-serif;
 }
 
 .Logo{
