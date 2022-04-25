@@ -7,9 +7,8 @@ import Router from 'next/router'
 
 export default function Results() {
   const [loading, setLoading] = useState(true)
-  const [result, setResult] = useState({})
   const [selectedTrait, setSelectedTrait] = useState(1);
-  const {handleConnectClick, address, searchAddr, setSearchAddr, wpi} = useContext(Web3Context)
+  const {handleConnectClick, address, searchAddr, setSearchAddr, wpi, searchStarted} = useContext(Web3Context)
   
   const handleWhitelistClick = () => {
     if(!address){
@@ -18,28 +17,19 @@ export default function Results() {
     console.log(searchAddr, address);
   }
 
-  // const handleTraitClick = () => {
-
-  // }
-
-
   useEffect(() => {
-    // setTimeout(() => {
-    //   setLoading(false)
-    // }, 2500)
     let seconds = 0;
-    const checkWpi = setInterval(() => {
+    const checkWpiInterval = setInterval(() => {
       if(wpi && seconds >= 3){
+        console.log(`Results.jsx: WPI is ${wpi}`);
+        console.log("done loading");
         setLoading(false)
-        setResult(wpi)
-        
         // console.log(wpi);
-        clearInterval(checkWpi)
-        
+        clearInterval(checkWpiInterval)
       }
       seconds+= 0.5
     }, 500)
-  }, [])
+  }, [wpi])
   
   useEffect(() => {
     setTimeout(() => {
@@ -61,12 +51,12 @@ export default function Results() {
     if(!address && !searchAddr){
       Router.push("/")
     }
-  }, [])
+  }, [address, searchAddr])
 
   useEffect(() => {
     if(!searchAddr)
       setSearchAddr(address)
-  }, [address, setSearchAddr])
+  }, [address, setSearchAddr, searchAddr])
 
 
   return (
@@ -80,7 +70,7 @@ export default function Results() {
            
            <ResultDisplay wpi={wpi}/>
            <div className={styles.resultExplanation}>
-            <h2>The results are in. <br/> Your wallet personailty Type is</h2>
+            <h2>The results are in. <br/> Your wallet personailty type is</h2>
             <h1 className={styles.wpi}>
               <span className={`${styles.trait} ${styles.trait1} ${selectedTrait === 1 && styles.selected}`} onClick={() => {setSelectedTrait(1)}}>{wpi && wpi["1"].info.Value}</span>
               <span className={`${styles.trait} ${styles.trait2} ${selectedTrait === 2 && styles.selected}`} onClick={() => {setSelectedTrait(2)}}>{wpi && wpi["2"].info.Value}</span>

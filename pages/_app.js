@@ -37,8 +37,8 @@ function MyApp({ Component, pageProps }) {
   const [searchAddr, setSearchAddr] = useState("")
   const [signInAddr, setSigninAddr] = useState("")
   const [jwtToken, setJwtToken] = useState(storedJwt || null)
-  const [wpi, setWpi] = useState({})
-
+  const [wpi, setWpi] = useState(null)
+  const [searchStarted, setSearchStarted] = useState(false)
 
   const getJwt = async () => {
     const headers =  {
@@ -56,20 +56,16 @@ function MyApp({ Component, pageProps }) {
 
   const startWpi = async(addr) => {
     try {
-      const { data } = await axios.post(`${apiUrl}/analyze/${addr}`)
-      console.log(data);
+      await axios.post(`${apiUrl}/analyze/${addr}`)
+      // setStatus(res.status)
+    } catch (err) {
+      // console.log(Object.keys(err));
+      console.log(err.response.status, err.response.statusText);
+      // setStatus(err.response.status)
     }
-    catch(err){
-      console.log(err);
-    }
-  }
-
+  }   
   const getResult = async(addr) => {
-    const { data } = await axios.get(`${apiUrl}/result/${addr}`)
-    console.log(Object.keys(data).length);
-    if(Object.keys(data).length > 1)
-      setWpi(data)
-    console.log(data);
+    
   }
 
   const web3ModalRef = useRef()
@@ -133,21 +129,48 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
+    if(searchStarted === true){
+      const resultCheckInterval = setInterval(async() => {
+        
+        if(!wpi){
+          const { data } = await axios.get(`${apiUrl}/result/${searchAddr}`)
+          console.log(Object.keys(data).length);
+          console.log(data);
+          if(Object.keys(data).length > 1 ){
+            console.log("setting wpi");
+            setWpi(data)
+          }
+          // await getResult(searchAddr)
+        }
+        else{
+          clearInterval(resultCheckInterval)
+        }
+      }, 1000)
+      setSearchStarted(false)
+    }
+  }, [searchStarted, wpi, searchAddr])
+
+  useEffect(() => {
+    console.log("UseEffect App.js: " + wpi)
+  }, [wpi])
+
+  useEffect(() => {
     if(window.ethereum){
       window.ethereum.on("accountsChanged", (accounts) => {
         setAddress(accounts[0])
       })
     }
-    const jwt = localStorage.getItem('token')
-    if(jwt){
-      console.log("jwt from localStorage " + jwt);
-      setJwtToken(jwt)
-    }
-    else {
-      getJwt()
-    }
+    getJwt()
+    // const jwt = localStorage.getItem('token')
+    // if(jwt){
+    //   console.log("jwt from localStorage " + jwt);
+    //   setJwtToken(jwt)
+    // }
+    // else {
+    //   getJwt()
+    // }
   }, [])
-  
+
   return (
     <>
       <Head>
@@ -155,10 +178,10 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Wallet Personality Analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi}}>
+      <Web3Context.Provider value={{handleConnectClick, address, signer, searchAddr, setSearchAddr, signInAddr, jwtToken, setJwtToken, startWpi, getResult, wpi, setSearchStarted}}>
         <Navbar />
         <Component {...pageProps }/>
-        {pathname !== '/' ? <Footer /> : <></>}
+        <Footer />
       </Web3Context.Provider>
       
     </>

@@ -1,5 +1,5 @@
 
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Web3Context } from '../contexts/Web3Context'
 import Badge from '../components/Badge'
 import styles from '../styles/Hero.module.css'
@@ -7,40 +7,29 @@ import Router from 'next/router'
 import PasswordModal from './PasswordModal'
 
 export default function Hero() {
-  const {handleConnectClick, address, searchAddr, setSearchAddr, signInAddr, startWpi, getResult, wpi} = useContext(Web3Context);
+  const {address, searchAddr, setSearchAddr, signInAddr, startWpi, getResult, wpi, setSearchStarted} = useContext(Web3Context);
   
   const handleSearchChange = (e) => {
-    console.log(e.target.value)
     setSearchAddr(e.target.value)
   }
-
-  // const handleWalletSearch = async () => {
-  //   await handleConnectClick()
-
-  //   // console.log(address)
-  //   setSearchAddr(address)
-  //   setTimeout(() => {
-  //     Router.push("/results")
-  //   }, 500)
-  //   //TODO: make api request
-  // }
   
+  
+
   const handleSearch = () => {
-    startWpi(searchAddr)
-    const resultCheck = setInterval(async () => {
-      await getResult(searchAddr)
-      if(wpi){
-        clearInterval(resultCheck)
+    if(searchAddr && searchAddr.length == 42){
+      startWpi(searchAddr)
+      setSearchStarted(true)
+      if(searchAddr){
+        Router.push("/results")
       }
-    }, 1000)
-    if(searchAddr)
-      Router.push("/results")
+    }
   }
 
   useEffect(() => {
     setSearchAddr("")
   }, [setSearchAddr])
-  
+
+
   useEffect(() => {
     setSearchAddr(address)
   }, [signInAddr, setSearchAddr, address])

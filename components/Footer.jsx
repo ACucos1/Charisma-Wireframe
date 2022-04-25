@@ -24,6 +24,7 @@ export default function Footer() {
         <div className={styles.ContentWrapper}>
             <div className={styles.Content1}>
                 <Badge />
+                Add “© 2022 New Territories LLC  All Rights Reserved”
             </div>
 
             <ul className={styles.footerNav}>
@@ -32,6 +33,7 @@ export default function Footer() {
               <li>TEAM</li>
               <li>DISCORD</li>
             </ul>
+            
         </div>
     </div>
   )
