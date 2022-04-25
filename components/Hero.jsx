@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
         {/* <span className={styles.Desc}>OR</span> */}
         <div className={styles.SearchWrapper}>
-            <input className={styles.SearchInput} onChange={handleSearchChange} value={searchAddr} type="text" placeholder="ENS domain or Eth address" />
+            <input className={styles.SearchInput} onChange={handleSearchChange} value={searchAddr} type="text" placeholder="Enter wallet address, ENS or connect wallet" />
             <button className={`btn-secondary ${styles.searchBtn}`} onClick={handleSearch} >Find out</button>
         </div>
         {err ? <div className={styles.error}>{err}</div> : <div className={styles.placeHolder}></div>}

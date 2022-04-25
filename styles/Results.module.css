@@ -30,10 +30,36 @@
     font-weight: 300;
 }
 
-.resultExplanation >p {
+.traitInfo {
     font-family: "DM Mono", monospace;
     font-weight: 300;
     color: rgb(170, 170, 170);
+    opacity: 0;
+    animation: fadeIn .2s ease forwards;
+}
+
+.exit {
+    animation: fadeOut .2s ease forwards;
+}
+
+@keyframes fadeIn {
+    0%{ 
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
 }
 
 .selected{

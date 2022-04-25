@@ -10,11 +10,10 @@ export default function Footer() {
             <div className={styles.TextWrapper}>
                  <h2>See our methodology.</h2>
                  <p>
-                    Who came up with these personality types? 
-                    <br />  
-                    Why did we choose these traits? 
-                    <br />
-                    Community created algorithms
+                 Charisma explores the foundational elements of a reputation.  
+                 <br />
+                 It lays the groundwork for a more fair and open world 
+                 <br /> by increasing transparency and context <br /> in how information is being used and interpreted.
                  </p>
             </div>
             <button className={`btn-secondary ${styles.learnMore}`}>LEARN MORE</button> 
@@ -27,10 +26,12 @@ export default function Footer() {
             </div>
 
             <ul className={styles.footerNav}>
-              <li>COMMUNITY</li>
+              <li>LEARN ABOUT THE TRAITS</li>
               <li>METHODOLOGY</li>
               <li>TEAM</li>
               <li>DISCORD</li>
+              <li>TERMS OF SERVICE</li>
+              <li>PRIVACY</li>
             </ul>
         </div>
     </div>
