@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
     loginFormData.append("password", "password");
 
     const { data } = await axios.post(`${apiUrl}/token`, loginFormData, {headers});
-    window.localStorage.setItem("token", data.access_token)
+    localStorage.setItem("token", data.access_token)
     setJwtToken(data.access_token)
     console.log("Jwt: " + data.access_token);
   }
@@ -62,6 +62,10 @@ function MyApp({ Component, pageProps }) {
     } catch (err) {
       // console.log(Object.keys(err));
       console.log(err.response.status, err.response.statusText);
+      if(err.response.status === 403){
+        getJwt()
+        throw {err: err.response.status, text: "Please refresh the page and try again"}
+      }
       throw {err: err.response.status, text: err.response.statusText}
       // setStatus(err.response.status)
     }
