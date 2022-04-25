@@ -27,7 +27,8 @@ export default function Hero() {
           })
           .catch(({err, text}) => {
             console.log("Error: ", err, text);
-            setErr(`Error: ${err}, ${text}`);
+            setSearchAddr("")
+            setErr(`${text}`);
             setTimeout(() => {
               setErr("")
             }, 2000)
@@ -90,8 +91,6 @@ export default function Hero() {
           <img className={`doodle ${styles.doodle} ${styles.upchart}`} src="./images/upchart.png" alt="" />
           <img className={`doodle ${styles.doodle} ${styles.yellowsquig}`} src="./images/yellowsquig.png" alt="" />
         </div>
-        
-        
     </div>
   )
 }

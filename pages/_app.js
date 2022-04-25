@@ -64,7 +64,11 @@ function MyApp({ Component, pageProps }) {
       console.log(err.response.status, err.response.statusText);
       if(err.response.status === 403){
         getJwt()
-        throw {err: err.response.status, text: "Please refresh the page and try again"}
+        throw {err: err.response.status, text: "Session Timed out. Please refresh the page and try again"}
+      }
+      if(err.response.status === 422){
+        
+        throw {err: err.response.status, text: "Invalid ENS Address"}
       }
       throw {err: err.response.status, text: err.response.statusText}
       // setStatus(err.response.status)
