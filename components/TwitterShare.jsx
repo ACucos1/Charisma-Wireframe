@@ -1,8 +1,8 @@
-import styles from "../styles/Results.module.css";
 import React, { useContext } from "react";
 import { Web3Context } from "../contexts/Web3Context";
 import encodeUrl from "encodeurl";
 import personalityIcons from "../public/icons.json";
+import styles from '../styles/TwitterShare.module.css';
 
 const CHARISMA_TWITTER_NAME = "Charisma_Social";
 const WAITLIST_SIGNUP_LINK =
@@ -28,12 +28,11 @@ const TwitterShare = () => {
 
   return (
     <div className={styles.share}>
-      <div className={styles.shareText}>{tweetText}</div>
-      <button className={`btn-secondary ${styles.shareBtn}`}>
-        <a href={`${TWITTER_URL}?text=${encodedText}`} target="_blank">
+      <div className={styles.shareText}>Share your results!</div>
+      <a href={`${TWITTER_URL}?text=${encodedText}`} target="_blank" rel="noreferrer"><button className={`btn-secondary ${styles.shareBtn}`}>
           Share
-        </a>
       </button>
+      </a>
     </div>
   );
 };
