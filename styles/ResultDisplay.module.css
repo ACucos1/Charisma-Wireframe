@@ -16,6 +16,7 @@
   border-radius: 25px;
   flex-shrink: none;
   position: relative;
+  
 }
 
 .descriptionSmall {
@@ -50,7 +51,7 @@
   position: absolute;
   /* background-color: rgba(255, 0, 0, 0.103); */
   height: 382px;
-  width: 400px;
+  width: 100%;
   top: 0;
   border-radius: 25px;
   z-index: -2;
@@ -118,7 +119,7 @@
 
 .timeStamp {
   position: absolute;
-  right: -25px;
+  right: 10px;
   bottom: 10px;
   color: white;
   text-align: right;
@@ -135,6 +136,7 @@
   .resultDisplay {
     /* min-width: 350px; */
     min-width: unset;
+    margin: 0 2rem;
   }
 
   .upchart {
@@ -147,6 +149,6 @@
 
 
   .timeStamp {
-    right: -10px;
+    right: 10px;
   }
 }

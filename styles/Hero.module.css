@@ -240,13 +240,16 @@
   }
 
   .house {
-    top: 0px;
-    right: 10px;
+    top: 75px;
+    width: 50px;
+    left: 20px;
   }
 
   .diamond {
     left: unset;
-    right: 35px;
+    width: 75px;
+    right: 25px;
+
   }
 
   .bluesquig {
@@ -254,13 +257,20 @@
   }
 
   .pokerchip {
-    bottom: 200px;
+    bottom: 50px;
   }
 
   .toiletpaper {
-    top: 550px;
+    top: 250px;
+    left: 350px;
+    width: 50px;
+    transform: rotate(15deg);
   }
 
+  .greensquig{
+    width: 50px;
+    top: 225px;
+  }
   .pot {
     right: 300px;
     bottom: -25px;

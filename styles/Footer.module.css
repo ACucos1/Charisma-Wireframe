@@ -75,6 +75,7 @@
 @media screen and (max-width: 425px) {
   .Explanation {
     flex-direction: column;
+    padding: 1rem;
   }
 
   .TextWrapper > p {
