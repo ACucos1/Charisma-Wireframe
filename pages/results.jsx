@@ -128,10 +128,13 @@ export default function Results() {
               </h1>
               <p className={styles.resultInfo}>
               {wpi && wpi["6"][Object.keys(wpi["6"])[0]]}
+
               </p>
 
               <p className={styles.traitInfo} ref={traitInfoRef}>
                 {wpi && wpi[selectedTrait].info.Message}
+                <br />
+                <span className={styles.tip}>Click the letters to read more about each trait</span>
               </p>
             </div>
           </div>
@@ -151,7 +154,7 @@ export default function Results() {
                 <h3>
                   The wallet you connected does not match the one we analyzed.{" "}
                   <br />
-                  Try again with a different wallet.
+                  Try connecting with a different wallet.
                 </h3>
               </div>
             )}

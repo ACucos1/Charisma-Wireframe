@@ -48,14 +48,14 @@ export default function Navbar() {
             </button>
           </li>
 
-          {address && <li className={styles.NavLink}>
+          <li className={styles.NavLink}>
             <button
-              className={`btn-secondary ${styles.disconnect}`}
+              className={`btn-secondary ${styles.disconnect} ${address ? styles.visible : ""}`}
               onClick={handleDisconnect}
             >
               Disconnect
             </button>
-          </li>}
+          </li>
         </ul>
       </div>
     </div>

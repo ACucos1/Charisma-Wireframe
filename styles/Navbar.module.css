@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0rem 5rem;
+  
   /* height: 100px; */
   /* background-color: orange; */
 }
@@ -68,6 +69,7 @@
 }
 
 .disconnect{
+  visibility: hidden;
   background-color: rgb(112, 30, 30) !important;
   font-size: 14px;
 }
@@ -75,6 +77,10 @@
 .disconnect:hover {
   background-color: rgb(56, 15, 15) !important;
   color: rgb(94, 94, 94);
+}
+
+.visible {
+  visibility: visible;
 }
 
 @media screen and (max-width: 1024px) {

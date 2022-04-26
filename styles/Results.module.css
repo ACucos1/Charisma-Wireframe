@@ -43,6 +43,11 @@
   animation: fadeIn 0.2s ease forwards;
 }
 
+.tip {
+  font-size: 14px;
+  line-height: 5px;
+}
+
 .exit {
   animation: fadeOut 0.2s ease forwards;
 }
