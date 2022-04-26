@@ -24,7 +24,14 @@
     width: 100px;
 }
 
-@media screen and (max-width: 425px){
+.twitterLogo {
+    height: 1rem;
+}
+
+@media screen and (max-width: 920px){ /* Relate to media query for max-width 920px in Results.module.css */
+    .share {
+        margin-left: 0;
+    }
     .shareText{
         margin-left: 0;
     }

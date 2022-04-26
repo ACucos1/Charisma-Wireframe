@@ -10,10 +10,10 @@ export default function Footer() {
           <h2>See our methodology.</h2>
           <p>
             Charisma explores the foundational elements of a reputation.
-            <br />
-            It lays the groundwork for a more fair and open world
-            <br /> by increasing transparency and context <br /> in how
-            information is being used and interpreted.
+            <br /> <br />
+            It lays the groundwork for a more fair and open world by increasing
+            transparency and context in how information is being used and
+            interpreted.
           </p>
         </div>
         <button className={`btn-secondary ${styles.learnMore}`}>
