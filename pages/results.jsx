@@ -4,6 +4,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import { Web3Context } from "../contexts/Web3Context";
 import styles from "../styles/Results.module.css";
 import Router from "next/router";
+import TwitterShare from "../components/TwitterShare";
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
@@ -137,14 +138,7 @@ export default function Results() {
             >
               {address ? "Thanks for connecting!" : "Connect to be Charisma OG"}
             </button>
-            <div className={styles.share}>
-              <div className={styles.shareText}>
-                I’m a DEOS 💎🌅📈🍼 → Charisma.xyz
-              </div>
-              <button className={`btn-secondary ${styles.shareBtn}`}>
-                Share
-              </button>
-            </div>
+            <TwitterShare />
           </div>
           {searchAddr &&
             address &&
