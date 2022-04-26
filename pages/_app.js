@@ -146,6 +146,12 @@ function MyApp({ Component, pageProps }) {
     }
   };
 
+  const handleDisconnect = () => {
+    setWalletConnected(false);
+    setAddress("");
+    setSigner(null);
+  };
+
   useEffect(() => {
     if (searchStarted === true) {
       const resultCheckInterval = setInterval(async () => {
@@ -205,6 +211,7 @@ function MyApp({ Component, pageProps }) {
           setSearchStarted,
           searchStarted,
           resolveEnsDomain,
+          handleDisconnect,
         }}
       >
         <Navbar />

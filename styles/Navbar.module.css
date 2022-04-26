@@ -67,6 +67,16 @@
   font-family: "DM Mono", sans-serif;
 }
 
+.disconnect{
+  background-color: rgb(112, 30, 30);
+  font-size: 14px;
+}
+
+.disconnect:hover {
+  background-color: rgb(56, 15, 15);
+  color: rgb(94, 94, 94);
+}
+
 @media screen and (max-width: 1024px) {
   .connect {
     display: none;
