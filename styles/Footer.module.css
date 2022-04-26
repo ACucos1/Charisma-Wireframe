@@ -10,18 +10,20 @@
 
 .Explanation {
   background-color: #2c2c2c;
-  padding: 1rem;
+  padding: 3rem;
   border-radius: 10px;
   max-width: 1000px;
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin: 1rem;
-  padding: 3rem;
 }
 
 .learnMore {
+  margin-top: 20px;
   padding: 0 3rem;
+  width: 30%;
+  align-self: flex-end;
 }
 
 .TextWrapper h2 {
@@ -35,7 +37,7 @@
 .TextWrapper p {
   font-size: 16px;
   font-family: "DM Mono", monospace;
-  line-height: 3rem;
+  line-height: 2.5rem;
   color: rgb(173, 173, 173);
 }
 
@@ -72,10 +74,23 @@
   font-family: "DM Mono", monospace;
 }
 
+@media screen and (max-width: 1024px) {
+  .learnMore {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .learnMore {
+    width: 90%;
+    align-self: center;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .Explanation {
-    flex-direction: column;
-    padding: 1rem;
+    width: 90%;
+    padding: 3rem 1rem;
   }
 
   .TextWrapper > p {
