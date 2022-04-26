@@ -21,7 +21,7 @@ export default function ResultDisplay({ wpi }) {
           </li>
         </ul>
         <div className={styles.images}>
-          
+
 
           {wpi && wpi["1"].info.Value == "D" ? 
             <img
@@ -80,7 +80,7 @@ export default function ResultDisplay({ wpi }) {
             />
           }
 
-          
+          <div className={styles.timeStamp}>Wallet Birth Date: <br/> {wpi && new Date(wpi["5"].info.Value).toDateString()}</div>
           
           
         </div>

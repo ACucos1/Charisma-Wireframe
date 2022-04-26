@@ -7,7 +7,7 @@ export default function Badge() {
     <div className={styles.Badge}>
       <Image className={styles.ethGlobal} src="/images/ethglobal.png" width="63" height="63"></Image>
       <h2>
-        NFT Hack 2022 Finalist <br />
+        ETH Global <br /> NFT  Hack 2022 Winner <br />
       </h2>
     </div>
   );

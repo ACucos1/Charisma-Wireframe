@@ -125,6 +125,10 @@ export default function Results() {
                   {wpi && wpi["4"].info.Value}
                 </span>
               </h1>
+              <p className={styles.resultInfo}>
+              {wpi && wpi["6"][Object.keys(wpi["6"])[0]]}
+              </p>
+
               <p className={styles.traitInfo} ref={traitInfoRef}>
                 {wpi && wpi[selectedTrait].info.Message}
               </p>
