@@ -5,8 +5,7 @@ import personalityIcons from "../public/icons.json";
 import styles from "../styles/TwitterShare.module.css";
 
 const CHARISMA_TWITTER_NAME = "Charisma_Social";
-const WAITLIST_SIGNUP_LINK =
-  "https://docs.google.com/forms/d/1gyKQujDEzvdDRmB9ZqcOWEGXUvlrB08BWVY-CcbsW6g/edit?usp=drive_web";
+const WAITLIST_SIGNUP_LINK = "https://bit.ly/3LnB414";
 const TWITTER_URL = "https://twitter.com/intent/tweet";
 
 const TwitterShare = () => {
@@ -20,9 +19,9 @@ const TwitterShare = () => {
   }, "");
 
   if (address === searchAddr) {
-    tweetText = `I just used Charisma @${CHARISMA_TWITTER_NAME} (the world's first wallet personality test) for my wallet. The result is ${personalityString}! ${iconText}.\nWaitlist to join: ${WAITLIST_SIGNUP_LINK}`;
+    tweetText = `My wallet personality type is ${personalityString} ${iconText}! @${CHARISMA_TWITTER_NAME} What does your wallet say about you?  Join waitlist here: ${WAITLIST_SIGNUP_LINK}`;
   } else {
-    tweetText = `I just used Charisma @${CHARISMA_TWITTER_NAME} (the world's first wallet personality test).\nWaitlist to join: ${WAITLIST_SIGNUP_LINK} ${iconText}`;
+    tweetText = `I just analyzed wallet personalities with @${CHARISMA_TWITTER_NAME}, the world's first wallet personality test.  Join waitlist here: ${WAITLIST_SIGNUP_LINK}`;
   }
   encodedText = encodeUrl(tweetText);
 
