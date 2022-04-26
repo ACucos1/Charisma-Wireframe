@@ -79,5 +79,14 @@
 
   .TextWrapper > p {
     font-size: 14px;
+    line-height: 24px;
+  }
+
+  .ContentWrapper {
+    flex-direction: column;
+  }
+
+  .footerNav {
+    text-align: center;
   }
 }

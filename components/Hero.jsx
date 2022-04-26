@@ -40,7 +40,7 @@ export default function Hero() {
         setErr(`${text}`);
         setTimeout(() => {
           setErr("");
-        }, 2000);
+        }, 5000);
       });
   };
 
@@ -108,12 +108,12 @@ export default function Hero() {
         />
         <img
           className={`doodle ${styles.doodle} ${styles.diamond}`}
-          src="./images/diamond.png"
+          src="./images/diamond.svg"
           alt=""
         />
         <img
-          className={`doodle ${styles.doodle} ${styles.foot}`}
-          src="./images/foot.png"
+          className={`doodle ${styles.doodle} ${styles.house}`}
+          src="./images/house.svg"
           alt=""
         />
         <img
@@ -123,22 +123,17 @@ export default function Hero() {
         />
         <img
           className={`doodle ${styles.doodle} ${styles.pokerchip}`}
-          src="./images/pokerchip.png"
+          src="./images/pokerchip.svg"
           alt=""
         />
         <img
           className={`doodle ${styles.doodle} ${styles.pot}`}
-          src="./images/pot.png"
+          src="./images/pot.svg"
           alt=""
         />
         <img
-          className={`doodle ${styles.doodle} ${styles.star}`}
-          src="./images/star.png"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.sunset}`}
-          src="./images/sunset.png"
+          className={`doodle ${styles.doodle} ${styles.butterfly}`}
+          src="./images/butterfly.svg"
           alt=""
         />
         <img
@@ -148,9 +143,10 @@ export default function Hero() {
         />
         <img
           className={`doodle ${styles.doodle} ${styles.upchart}`}
-          src="./images/upchart.png"
+          src="./images/upchart.svg"
           alt=""
         />
+        
         <img
           className={`doodle ${styles.doodle} ${styles.yellowsquig}`}
           src="./images/yellowsquig.png"

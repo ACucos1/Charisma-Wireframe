@@ -7,7 +7,7 @@ export default function ResultDisplay({ wpi }) {
       {/* <p className={styles.descriptionSmall}>=DIAMOND HANDS, EARLY ADOPTER, OVER PERFORMANCE, <br /> SMALL PROJECT SUPPORTER</p> */}
       <div className={styles.resultDisplay}>
         <ul className={styles.traitsList}>
-          <li className={`${styles.trait} ${styles.trait1}`}>
+          <li className={`${styles.trait} ${styles.DorP}`}>
             {wpi && wpi["1"].info.LongDesc}
           </li>
           <li className={`${styles.trait} ${styles.trait2}`}>
@@ -21,26 +21,68 @@ export default function ResultDisplay({ wpi }) {
           </li>
         </ul>
         <div className={styles.images}>
-          <img
-            src="./images/upchart.png"
+          
+
+          {wpi && wpi["1"].info.Value == "D" ? 
+            <img
+            src="./images/diamond.svg"
             alt=""
-            className={`${styles.img} ${styles.img1}`}
+            className={`${styles.img} ${styles.diamond}`}
           />
+          :
           <img
-            src="./images/pot.png"
+            src="./images/toiletpaper.svg"
             alt=""
-            className={`${styles.img} ${styles.img2}`}
+            className={`${styles.img} ${styles.toiletpaper}`}
           />
-          <img
-            src="./images/sunset.png"
+
+          }
+
+          {wpi && wpi["2"].info.Value == "F" ?  
+            <img
+              src="./images/chick.svg"
+              alt=""
+              className={`${styles.img} ${styles.chick}`}
+            />
+            :
+            <img
+              src="./images/pokerchip.svg"
+              alt=""
+              className={`${styles.img} ${styles.pokerchip}`}
+            />
+          }
+
+          {wpi && wpi["3"].info.Value === "H" ? 
+            <img
+            src="./images/house.svg"
             alt=""
-            className={`${styles.img} ${styles.img3}`}
-          />
-          <img
-            src="./images/diamond.png"
+            className={`${styles.img} ${styles.house}`}
+            />
+            :
+            <img
+            src="./images/buttefly.svg"
             alt=""
-            className={`${styles.img} ${styles.img4}`}
-          />
+            className={`${styles.img} ${styles.butterfly}`}
+            />
+          }
+
+          {wpi && wpi["4"].info.Value === "U" ? 
+            <img
+            src="./images/pot.svg"
+            alt=""
+            className={`${styles.img} ${styles.pot}`}
+            />
+          :
+            <img
+              src="./images/downchart.svg"
+              alt=""
+              className={`${styles.img} ${styles.downchart}`}
+            />
+          }
+
+          
+          
+          
         </div>
       </div>
     </div>

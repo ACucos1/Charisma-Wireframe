@@ -72,7 +72,7 @@ function MyApp({ Component, pageProps }) {
         };
       }
       if (err.response.status === 422) {
-        throw { err: err.response.status, text: "Invalid ENS Address" };
+        throw { err: err.response.status, text: "Invalid ETH Address" };
       }
       throw { err: err.response.status, text: err.response.statusText };
       // setStatus(err.response.status)
