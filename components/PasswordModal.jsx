@@ -5,10 +5,10 @@ export default function PasswordModal() {
   const [input, setInput] = useState("");
   const [showWrongPwd, setShowWrongPwd] = useState(false);
   const modalRef = useRef();
-  const pwd = "123";
+  const pwd = "dazzle";
 
   const handlePasswordEnter = () => {
-    if (input === pwd) {
+    if (input.toLowerCase() === pwd) {
       modalRef.current.style.display = "none";
       window.localStorage.setItem("loggedIn", "loggedin");
     } else {

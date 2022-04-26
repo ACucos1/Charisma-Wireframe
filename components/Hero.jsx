@@ -102,11 +102,6 @@ export default function Hero() {
       )}
       <div className={styles.imagesWrapper}>
         <img
-          className={`doodle ${styles.doodle} ${styles.bluesquig}`}
-          src="./images/bluesquig.png"
-          alt=""
-        />
-        <img
           className={`doodle ${styles.doodle} ${styles.diamond}`}
           src="./images/diamond.svg"
           alt=""
@@ -124,11 +119,6 @@ export default function Hero() {
         <img
           className={`doodle ${styles.doodle} ${styles.pokerchip}`}
           src="./images/pokerchip.svg"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.pot}`}
-          src="./images/pot.svg"
           alt=""
         />
         <img

@@ -74,7 +74,7 @@
   filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
 }
 
-.pot {
+.upchart {
   bottom: -20px;
   left: 125px;
   transform-origin: center;

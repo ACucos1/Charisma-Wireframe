@@ -135,7 +135,7 @@ export default function Results() {
               className={`btn-secondary ${styles.mintBtn}`}
               onClick={handleWhitelistClick}
             >
-              {address ? "Thanks for connecting!" : "Connect to be Charisma OG"}
+              {!address ? "Connect to be Charisma OG" : address === searchAddr ? "Thanks for connecting!" : "You don't own this account"}
             </button>
             <div className={styles.share}>
               <div className={styles.shareText}>

@@ -164,8 +164,8 @@
 }
 
 .upchart {
-  top: 40px;
-  left: 800px;
+  top: 600px;
+  right: 600px;
   transform: scale(1.3);
   filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg) brightness(98%) contrast(87%);
 }
@@ -178,22 +178,11 @@
   filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg) brightness(101%) contrast(101%);
 }
 
-.bluesquig {
-  right: 0;
-  top: 400px;
-  width: 100px;
-}
 
 .pokerchip {
   right: 100px;
   bottom: 300px;
   filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
-}
-
-.pot {
-  bottom: 0;
-  right: 400px;
-  filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg) brightness(96%) contrast(90%);
 }
 
 .butterfly {

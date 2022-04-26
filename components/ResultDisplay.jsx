@@ -68,9 +68,9 @@ export default function ResultDisplay({ wpi }) {
 
           {wpi && wpi["4"].info.Value === "U" ? 
             <img
-            src="./images/pot.svg"
+            src="./images/upchart.svg"
             alt=""
-            className={`${styles.img} ${styles.pot}`}
+            className={`${styles.img} ${styles.upchart}`}
             />
           :
             <img
