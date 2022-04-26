@@ -13,11 +13,8 @@ export default function Navbar() {
         <div className={styles.LogoWrapper}>
           {/* <Link href="/" passHref><div className={styles.Logo}>LOGO</div></Link> */}
           <Link href="/" passHref><img className={styles.Logo} src="./images/EYE.svg" /></Link>
-          <a  href="https://www.notion.so/charisma-social/Traits-Season-0-Alpha-f3787fed16614460a0bb69a898f16ef6" 
-              target="_blank" 
-              rel="noreferrer">
-            <div> SEASON 0 ALPHA </div>
-          </a>
+         
+          <div> SEASON 0 ALPHA </div>
         </div>
 
         <div className={styles.NavList}>
