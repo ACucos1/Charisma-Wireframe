@@ -67,7 +67,7 @@
   font-family: "DM Mono", sans-serif;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
   .connect {
     display: none;
   }
