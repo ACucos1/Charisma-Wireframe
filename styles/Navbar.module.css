@@ -1,20 +1,19 @@
 .Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0rem 5rem;
-    /* height: 100px; */
-    /* background-color: orange; */
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 5rem;
+  /* height: 100px; */
+  /* background-color: orange; */
 }
 
-.LogoWrapper{
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    color: #50b1f291;
-    /* font-size: 24.4px; */
-    font-weight: 100;
+.LogoWrapper {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  color: #50b1f291;
+  /* font-size: 24.4px; */
+  font-weight: 100;
 }
 
 .LogoWrapper > div:nth-child(2){
@@ -29,68 +28,68 @@
 }
 
 
-.Logo{
-    color: #3C64B1;
-    height: 50px;
-    /* margin-bottom: 20px; */
-    margin-right: 40px;
-}   
+.Logo {
+  color: #3c64b1;
+  height: 50px;
+  /* margin-bottom: 20px; */
+  margin-right: 40px;
+}
 
 .NavList {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
-.NavLinks{
-    display: flex;
-    align-items: center;
-    
+.NavLinks {
+  display: flex;
+  align-items: center;
 }
 
-.NavLink{
-    color: #F9F8F4;
-    font-weight: 500;
-    margin-left: 1rem;
-    font-size: 14px;
-    padding: 0 1.5rem;
-    text-transform: capitalize;
-    font-family: 'DM Mono', sans-serif;
-    transition: all 0.25s ease;
+.NavLink {
+  color: #f9f8f4;
+  font-weight: 500;
+  margin-left: 1rem;
+  font-size: 14px;
+  padding: 0 1.5rem;
+  text-transform: capitalize;
+  font-family: "DM Mono", sans-serif;
+  transition: all 0.25s ease;
 }
 
-.NavLink:nth-child(1):hover, .NavLink:nth-child(2):hover, .NavLink:nth-child(3):hover {
-    color: #50b1f2;
-    transform: scale(1.1);
+.NavLink:nth-child(1):hover,
+.NavLink:nth-child(2):hover,
+.NavLink:nth-child(3):hover {
+  color: #50b1f2;
+  transform: scale(1.1);
 }
-
 
 .connect {
-    width: 250px;
-    font-family: 'DM Mono', sans-serif;
+  width: 250px;
+  font-family: "DM Mono", sans-serif;
 }
 
-@media screen and (max-width: 920px){
-    .connect {
-        display: none;
-    }
-    .Navbar {
-        flex-direction: column;
-    }
+@media screen and (max-width: 920px) {
+  .connect {
+    display: none;
+  }
+  .Navbar {
+    flex-direction: column;
+  }
 }
 
-@media screen and (max-width: 414px){
-    .LogoWrapper{
-        margin-top: 1rem;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-    .Logo{
-        margin: 0;
-        height: 75px;
-    }
+@media screen and (max-width: 414px) {
+  .LogoWrapper {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .Logo {
+    margin: 0;
+    height: 75px;
+  }
 
-    .NavList {
-        display: none;
-    }
+  .NavList {
+    display: none;
+  }
 }

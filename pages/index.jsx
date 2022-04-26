@@ -1,14 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from "react";
 
-import { gsap, Power1 } from 'gsap'
-import Hero from '../components/Hero'
-
-
+import { gsap, Power1 } from "gsap";
+import Hero from "../components/Hero";
 
 export default function Home() {
-  
-
-  
   // useEffect(() => {
 
   //   const fadeInTl = gsap.timeline()
@@ -19,7 +14,6 @@ export default function Home() {
 
   //   const doodles = gsap.utils.toArray(".doodle")
   //   // console.log(doodles);
-    
 
   //   doodles.forEach((doodle, idx) => {
   //     const num = Math.random(idx)
@@ -27,18 +21,17 @@ export default function Home() {
   //     floatTl.to(doodle, {
   //       y:'+=5',
   //       // x:'-=20',
-  //       // rotation:"-=5", 
+  //       // rotation:"-=5",
   //       ease: Power1.easeInOut,
   //       duration: 3 + num,
   //     })
   //     .to(doodle, {
-  //       y:'-=5', 
-  //       // x:'+=20', 
-  //       // rotation:'+=5', 
+  //       y:'-=5',
+  //       // x:'+=20',
+  //       // rotation:'+=5',
   //       ease: Power1.easeInOut,
   //       duration: 2 + num,
   //     })
-
 
   //   });
   // }, []);
@@ -46,8 +39,8 @@ export default function Home() {
   return (
     <div>
       <main className="container">
-        <Hero /> 
+        <Hero />
       </main>
     </div>
-  )
+  );
 }

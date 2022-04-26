@@ -1,308 +1,303 @@
-.Hero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* position: relative; */
-    /* background-color: red; */
-    min-height: 700px;
-    /* filter: blur(5px); */
+.Hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* position: relative; */
+  /* background-color: red; */
+  min-height: 700px;
+  /* filter: blur(5px); */
 }
 
-.Hero > h1, .Hero > p .Hero > .SearchWrapper {
-    margin-bottom: 2rem;
+.Hero > h1,
+.Hero > p .Hero > .SearchWrapper {
+  margin-bottom: 2rem;
 }
 
 .Hero h1 {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
 
 .TagLine {
-    line-height: 64px;
-    font-weight: 300;
+  line-height: 64px;
+  font-weight: 300;
 }
 
 .bigConnect {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .connectBtn {
-    min-width: 300px;
-    max-width: 500px;
-    height: 75px;
-    letter-spacing: 3px;
+  min-width: 300px;
+  max-width: 500px;
+  height: 75px;
+  letter-spacing: 3px;
 }
 
-.Desc{
-    font-family: 'DM Mono', monospace;
-    font-weight: 300;
-    color: #F9F8F4;
-    font-size: 16px;
-    margin-bottom: 4rem;
-
+.Desc {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  color: #f9f8f4;
+  font-size: 16px;
+  margin-bottom: 4rem;
 }
 
 .SearchWrapper {
-    display: flex;
-    /* flex-direction: column; */
+  display: flex;
+  /* flex-direction: column; */
 }
 
 .SearchWrapper > * {
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
 }
 
-.SearchInput{
-    height: 40px;
-    min-width: 500px;
-    max-width: 590px;
-    color: gray;
-    background-color: #f9f8f40c;
-    /* border: 1px solid #D9D9D9; */
-    border: none;
-    border-radius: 25px 0 0 25px;
-    padding: 0 .5rem;
-
+.SearchInput {
+  height: 40px;
+  min-width: 500px;
+  max-width: 590px;
+  color: gray;
+  background-color: #f9f8f40c;
+  /* border: 1px solid #D9D9D9; */
+  border: none;
+  border-radius: 25px 0 0 25px;
+  padding: 0 0.5rem;
 }
 
 .SearchInput:focus {
-    outline: none;
+  outline: none;
 }
 
-.searchBtn{
-    /* border-radius: 0 25px 25px 0; */
-    border-radius: 25px;
-    margin-left: -30px;
+.searchBtn {
+  /* border-radius: 0 25px 25px 0; */
+  border-radius: 25px;
+  margin-left: -30px;
 }
 
 .BadgeWrapper {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .placeHolder {
-    min-height: 50px;
-    margin-top: 1rem;
+  min-height: 50px;
+  margin-top: 1rem;
 }
 
 .error {
-    font-family: "DM Mono", sans-serif;
-    margin-top: 1rem;
-    background-color: #53190C;
-    border: 1px solid #FC0000;
-    border-radius: 12px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;    
-    /* justify-content: center; */
-    color: #F24822;
-    padding: 0 6rem;
-    opacity: 0;
-    animation: shake .2s ease forwards;
+  font-family: "DM Mono", sans-serif;
+  margin-top: 1rem;
+  background-color: #53190c;
+  border: 1px solid #fc0000;
+  border-radius: 12px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: #f24822;
+  padding: 0 6rem;
+  opacity: 0;
+  animation: shake 0.2s ease forwards;
 }
 
 @keyframes shake {
-    0%{
-        opacity: 0;
-        margin-left: 0;
-        margin-right: 0;  
-    }
-    
-    25% {
-        opacity: 0.5;
-        margin-left: -1rem;
-        margin-right: 1rem;        
-    }
+  0% {
+    opacity: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-    50% {
-        opacity: 0.75;
-        margin-left: 1rem;
-        margin-right: -1rem;  
-    }
+  25% {
+    opacity: 0.5;
+    margin-left: -1rem;
+    margin-right: 1rem;
+  }
 
-    100%{
-        opacity: 1;
-        margin-left: 0;
-        margin-right: 0;  
-    }
+  50% {
+    opacity: 0.75;
+    margin-left: 1rem;
+    margin-right: -1rem;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .imagesWrapper {
-    position: absolute;
-    width: 100vw;
-    height: calc(100vh - 100px);
-    /* top: 100px;*/
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -1;
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  /* top: 100px;*/
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .doodle {
-    position: absolute;
-    /* width: 150px; */
-    width: 100px !important;
-    z-index: -1;
+  position: absolute;
+  /* width: 150px; */
+  width: 100px !important;
+  z-index: -1;
 }
 
 .greensquig {
-    left: 0;
-    top: 150px;
-    width: 100px;
+  left: 0;
+  top: 150px;
+  width: 100px;
 }
 
 .diamond {
-    width: 200px;
-    left: 250px;
-    top: 200px;
+  width: 200px;
+  left: 250px;
+  top: 200px;
 }
 
 .yellowsquig {
-    top: 90px;
-    left: 500px;
-    display: none;
+  top: 90px;
+  left: 500px;
+  display: none;
 }
 
 .upchart {
-    top: 80px;
-    left: 800px;
+  top: 80px;
+  left: 800px;
 }
 
-.foot{
-    right: 50px;
-    top: 200px;
-    width: 100px;
+.foot {
+  right: 50px;
+  top: 200px;
+  width: 100px;
 }
 
 .bluesquig {
-    right: 0;
-    top: 400px;
-    width: 100px;
+  right: 0;
+  top: 400px;
+  width: 100px;
 }
 
 .pokerchip {
-    right: 100px;
-    bottom: 300px;
+  right: 100px;
+  bottom: 300px;
 }
 
 .pot {
-    bottom: 0;
-    right: 400px;
+  bottom: 0;
+  right: 400px;
 }
 
 .sunset {
-    bottom: 75px;
-    left: 200px;
+  bottom: 75px;
+  left: 200px;
 }
 
 .star {
-    bottom: 200px;
-    left: 50px;
-    width: 50px;
-    display: none;
+  bottom: 200px;
+  left: 50px;
+  width: 50px;
+  display: none;
 }
 
 .toiletpaper {
-    left: 50px;
-    top: 500px;
+  left: 50px;
+  top: 500px;
 }
 
-
-@media screen and (max-width: 920px){
-
+@media screen and (max-width: 920px) {
 }
 
-
-@media screen and (max-width: 420px){
-    .Hero {
-        min-height: unset;
-    }
-       
-    .Hero > h1 {
-        margin-top: 3rem;
-        /* margin: 0; */
-    }
-    
-    .TagLine{
-        font-size: 36px;
-    }
-
-    .SearchWrapper {
-        flex-direction: column;
-    }
-
-    .SearchInput{
-        min-width: 300px;
-        max-width: 100px;
-        border-radius: 25px 25px 25px 25px;
-        margin-right: 0;
-    }
-
-    .searchBtn{
-        margin: 2rem 2rem 0 2rem;        
-    }
-
-    .placeHolder{
-        margin-top: 2rem;
-    }
-
-    .error{
-        width: 80%;
-
-    }
-
-    .foot {
-        top: 0px;
-        right: 10px;
-    }
-
-    .diamond {
-        left: unset;
-        right: 35px;
-    }
-
-    .bluesquig {
-        display: none;
-    }
-
-    .pokerchip {
-        bottom: 200px;
-    }
-
-    .toiletpaper {
-        top: 550px;
-    }
-
-    .pot {
-        right: 300px;
-        bottom: -25px;
-    }
-
-    .star {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 375px){
-    .Hero {
-        justify-content: flex-start;
-        min-height: unset;
-    }
-    .Hero > h1 {
-      margin-top: 0;
-      /* font-size: 18px; */
-    }
-  
-    .TagLine {
-      font-size: 32px;
-    }
-    .toiletpaper {
-        display: none;
-    }
-
-    .foot {
-        top: 80px;
-        right: 0px;
-    }
+@media screen and (max-width: 420px) {
+  .Hero {
+    min-height: unset;
   }
+
+  .Hero > h1 {
+    margin-top: 3rem;
+    /* margin: 0; */
+  }
+
+  .TagLine {
+    font-size: 36px;
+  }
+
+  .SearchWrapper {
+    flex-direction: column;
+  }
+
+  .SearchInput {
+    min-width: 300px;
+    max-width: 100px;
+    border-radius: 25px 25px 25px 25px;
+    margin-right: 0;
+  }
+
+  .searchBtn {
+    margin: 2rem 2rem 0 2rem;
+  }
+
+  .placeHolder {
+    margin-top: 2rem;
+  }
+
+  .error {
+    width: 80%;
+  }
+
+  .foot {
+    top: 0px;
+    right: 10px;
+  }
+
+  .diamond {
+    left: unset;
+    right: 35px;
+  }
+
+  .bluesquig {
+    display: none;
+  }
+
+  .pokerchip {
+    bottom: 200px;
+  }
+
+  .toiletpaper {
+    top: 550px;
+  }
+
+  .pot {
+    right: 300px;
+    bottom: -25px;
+  }
+
+  .star {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .Hero {
+    justify-content: flex-start;
+    min-height: unset;
+  }
+  .Hero > h1 {
+    margin-top: 0;
+    /* font-size: 18px; */
+  }
+
+  .TagLine {
+    font-size: 32px;
+  }
+  .toiletpaper {
+    display: none;
+  }
+
+  .foot {
+    top: 80px;
+    right: 0px;
+  }
+}

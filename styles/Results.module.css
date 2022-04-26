@@ -1,241 +1,230 @@
 .results {
-    min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
 }
 
-.resultsWrapper{
-    display: flex;
+.resultsWrapper {
+  display: flex;
 
-    margin-top: 6rem;
-    /* justify-content: space-between; */
-
+  margin-top: 6rem;
+  /* justify-content: space-between; */
 }
 
 .resultExplanation {
-    margin-left: 3rem;
-    /* margin-top: 4rem; */
-    min-height: 382px;
-    max-width: 600px;
-    border: 2px solid #444444;
-    border-radius: 25px;
-    padding: 2rem;
+  margin-left: 3rem;
+  /* margin-top: 4rem; */
+  min-height: 382px;
+  max-width: 600px;
+  border: 2px solid #444444;
+  border-radius: 25px;
+  padding: 2rem;
 }
 
 .resultExplanation > h2 {
-    color: white;
-    font-weight: 300;
-    font-size: 26px;
+  color: white;
+  font-weight: 300;
+  font-size: 26px;
 }
 
 .resultExplanation > h1 {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .traitInfo {
-    font-family: "DM Mono", monospace;
-    font-weight: 300;
-    color: rgb(170, 170, 170);
-    opacity: 0;
-    animation: fadeIn .2s ease forwards;
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  color: rgb(170, 170, 170);
+  opacity: 0;
+  animation: fadeIn 0.2s ease forwards;
 }
 
 .exit {
-    animation: fadeOut .2s ease forwards;
+  animation: fadeOut 0.2s ease forwards;
 }
 
 @keyframes fadeIn {
-    0%{ 
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100%{
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-    0%{
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
 
-    100%{
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 
-.selected{
-    transform: scale(1.2);
+.selected {
+  transform: scale(1.2);
 }
 
 .trait {
-    cursor: pointer;
-    display: inline-block;
-    transition: all .2s ease;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
 }
 
 .trait:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .trait1 {
-    color: #50B2F2;
+  color: #50b2f2;
 }
 
-.trait2{ 
-    color: #F39766;
+.trait2 {
+  color: #f39766;
 }
 
-.trait3{
-    color: #CC1144;
+.trait3 {
+  color: #cc1144;
 }
 
 .trait4 {
-    color: #37A16A;
+  color: #37a16a;
 }
 
-
 .interactWrapper {
-    display: flex;
-    align-items: center;
-    
+  display: flex;
+  align-items: center;
 }
 
 .share {
-    /* margin-top: 6.5rem; */
-    display: flex;
-    align-items: center;
-    margin-left: 3rem;
+  /* margin-top: 6.5rem; */
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
 }
 
-.shareText{
-    background-color: hsla(0, 1%, 18%, 0.295);
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-radius: 25px;
-    padding: 0 3rem;
-    width: 500px;
-    color: rgb(158, 158, 158);
+.shareText {
+  background-color: hsla(0, 1%, 18%, 0.295);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  padding: 0 3rem;
+  width: 500px;
+  color: rgb(158, 158, 158);
 }
 
 .shareBtn {
-    margin-left: -3rem;
-    
+  margin-left: -3rem;
 }
 
 .mintBtn {
-    width: 400px;
-    height: 60px;
-    /* font-size: 27px; */
-    text-transform: uppercase;
-    margin: 2rem 0;
-    align-self: center;
-    border-radius: 12px;
-    font-weight: 500;
-    
+  width: 400px;
+  height: 60px;
+  /* font-size: 27px; */
+  text-transform: uppercase;
+  margin: 2rem 0;
+  align-self: center;
+  border-radius: 12px;
+  font-weight: 500;
 }
 
-
 .errorWrapper {
-    background-color: #53190C;
-    border: 1px solid #FC0000;
-    border-radius: 12px;
-    min-height: 100px;
-    display: flex;
-    align-items: center;    
-    /* justify-content: center; */
-    color: #F24822;
-    padding: 0 6rem;
-    visibility: hidden;
-    animation: shake .2s ease forwards;
-    
-    
+  background-color: #53190c;
+  border: 1px solid #fc0000;
+  border-radius: 12px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: #f24822;
+  padding: 0 6rem;
+  visibility: hidden;
+  animation: shake 0.2s ease forwards;
 }
 
 .errorWrapper > * {
-    font-family: "DM Mono", monospace;
-    font-size: 16px;
-    font-weight: 500;
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 @keyframes shake {
-    0%{
-        visibility: hidden;
-        margin-left: 0;
-        margin-right: 0;  
-    }
-    
-    25% {
-        margin-left: -1rem;
-        margin-right: 1rem;        
-    }
+  0% {
+    visibility: hidden;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-    50% {
-        margin-left: 1rem;
-        margin-right: -1rem;  
-    }
+  25% {
+    margin-left: -1rem;
+    margin-right: 1rem;
+  }
 
-    100%{
-        visibility: visible;
-        margin-left: 0;
-        margin-right: 0;  
-    }
+  50% {
+    margin-left: 1rem;
+    margin-right: -1rem;
+  }
+
+  100% {
+    visibility: visible;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
-@media screen and (max-width: 920px){
-    .resultsWrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+@media screen and (max-width: 920px) {
+  .resultsWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .resultExplanation {
-        margin-top: 3rem;
-    }
+  .resultExplanation {
+    margin-top: 3rem;
+  }
 
-    .interactWrapper{
-        flex-direction: column;
-    }
-
+  .interactWrapper {
+    flex-direction: column;
+  }
 }
 
+@media screen and (max-width: 420px) {
+  .resultExplanation {
+    margin: 2rem;
+  }
 
-@media screen and (max-width: 420px){
-    .resultExplanation {
-        margin: 2rem;
-    }
-    
-    .share{
-        /* background-color: #fff; */
-        margin: 0;
-        width: 80%;
-        margin-left: 1rem;
-    }
+  .share {
+    /* background-color: #fff; */
+    margin: 0;
+    width: 80%;
+    margin-left: 1rem;
+  }
 
-    .shareText {
-        width: 80%;
-        
-    }
+  .shareText {
+    width: 80%;
+  }
 
-    .shareBtn {
-        /* margin: 0; */
-    }
-    
-    .mintBtn {
-        font-size: 24px;
-        width: 90%;
-    }
+  .shareBtn {
+    /* margin: 0; */
+  }
 
-    .interactWrapper{
-        flex-direction: column;
-    }
+  .mintBtn {
+    font-size: 24px;
+    width: 90%;
+  }
 
-    .resultsWrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+  .interactWrapper {
+    flex-direction: column;
+  }
 
-    .errorWrapper {
-        width: 80%;
-        margin: 2rem auto !important;
-        padding: 1rem;
-    }
+  .resultsWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .errorWrapper {
+    width: 80%;
+    margin: 2rem auto !important;
+    padding: 1rem;
+  }
 }
