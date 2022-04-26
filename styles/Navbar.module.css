@@ -68,12 +68,12 @@
 }
 
 .disconnect{
-  background-color: rgb(112, 30, 30);
+  background-color: rgb(112, 30, 30) !important;
   font-size: 14px;
 }
 
 .disconnect:hover {
-  background-color: rgb(56, 15, 15);
+  background-color: rgb(56, 15, 15) !important;
   color: rgb(94, 94, 94);
 }
 
