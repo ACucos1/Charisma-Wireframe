@@ -188,7 +188,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .resultExplanation {
     margin: 2rem;
   }

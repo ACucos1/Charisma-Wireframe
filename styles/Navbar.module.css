@@ -76,7 +76,7 @@
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 425px) {
   .LogoWrapper {
     margin-top: 1rem;
     flex-direction: column;
