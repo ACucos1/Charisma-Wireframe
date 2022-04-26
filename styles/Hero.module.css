@@ -193,8 +193,8 @@
 }
 
 .toiletpaper {
-  left: 50px;
-  top: 500px;
+  left: 450px;
+  top: 75px;
   filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
 }
 

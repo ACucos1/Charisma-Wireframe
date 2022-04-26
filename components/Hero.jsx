@@ -128,7 +128,7 @@ export default function Hero() {
         />
         <img
           className={`doodle ${styles.doodle} ${styles.toiletpaper}`}
-          src="./images/toiletpaper.png"
+          src="./images/toiletpaper.svg"
           alt=""
         />
         <img
