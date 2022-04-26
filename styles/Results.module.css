@@ -160,6 +160,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .results {
+    margin: 0 12px;
+  }
+}
+
 @media screen and (max-width: 920px) {
   .resultsWrapper {
     flex-direction: column;
@@ -172,6 +178,8 @@
 
   .interactWrapper {
     flex-direction: column;
+    align-items: center;
+    margin: 0;
   }
 }
 
