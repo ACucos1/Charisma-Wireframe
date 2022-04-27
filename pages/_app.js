@@ -98,7 +98,7 @@ function MyApp({ Component, pageProps }) {
 
   const getSigner = async () => {
     const provider = await web3ModalRef.current.connect();
-    console.log(provider);
+    // console.log(provider);
     const web3Provider = new providers.Web3Provider(provider);
 
     const { chainId } = await web3Provider.getNetwork();
@@ -155,14 +155,17 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (searchStarted === true) {
       const resultCheckInterval = setInterval(async () => {
-        const { data } = await axios.get(`${apiUrl}/result/${searchAddr}`);
-        console.log(Object.keys(data).length);
-        console.log(data);
-        if (Object.keys(data).length > 1) {
-          console.log("setting wpi");
-          setWpi(data);
-          clearInterval(resultCheckInterval);
+        const res = await axios.get(`${apiUrl}/result/${searchAddr}`);
+        if (res.status === 200) {
+          const data = await res.data;
+          console.log(data);
+          if (Object.keys(data).length > 1) {
+            console.log("setting wpi");
+            setWpi(data);
+            clearInterval(resultCheckInterval);
+          }
         }
+
         // await getResult(searchAddr)
       }, 1000);
       setSearchStarted(false);

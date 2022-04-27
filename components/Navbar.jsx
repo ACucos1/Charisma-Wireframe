@@ -20,9 +20,26 @@ export default function Navbar() {
 
       <div className={styles.NavList}>
         <ul className={styles.NavLinks}>
+
+          <li className={styles.NavLink}>
+            <a href="https://twitter.com/Charisma_Social" target="_blank" rel="noreferrer">
+              <img className={styles.twitterLogo} src="./images/TwitterLogoWhite.svg" alt="twitter" />
+
+            </a>
+          </li>
+
+          
+          <li className={styles.NavLink}>
+            <a href="https://discord.gg/7zuYcy4v2q" target="_blank" rel="noreferrer">
+              <img className={styles.discordLogo} src="./images/discordicon.svg" alt="twitter" />
+
+            </a>
+          </li>
+
+
           <li className={styles.NavLink}>
             <a
-              href="https://www.notion.so/charisma-social/Traits-Season-0-Alpha-f3787fed16614460a0bb69a898f16ef6"
+              href="https://charisma-social.notion.site/Traits-Season-0-Alpha-f3787fed16614460a0bb69a898f16ef6"
               target="_blank"
               rel="noreferrer"
             >
@@ -31,14 +48,18 @@ export default function Navbar() {
           </li>
           <li className={styles.NavLink}>
             <a
-              href="https://www.notion.so/charisma-social/Methodology-35d599c5f2bd4d01a91cb68a9a3084ba"
+              href="https://charisma-social.notion.site/Methodology-35d599c5f2bd4d01a91cb68a9a3084ba"
               target="_blank"
               rel="noreferrer"
             >
               METHODOLOGY
             </a>
           </li>
-          <li className={styles.NavLink}>PARTNERSHIPS</li>
+          <li className={styles.NavLink}>
+            <a href="https://docs.google.com/forms/d/1gyKQujDEzvdDRmB9ZqcOWEGXUvlrB08BWVY-CcbsW6g/edit" target="_blank" rel="noreferrer">PARTNERSHIPS
+              PARTNERSHIPS
+            </a>
+          </li>
           <li className={styles.NavLink}>
             <button
               className={`btn-secondary ${styles.connect}`}

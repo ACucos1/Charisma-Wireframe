@@ -28,6 +28,15 @@
 
 }
 
+.twitterLogo {
+  width: 25px;
+  height: 25px;
+}
+
+.discordLogo{
+  width: 25px;
+  height: 25px;
+}
 
 .Logo {
   color: #3c64b1;
@@ -58,7 +67,9 @@
 
 .NavLink:nth-child(1):hover,
 .NavLink:nth-child(2):hover,
-.NavLink:nth-child(3):hover {
+.NavLink:nth-child(3):hover,
+.NavLink:nth-child(4):hover
+.NavLink:nth-child(5):hover {
   color: #50b1f2;
   transform: scale(1.1);
 }

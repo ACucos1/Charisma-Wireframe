@@ -27,7 +27,7 @@ export default function Hero() {
     startWpi(query)
       .then((status) => {
         console.log(status);
-        if (status === 200 || status === 322 || status === 201) {
+        if (status === 200 || status === 302 || status === 201) {
           setSearchStarted(true);
           if (searchAddr) {
             Router.push("/results");

@@ -25,6 +25,7 @@ export default function Results() {
 
   // }
 
+  
   useEffect(() => {
     // setTimeout(() => {
     //   setLoading(false)
@@ -32,7 +33,7 @@ export default function Results() {
     let seconds = 0;
     const checkWpiInterval = setInterval(() => {
       if (wpi && seconds >= 3) {
-        console.log(`Results.jsx: WPI is ${wpi}`);
+        console.log(`Results.jsx: WPI is ${Object.keys(wpi)}`);
         console.log("Done Loading");
         setLoading(false);
         clearInterval(checkWpiInterval);
@@ -126,6 +127,7 @@ export default function Results() {
                   {wpi && wpi["4"].info.Value}
                 </span>
               </h1>
+              <span className={styles.tip}>Click the letters to read more about each trait</span>
               <p className={styles.resultInfo}>
               {wpi && wpi["6"][Object.keys(wpi["6"])[0]]}
 
@@ -134,7 +136,6 @@ export default function Results() {
               <p className={styles.traitInfo} ref={traitInfoRef}>
                 {wpi && wpi[selectedTrait].info.Message}
                 <br />
-                <span className={styles.tip}>Click the letters to read more about each trait</span>
               </p>
             </div>
           </div>
