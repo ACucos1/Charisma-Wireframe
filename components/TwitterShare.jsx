@@ -13,15 +13,18 @@ const TwitterShare = () => {
   const [personalityString] = Object.keys(wpi["6"]);
   let tweetText = "";
   let encodedText = "";
-  const iconText = personalityString.split("").reduce((iconString, trait) => {
-    iconString += personalityIcons[trait];
-    return iconString;
-  }, "");
+  let iconText = "";
+  if (personalityString !== "NGMI") {
+    iconText = personalityString.split("").reduce((iconString, trait) => {
+      iconString += personalityIcons[trait];
+      return iconString;
+    }, "");
+  }
 
   if (address === searchAddr) {
     tweetText = `My wallet personality type is ${personalityString} ${iconText}! @${CHARISMA_TWITTER_NAME} What does your wallet say about you?\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}`;
   } else {
-    tweetText = `I just analyzed wallet personalities with ${iconText} @${CHARISMA_TWITTER_NAME}, the world's first wallet personality test.\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}`;
+    tweetText = `I just analyzed wallet personalities with @${CHARISMA_TWITTER_NAME}, the world's first wallet personality test.\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}`;
   }
   encodedText = encodeUrl(tweetText);
 
