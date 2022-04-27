@@ -14,11 +14,12 @@ const TwitterShare = () => {
   let tweetText = "";
   let encodedText = "";
   const iconText =
-    personalityString !== "NGMI" ??
-    personalityString.split("").reduce((iconString, trait) => {
-      iconString += personalityIcons[trait];
-      return iconString;
-    }, "");
+    personalityString !== "NGMI"
+      ? personalityString.split("").reduce((iconString, trait) => {
+          iconString += personalityIcons[trait];
+          return iconString;
+        }, "")
+      : "";
 
   if (address === searchAddr) {
     tweetText = `My wallet personality type is ${personalityString} ${iconText}! @${CHARISMA_TWITTER_NAME} What does your wallet say about you?\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}`;
