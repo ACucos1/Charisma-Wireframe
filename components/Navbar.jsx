@@ -5,7 +5,7 @@ import truncateAddress from "../utils";
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
-  const { handleConnectClick, address, handleDisconnect } = useContext(Web3Context);
+  const { handleConnectClick, address, handleDisconnect, ens } = useContext(Web3Context);
 
   return (
     <div className={styles.Navbar}>
@@ -65,7 +65,7 @@ export default function Navbar() {
               className={`btn-secondary ${styles.connect}`}
               onClick={handleConnectClick}
             >
-              {address ? truncateAddress(address) : "Connect Wallet"}
+              {ens ? ens : address ? truncateAddress(address) : "Connect Wallet"}
             </button>
           </li>
 

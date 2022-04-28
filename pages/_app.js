@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { ethers, Contract, providers } from "ethers";
 import { Web3Context } from "../contexts/Web3Context";
 import axios from "axios";
-const crypto = require("crypto");
 import Web3Modal from "web3modal";
 import Authereum from "authereum";
 import Head from "next/head";
@@ -10,7 +9,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
-import { resolve } from "path";
 
 const apiUrl = "https://api.charismasocial.xyz";
 
@@ -31,7 +29,6 @@ axios.interceptors.request.use(
 
 function MyApp({ Component, pageProps }) {
   const storedJwt = null;
-  const { pathname } = useRouter();
   const [walletConnected, setWalletConnected] = useState(false);
   const [address, setAddress] = useState("");
   const [signer, setSigner] = useState(false);
@@ -40,6 +37,7 @@ function MyApp({ Component, pageProps }) {
   const [jwtToken, setJwtToken] = useState(storedJwt || null);
   const [wpi, setWpi] = useState({});
   const [searchStarted, setSearchStarted] = useState(false);
+  const [ens, setEns] = useState(null);
 
   const getJwt = async () => {
     const headers = {
@@ -110,12 +108,23 @@ function MyApp({ Component, pageProps }) {
     return signer;
   };
 
+  const lookupEnsName = async (address) => {
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://mainnet.infura.io/v3/4573dc7eefa641249c73db4a48c47f87"
+    );
+    const name = await provider.lookupAddress(address);
+    if (name) {
+      setEns(name);
+    }
+  };
+
   const connectWallet = async () => {
     try {
       const signer = await getSigner();
       const address = await signer.getAddress();
       setSigner(signer);
       setAddress(address);
+      lookupEnsName(address);
       setWalletConnected(true);
     } catch (err) {
       console.log(err);
@@ -174,6 +183,10 @@ function MyApp({ Component, pageProps }) {
   }, [searchStarted, wpi, searchAddr]);
 
   useEffect(() => {
+    if (address) resolveEnsDomain(address);
+  }, [address]);
+
+  useEffect(() => {
     console.log("UseEffect App.js: " + wpi);
   }, [wpi]);
 
@@ -217,6 +230,7 @@ function MyApp({ Component, pageProps }) {
           resolveEnsDomain,
           handleDisconnect,
           setWpi,
+          ens,
         }}
       >
         <Navbar />
