@@ -122,6 +122,7 @@
 }
 
 .L {
+  color: black;
   filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg) brightness(103%) contrast(106%);
 }
 
@@ -129,9 +130,6 @@
 .interactWrapper {
   display: flex;
 }
-
-
-
 
 
 .mintBtn {

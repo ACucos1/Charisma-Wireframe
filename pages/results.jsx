@@ -5,6 +5,7 @@ import { Web3Context } from "../contexts/Web3Context";
 import styles from "../styles/Results.module.css";
 import Router from "next/router";
 import TwitterShare from "../components/TwitterShare";
+import Feedback from '../components/Feedback'
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
@@ -21,15 +22,8 @@ export default function Results() {
     console.log(searchAddr, address);
   };
 
-  // const handleTraitClick = () => {
-
-  // }
-
   
   useEffect(() => {
-    // setTimeout(() => {
-    //   setLoading(false)
-    // }, 2500)
     let seconds = 0;
     const checkWpiInterval = setInterval(() => {
       if (wpi && seconds >= 3) {
@@ -144,6 +138,7 @@ export default function Results() {
             </button>
             <TwitterShare />
           </div>
+          <Feedback />
           {searchAddr &&
             address &&
             address.toLowerCase() !== searchAddr.toLowerCase() && (
