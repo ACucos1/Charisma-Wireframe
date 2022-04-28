@@ -46,7 +46,7 @@ export default function ResultDisplay({ wpi }) {
             />
             :
             <img
-            src="./images/buttefly.svg"
+            src="./images/butterfly.svg"
             alt=""
             className={`${styles.img} ${styles.butterfly}`}
             />
