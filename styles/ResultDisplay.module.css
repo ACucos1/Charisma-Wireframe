@@ -31,8 +31,12 @@
   font-size: 28px;
 }
 
-.DorP {
+.D {
   color: #50b2f2;
+}
+
+.P{
+  filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
 }
 
 .trait2 {

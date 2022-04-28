@@ -7,7 +7,7 @@ export default function ResultDisplay({ wpi }) {
       {/* <p className={styles.descriptionSmall}>=DIAMOND HANDS, EARLY ADOPTER, OVER PERFORMANCE, <br /> SMALL PROJECT SUPPORTER</p> */}
       <div className={styles.resultDisplay}>
         <ul className={styles.traitsList}>
-          <li className={`${styles.trait} ${styles.DorP}`}>
+          <li className={`${styles.trait} ${wpi && wpi["1"].info.Value == "D" ? styles.D : styles.P}`}>
             {wpi && wpi["1"].info.LongDesc}
           </li>
           <li className={`${styles.trait} ${styles.trait2}`}>
