@@ -38,7 +38,7 @@ export default function ResultDisplay({ wpi }) {
 
           }
 
-          {wpi && wpi["2"].info.Value == "F" ?  
+          {wpi && wpi["2"].info.Value == "H" ?  
             <img
               src="./images/chick.svg"
               alt=""
@@ -52,7 +52,7 @@ export default function ResultDisplay({ wpi }) {
             />
           }
 
-          {wpi && wpi["3"].info.Value === "H" ? 
+          {wpi && wpi["3"].info.Value === "F" ? 
             <img
             src="./images/house.svg"
             alt=""

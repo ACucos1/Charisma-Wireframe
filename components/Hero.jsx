@@ -16,6 +16,7 @@ export default function Hero() {
     wpi,
     setSearchStarted,
     resolveEnsDomain,
+    setWpi,
   } = useContext(Web3Context);
   const [err, setErr] = useState("");
   const handleSearchChange = (e) => {
@@ -24,6 +25,7 @@ export default function Hero() {
   };
 
   const startSearch = (query) => {
+    setWpi({});
     startWpi(query)
       .then((status) => {
         console.log(status);

@@ -157,6 +157,7 @@ function MyApp({ Component, pageProps }) {
       const resultCheckInterval = setInterval(async () => {
         const res = await axios.get(`${apiUrl}/result/${searchAddr}`);
         if (res.status === 200) {
+          console.log(res);
           const data = await res.data;
           console.log(data);
           if (Object.keys(data).length > 1) {
@@ -215,6 +216,7 @@ function MyApp({ Component, pageProps }) {
           searchStarted,
           resolveEnsDomain,
           handleDisconnect,
+          setWpi,
         }}
       >
         <Navbar />
