@@ -10,13 +10,13 @@ export default function ResultDisplay({ wpi }) {
           <li className={`${styles.trait} ${wpi && wpi["1"].info.Value == "D" ? styles.D : styles.P}`}>
             {wpi && wpi["1"].info.LongDesc}
           </li>
-          <li className={`${styles.trait} ${styles.trait2}`}>
+          <li className={`${styles.trait} ${wpi && wpi["2"].info.Value == "H" ? styles.H : styles.S}`}>
             {wpi && wpi["2"].info.LongDesc}
           </li>
-          <li className={`${styles.trait} ${styles.trait3}`}>
+          <li className={`${styles.trait} ${wpi && wpi["3"].info.Value == "B" ? styles.B : styles.F}`}>
             {wpi && wpi["3"].info.LongDesc}
           </li>
-          <li className={`${styles.trait} ${styles.trait4}`}>
+          <li className={`${styles.trait} ${wpi && wpi["4"].info.Value == "U" ? styles.U : styles.L}`}>
             {wpi && wpi["4"].info.LongDesc}
           </li>
         </ul>

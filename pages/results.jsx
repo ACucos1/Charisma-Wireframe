@@ -87,9 +87,8 @@ export default function Results() {
               </h2>
               <h1 className={styles.wpi}>
                 <span
-                  className={`${styles.trait} ${styles.trait1} ${
-                    selectedTrait === 1 && styles.selected
-                  }`}
+                  className={`${styles.trait} ${
+                    selectedTrait === 1 && styles.selected} ${wpi && wpi["1"].info.Value == "D" ? styles.D : styles.P}`}
                   onClick={() => {
                     setSelectedTrait(1);
                   }}
@@ -97,9 +96,8 @@ export default function Results() {
                   {wpi && wpi["1"].info.Value}
                 </span>
                 <span
-                  className={`${styles.trait} ${styles.trait2} ${
-                    selectedTrait === 2 && styles.selected
-                  }`}
+                  className={`${styles.trait}  ${
+                    selectedTrait === 2 && styles.selected} ${wpi && wpi["2"].info.Value == "H" ? styles.H : styles.S}`}
                   onClick={() => {
                     setSelectedTrait(2);
                   }}
@@ -107,9 +105,8 @@ export default function Results() {
                   {wpi && wpi["2"].info.Value}
                 </span>
                 <span
-                  className={`${styles.trait} ${styles.trait3} ${
-                    selectedTrait === 3 && styles.selected
-                  }`}
+                  className={`${styles.trait}  ${
+                    selectedTrait === 3 && styles.selected} ${wpi && wpi["3"].info.Value == "B" ? styles.B : styles.F}`}
                   onClick={() => {
                     setSelectedTrait(3);
                   }}
@@ -117,9 +114,8 @@ export default function Results() {
                   {wpi && wpi["3"].info.Value}
                 </span>
                 <span
-                  className={`${styles.trait} ${styles.trait4} ${
-                    selectedTrait === 4 && styles.selected
-                  }`}
+                  className={`${styles.trait}  ${
+                    selectedTrait === 4 && styles.selected} ${wpi && wpi["4"].info.Value == "U" ? styles.U : styles.L}`}
                   onClick={() => {
                     setSelectedTrait(4);
                   }}
