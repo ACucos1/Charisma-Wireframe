@@ -31,7 +31,7 @@ export default function Navbar() {
           
           <li className={styles.NavLink}>
             <a href="https://discord.gg/7zuYcy4v2q" target="_blank" rel="noreferrer">
-              <img className={styles.discordLogo} src="./images/discordicon.svg" alt="discord" />
+              <img className={styles.discordLogo} src="./images/discordlogo.png" alt="discord" />
 
             </a>
           </li>

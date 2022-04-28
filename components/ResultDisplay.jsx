@@ -38,21 +38,7 @@ export default function ResultDisplay({ wpi }) {
 
           }
 
-          {wpi && wpi["2"].info.Value == "H" ?  
-            <img
-              src="./images/chick.svg"
-              alt=""
-              className={`${styles.img} ${styles.chick}`}
-            />
-            :
-            <img
-              src="./images/pokerchip.svg"
-              alt=""
-              className={`${styles.img} ${styles.pokerchip}`}
-            />
-          }
-
-          {wpi && wpi["3"].info.Value === "F" ? 
+          {wpi && wpi["2"].info.Value === "H" ? 
             <img
             src="./images/house.svg"
             alt=""
@@ -63,6 +49,21 @@ export default function ResultDisplay({ wpi }) {
             src="./images/buttefly.svg"
             alt=""
             className={`${styles.img} ${styles.butterfly}`}
+            />
+          }
+
+
+          {wpi && wpi["3"].info.Value == "F" ?  
+            <img
+              src="./images/chick.svg"
+              alt=""
+              className={`${styles.img} ${styles.chick}`}
+            />
+            :
+            <img
+              src="./images/pokerchip.svg"
+              alt=""
+              className={`${styles.img} ${styles.pokerchip}`}
             />
           }
 
