@@ -56,7 +56,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className={styles.NavLink}>
-            <a href="https://docs.google.com/forms/d/1gyKQujDEzvdDRmB9ZqcOWEGXUvlrB08BWVY-CcbsW6g/edit" target="_blank" rel="noreferrer">
+            <a href="https://docs.google.com/forms/d/1Sdp7vQIkwy5sx_DCx-7AC6-L_54TlUWjEHS8rId-Q08/edit" target="_blank" rel="noreferrer">
               PARTNERSHIPS
             </a>
           </li>
