@@ -66,9 +66,12 @@
 }
 
 .NavLink:nth-child(1):hover,
-.NavLink:nth-child(2):hover,
+.NavLink:nth-child(2):hover {
+  filter: invert(54%) sepia(80%) saturate(548%) hue-rotate(177deg) brightness(105%) contrast(90%);
+  transform: scale(1.1);
+}
 .NavLink:nth-child(3):hover,
-.NavLink:nth-child(4):hover
+.NavLink:nth-child(4):hover,
 .NavLink:nth-child(5):hover {
   color: #50b1f2;
   transform: scale(1.1);
