@@ -138,7 +138,7 @@ export default function Results() {
             </button>
             <TwitterShare />
           </div>
-          <Feedback />
+          {/* <Feedback /> */}
           {searchAddr &&
             address &&
             address.toLowerCase() !== searchAddr.toLowerCase() && (
