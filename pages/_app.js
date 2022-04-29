@@ -261,7 +261,7 @@ function MyApp({ Component, pageProps }) {
         <Navbar />
         <Component {...pageProps} />
         {/* {pathname !== '/' ? <Footer /> : <></>} */}
-        <Footer />
+        {localStorage.getItem("loggedIn") && <Footer />}
       </Web3Context.Provider>
     </>
   );
