@@ -4,6 +4,7 @@ import Badge from "../components/Badge";
 import styles from "../styles/Hero.module.css";
 import Router from "next/router";
 import PasswordModal from "./PasswordModal";
+import InfoButton from "./InfoButton";
 
 export default function Hero() {
   const {
@@ -83,12 +84,12 @@ export default function Hero() {
       </div>
       {/* <span className={styles.Desc}>OR</span> */}
       <div className={styles.SearchWrapper}>
+        <InfoButton />
         <input
           className={styles.SearchInput}
           onChange={handleSearchChange}
           value={searchAddr}
           type="text"
-          placeholder="Enter wallet address, ENS or connect wallet"
         />
         <button
           className={`btn-secondary ${styles.searchBtn}`}
@@ -138,7 +139,7 @@ export default function Hero() {
           src="./images/upchart.svg"
           alt=""
         />
-        
+
         <img
           className={`doodle ${styles.doodle} ${styles.yellowsquig}`}
           src="./images/yellowsquig.png"
