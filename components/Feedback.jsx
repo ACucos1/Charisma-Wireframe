@@ -25,7 +25,7 @@ export default function Feedback({ address }) {
     };
     return (
         <div className={styles.feedback}>
-            <h2>Like your results? Let us know!</h2>
+            <h2>How do you feel about your results? Let us know!</h2>
             <div className={styles.buttonWrapper}>
                 <button onClick={() => { handleFeedBack("Thumbs_up") }}>Like</button>
                 <button onClick={() => { handleFeedBack("Thumbs_down") }}>Dislike</button>
