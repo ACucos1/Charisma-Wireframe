@@ -121,12 +121,21 @@ function MyApp({ Component, pageProps }) {
     }
   };
 
+  const sendConnected = async (address) => {
+    const headers = {
+      "Content-Type": "application-x-www-form-urlencoded",
+    };
+    await axios.post(`${apiUrl}/connected`, { address: address }, headers);
+  };
+
   const connectWallet = async () => {
     try {
       const signer = await getSigner();
+
       const address = await signer.getAddress();
       setSigner(signer);
       setAddress(address);
+      await sendConnected(address);
       lookupEnsName(address);
       setWalletConnected(true);
     } catch (err) {
@@ -217,13 +226,7 @@ function MyApp({ Component, pageProps }) {
         setAddress(accounts[0]);
       });
     }
-    const jwt = localStorage.getItem("token");
-    if (jwt) {
-      console.log("jwt from localStorage " + jwt);
-      setJwtToken(jwt);
-    } else {
-      getJwt();
-    }
+    getJwt();
   }, []);
 
   return (
