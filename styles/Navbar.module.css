@@ -142,6 +142,7 @@
     margin-top: 2rem;
     background-color: #cacaca;
     transition: all .2s ease-in-out;
+    border-radius: 25px;
   }
 
   .burger::before, .burger::after{
@@ -152,6 +153,7 @@
     transition: all .2s ease-in-out;
     transform-origin: center;
     background-color: #cacaca;
+    border-radius: 25px;
   }
 
   .burger::before{
