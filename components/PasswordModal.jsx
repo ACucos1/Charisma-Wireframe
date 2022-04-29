@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { Web3Context } from "../contexts/Web3Context";
 import styles from "../styles/Passwordmodal.module.css";
 
 export default function PasswordModal() {
   const [input, setInput] = useState("");
   const [showWrongPwd, setShowWrongPwd] = useState(false);
+  const { setLoggedIn } = useContext(Web3Context);
   const modalRef = useRef();
   const pwd = "dazzle";
 
@@ -11,6 +13,7 @@ export default function PasswordModal() {
     if (input.toLowerCase() === pwd) {
       modalRef.current.style.display = "none";
       window.localStorage.setItem("loggedIn", "loggedin");
+      setLoggedIn(true);
     } else {
       setShowWrongPwd(true);
       setInput("");
@@ -27,6 +30,7 @@ export default function PasswordModal() {
   useEffect(() => {
     if (window.localStorage.getItem("loggedIn") === "loggedin") {
       modalRef.current.style.display = "none";
+      setLoggedIn(true);
     }
   }, []);
 
