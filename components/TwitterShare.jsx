@@ -22,9 +22,9 @@ const TwitterShare = () => {
   }
 
   if (address === searchAddr) {
-    tweetText = `My wallet personality type is ${personalityString} ${iconText}! @${CHARISMA_TWITTER_NAME} What does your wallet say about you?\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}`;
+    tweetText = `My wallet personality type is #${personalityString} ${iconText}! @${CHARISMA_TWITTER_NAME} What does your wallet say about you?\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}\n#Charisma`;
   } else {
-    tweetText = `I just analyzed wallet personalities with @${CHARISMA_TWITTER_NAME}, the world's first wallet personality test.\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}`;
+    tweetText = `I just analyzed wallet personalities with @${CHARISMA_TWITTER_NAME}, the world's first wallet personality test.\nJoin waitlist here: ${WAITLIST_SIGNUP_LINK}\n#Charisma`;
   }
   encodedText = encodeUrl(tweetText);
 

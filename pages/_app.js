@@ -38,6 +38,7 @@ function MyApp({ Component, pageProps }) {
   const [wpi, setWpi] = useState({});
   const [searchStarted, setSearchStarted] = useState(false);
   const [ens, setEns] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const getJwt = async () => {
     const headers = {
@@ -228,6 +229,8 @@ function MyApp({ Component, pageProps }) {
           handleDisconnect,
           setWpi,
           ens,
+          loggedIn,
+          setLoggedIn,
         }}
       >
         <Navbar />
