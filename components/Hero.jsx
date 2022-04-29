@@ -4,7 +4,6 @@ import Badge from "../components/Badge";
 import styles from "../styles/Hero.module.css";
 import Router from "next/router";
 import PasswordModal from "./PasswordModal";
-import InfoButton from "./InfoButton";
 
 export default function Hero() {
   const {
@@ -84,12 +83,12 @@ export default function Hero() {
       </div>
       {/* <span className={styles.Desc}>OR</span> */}
       <div className={styles.SearchWrapper}>
-        <InfoButton className={styles.InfoButton}/>
         <input
           className={styles.SearchInput}
           onChange={handleSearchChange}
           value={searchAddr}
           type="text"
+          placeholder="ENS or ETH address"
         />
         <button
           className={`btn-secondary ${styles.searchBtn}`}
