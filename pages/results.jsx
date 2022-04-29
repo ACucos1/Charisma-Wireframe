@@ -79,6 +79,7 @@ export default function Results() {
               <h2>
                 The results are in. <br /> Your wallet personailty type is
               </h2>
+              <span className={styles.tip}>Click the letters to read more about each trait</span>
               <h1 className={styles.wpi}>
                 <span
                   className={`${styles.trait} ${
@@ -117,7 +118,7 @@ export default function Results() {
                   {wpi && wpi["4"].info.Value}
                 </span>
               </h1>
-              <span className={styles.tip}>Click the letters to read more about each trait</span>
+              
               <p className={styles.resultInfo}>
               {wpi && wpi["6"][Object.keys(wpi["6"])[0]]}
 
