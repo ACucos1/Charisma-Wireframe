@@ -153,8 +153,8 @@
 }
 
 .diamond {
-  bottom: 75px;
-  left: 600px;
+  left: 250px;
+  top: 400px;
   filter: invert(62%) sepia(30%) saturate(1840%) hue-rotate(178deg) brightness(102%) contrast(90%);
 }
 
@@ -181,15 +181,14 @@
 
 
 .pokerchip {
-  left: 250px;
-  top: 400px;
+  right: 100px;
+  bottom: 300px;
   filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
 }
 
 .butterfly {
-
-  right: 100px;
-  bottom: 300px;
+  bottom: 75px;
+  left: 600px;
   transform: scale(2) rotate(20deg);
   filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg) brightness(95%) contrast(77%);
 }
