@@ -178,7 +178,6 @@ function MyApp({ Component, pageProps }) {
         network: "mainnet",
         providerOptions,
         disableInjectedProvider: false,
-        cacheProvider: true,
       });
     }
     if (!address) {
