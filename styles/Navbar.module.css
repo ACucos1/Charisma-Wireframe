@@ -97,16 +97,32 @@
   visibility: visible;
 }
 
-@media screen and (max-width: 1024px) {
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 1285px) {
   .connect {
+    display: none;
+  }
+  .disconnect{
     display: none;
   }
   .Navbar {
     flex-direction: column;
   }
+
+  .NavLinks {
+    justify-content: center;
+    /* align-items: center; */
+    /* background-color: #fff; */
+    /* width: 80%; */
+    /* margin: auto; */
+    /* margin-left: 7rem; */
+  }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .LogoWrapper {
     margin-top: 1rem;
     flex-direction: column;
@@ -119,7 +135,95 @@
     height: 75px;
   }
 
+  .burger {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin-top: 2rem;
+    background-color: #cacaca;
+    transition: all .2s ease-in-out;
+  }
+
+  .burger::before, .burger::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    transition: all .2s ease-in-out;
+    transform-origin: center;
+    background-color: #cacaca;
+  }
+
+  .burger::before{
+    transform: translateY(-16px);
+  }
+
+  .burger::after {
+    transform:translateY(16px);
+  }
+
+  .menuBtn {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+  }
+
+  .menuBtn.open {
+    position: fixed;
+    transform: translateY(600px);
+  }
+
+  .menuBtn.open .burger {
+    background-color: transparent;
+  }
+
+  .menuBtn.open .burger::before{
+    transform: rotate(45deg);
+  }
+
+  .menuBtn.open .burger::after{
+    transform: rotate(-45deg);
+  }
+
   .NavList {
+    visibility: hidden;
+    /* flex-direction: column; */
+    position: fixed;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 100rem;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+  }
+
+  .NavList.open {
+    visibility: visible;
+    margin-top: 15rem;
+    background-color: rgba(34, 34, 34, 0.911);
+    
+    height: 100%;
+  }
+
+  .NavLinks {
+    margin-top: 1rem;
+    flex-direction: column;
+  }
+
+  .NavLink {
+    padding: 1rem;
+    border: 1px solid rgb(145, 145, 145);
+    width: 90%;
+    margin: 0;
+  }
+  .NavLink:nth-child(1):hover,
+  .NavLink:nth-child(2):hover,
+  .NavLink:nth-child(3):hover,
+  .NavLink:nth-child(4):hover,
+  .NavLink:nth-child(5):hover {
+    /* background-color: #fff; */
+    transform: scale(1);
+  }
+  .NavLink:nth-child(6),
+  .NavLink:nth-child(7){
     display: none;
   }
 }

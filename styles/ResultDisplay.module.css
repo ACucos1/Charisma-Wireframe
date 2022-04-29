@@ -164,7 +164,7 @@
     }
 } */
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .resultDisplay {
     /* min-width: 350px; */
     min-width: unset;

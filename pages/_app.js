@@ -158,6 +158,7 @@ function MyApp({ Component, pageProps }) {
   const handleDisconnect = () => {
     setWalletConnected(false);
     setAddress("");
+    setEns("");
     setSigner(null);
   };
 
@@ -181,10 +182,6 @@ function MyApp({ Component, pageProps }) {
       setSearchStarted(false);
     }
   }, [searchStarted, wpi, searchAddr]);
-
-  useEffect(() => {
-    if (address) resolveEnsDomain(address);
-  }, [address]);
 
   useEffect(() => {
     console.log("UseEffect App.js: " + wpi);

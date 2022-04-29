@@ -13,8 +13,9 @@ export default function Feedback({ address }) {
             result: feedback,
             message: ""
         }
-        if(submited === false){
+        if(submitted === false){
             const res = await axios.post(`${apiUrl}/feedback`, payload);
+            console.log(res);
             if(res.status === 200){
                 setSubmitted(true)
             }
@@ -22,7 +23,6 @@ export default function Feedback({ address }) {
         
         
     };
-
     return (
         <div className={styles.feedback}>
             <h2>Like your results? Let us know!</h2>

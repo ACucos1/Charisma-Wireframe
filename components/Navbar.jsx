@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Web3Context } from "../contexts/Web3Context";
 import Link from "next/link";
 import truncateAddress from "../utils";
@@ -6,6 +6,8 @@ import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
   const { handleConnectClick, address, handleDisconnect, ens } = useContext(Web3Context);
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className={styles.Navbar}>
@@ -18,7 +20,12 @@ export default function Navbar() {
         <div> SEASON 0 ALPHA </div>
       </div>
 
-      <div className={styles.NavList}>
+
+      <div onClick={() => {setMenuOpen(prev => !prev)}} className={`${styles.menuBtn} ${menuOpen && styles.open}`}>
+        <div className={styles.burger}></div>
+      </div>
+
+      <div className={`${styles.NavList} ${menuOpen && styles.open}`}>  
         <ul className={styles.NavLinks}>
 
           <li className={styles.NavLink}>
@@ -60,7 +67,7 @@ export default function Navbar() {
               PARTNERSHIPS
             </a>
           </li>
-          <li className={styles.NavLink}>
+          <li className={`${styles.NavLink} ${styles.connect}`}>
             <button
               className={`btn-secondary ${styles.connect}`}
               onClick={handleConnectClick}
@@ -69,7 +76,7 @@ export default function Navbar() {
             </button>
           </li>
 
-          <li className={styles.NavLink}>
+          <li className={`${styles.NavLink} ${styles.disconnect}`}>
             <button
               className={`btn-secondary ${styles.disconnect} ${address ? styles.visible : ""}`}
               onClick={handleDisconnect}

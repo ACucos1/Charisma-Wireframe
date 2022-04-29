@@ -87,7 +87,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .Explanation {
     width: 90%;
     padding: 3rem 1rem;
