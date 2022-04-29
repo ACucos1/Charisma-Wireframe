@@ -163,13 +163,15 @@
   }
 
   .menuBtn {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 2;
+    /* transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+    transition: all .5s cubic-bezier(.44,.53,.09,1.13);
+    z-index: 3;
   }
 
   .menuBtn.open {
     position: fixed;
-    transform: translateY(600px);
+    top: 150px;
+    transform: translateY(450px);
   }
 
   .menuBtn.open .burger {
