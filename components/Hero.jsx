@@ -84,7 +84,7 @@ export default function Hero() {
       </div>
       {/* <span className={styles.Desc}>OR</span> */}
       <div className={styles.SearchWrapper}>
-        <InfoButton />
+        <InfoButton className={styles.InfoButton}/>
         <input
           className={styles.SearchInput}
           onChange={handleSearchChange}
