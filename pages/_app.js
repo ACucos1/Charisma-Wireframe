@@ -3,7 +3,9 @@ import { ethers, Contract, providers } from "ethers";
 import { Web3Context } from "../contexts/Web3Context";
 import axios from "axios";
 import Web3Modal from "web3modal";
-import Authereum from "authereum";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
+import Torus from "@toruslabs/torus-embed";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -137,14 +139,35 @@ function MyApp({ Component, pageProps }) {
   };
 
   const handleConnectClick = async () => {
+    const providerOptions = {
+      walletconnect: {
+        package: WalletConnectProvider, // required
+        options: {
+          infuraId:
+            "https://mainnet.infura.io/v3/4573dc7eefa641249c73db4a48c47f87", // required
+        },
+      },
+      coinbasewallet: {
+        package: CoinbaseWalletSDK, // Required
+        options: {
+          appName: "My Awesome App", // Required
+          infuraId:
+            "https://mainnet.infura.io/v3/4573dc7eefa641249c73db4a48c47f87", // Required
+          rpc: "", // Optional if `infuraId` is provided; otherwise it's required
+          chainId: 1, // Optional. It defaults to 1 if not provided
+          darkMode: false, // Optional. Use dark theme, defaults to false
+        },
+      },
+      torus: {
+        package: Torus, // required
+        options: {},
+      },
+    };
+
     if (!walletConnected) {
       web3ModalRef.current = new Web3Modal({
         network: "mainnet",
-        providerOptions: {
-          authereum: {
-            package: Authereum,
-          },
-        },
+        providerOptions,
         disableInjectedProvider: false,
         cacheProvider: true,
       });
