@@ -9,7 +9,7 @@ import Torus from "@toruslabs/torus-embed";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useRouter } from "next/router";
+import Router from "next/router";
 import "../styles/globals.css";
 
 const apiUrl = "https://api.charismasocial.xyz";
@@ -41,6 +41,7 @@ function MyApp({ Component, pageProps }) {
   const [searchStarted, setSearchStarted] = useState(false);
   const [ens, setEns] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [err, setErr] = useState("");
 
   const getJwt = async () => {
     const headers = {
@@ -197,31 +198,43 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (searchStarted === true) {
       const resultCheckInterval = setInterval(async () => {
-        const res = await axios.get(`${apiUrl}/result/${searchAddr}`);
-        if (res.status === 200) {
-          console.log(res);
-          const data = await res.data;
-          console.log(data);
-          if (Object.keys(data).length > 1) {
-            console.log("setting wpi");
-            setWpi(data);
-            clearInterval(resultCheckInterval);
+        try {
+          const res = await axios.get(`${apiUrl}/result/${searchAddr}`);
+          if (res.status === 200) {
+            console.log(res);
+            const data = await res.data;
+            console.log(data);
+            if (Object.keys(data).length > 1) {
+              console.log("setting wpi");
+              setWpi(data);
+              if (searchAddr) {
+                Router.push("/results");
+              }
+              clearInterval(resultCheckInterval);
+            }
           }
+        } catch (err) {
+          setErr("Invalid Address");
+          setAddress("");
+          setTimeout(() => {
+            setErr("");
+          }, 3000);
+          clearInterval(resultCheckInterval);
         }
-
-        // await getResult(searchAddr)
       }, 1000);
       setSearchStarted(false);
     }
   }, [searchStarted, wpi, searchAddr]);
 
   useEffect(() => {
-    console.log("UseEffect App.js: " + wpi);
+    console.log("UseEffect App.js: " + Object.keys(wpi));
   }, [wpi]);
 
   useEffect(() => {
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
+        setEns(null);
+        lookupEnsName(accounts[0]);
         setAddress(accounts[0]);
       });
     }
@@ -256,6 +269,8 @@ function MyApp({ Component, pageProps }) {
           ens,
           loggedIn,
           setLoggedIn,
+          err,
+          setErr,
         }}
       >
         <Navbar />

@@ -17,8 +17,9 @@ export default function Hero() {
     setSearchStarted,
     resolveEnsDomain,
     setWpi,
+    err,
+    setErr,
   } = useContext(Web3Context);
-  const [err, setErr] = useState("");
   const handleSearchChange = (e) => {
     console.log(e.target.value);
     setSearchAddr(e.target.value);
@@ -31,9 +32,7 @@ export default function Hero() {
         console.log(status);
         if (status === 200 || status === 201 || status === 302) {
           setSearchStarted(true);
-          if (searchAddr) {
-            Router.push("/results");
-          }
+          
         }
       })
       .catch(({ err, text }) => {
