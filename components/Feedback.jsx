@@ -24,11 +24,11 @@ export default function Feedback({ address }) {
         
     };
     return (
-        <div className={styles.feedback}>
-            <h2>How do you feel about your results? Let us know!</h2>
+        <div className={`${styles.feedback} ${submitted && styles.exiting}`}>
+            <h2>{!submitted ? "How do you feel about your results? Let us know!" : "Thanks!"}</h2>
             <div className={styles.buttonWrapper}>
-                <button onClick={() => { handleFeedBack("Thumbs_up") }}>Like</button>
-                <button onClick={() => { handleFeedBack("Thumbs_down") }}>Dislike</button>
+                <button className={`${styles.btn} ${styles.likeBtn}`} onClick={() => { handleFeedBack("Thumbs_up") }}><img className={styles.thumbsUpImg} src="images/thumbsup.png" alt="" /></button>
+                <button className={`${styles.btn} ${styles.dislikeBtn}`} onClick={() => { handleFeedBack("Thumbs_down") }}><img className={styles.thumbsDownImg} src="images/thumbsdown.png" alt="" /></button>
             </div>
         </div>
     );

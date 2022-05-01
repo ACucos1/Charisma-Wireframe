@@ -7,6 +7,46 @@
     justify-content: center;
 }
 
+.feedback h2 {
+    font-weight: 200;
+}
+
 .buttonWrapper {
-    
+
+}
+
+.btn {
+    /* height: 50px; */
+    /* border-radius: 25px; */
+    background-color: transparent;
+    border: none;
+    margin: 2rem 1rem;
+    cursor: pointer;
+}
+
+
+.thumbsUpImg {
+    height: 100px;
+    filter: invert(22%) sepia(84%) saturate(5435%) hue-rotate(114deg) brightness(95%) contrast(107%);
+}
+
+.thumbsDownImg {
+    height: 100px;
+    filter: invert(17%) sepia(76%) saturate(7470%) hue-rotate(358deg) brightness(95%) contrast(117%);
+    transform: scaleX(-1);
+}
+
+.exiting {
+    animation: fadeOut .5s ease forwards;
+    animation-delay: .5s;
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
