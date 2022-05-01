@@ -30,7 +30,8 @@
 
 @media screen and (max-width: 920px){ /* Relate to media query for max-width 920px in Results.module.css */
     .share {
-        margin: 2rem 0 0 0;
+        margin: 1rem 0;
+
     }
     .shareText{
         margin-left: 0;

@@ -21,9 +21,12 @@ export default function Navbar() {
       </div>
 
 
-      <div onClick={() => {setMenuOpen(prev => !prev)}} className={`${styles.menuBtn} ${menuOpen && styles.open}`}>
-        <div className={styles.burger}></div>
+      <div className={styles.menuBtnWrapper}>
+        <div onClick={() => {setMenuOpen(prev => !prev)}} className={`${styles.menuBtn} ${menuOpen && styles.open}`}>
+          <div className={styles.burger}></div>
+        </div>
       </div>
+      
 
       <div className={`${styles.NavList} ${menuOpen && styles.open}`}>  
         <ul className={styles.NavLinks}>

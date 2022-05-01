@@ -6,6 +6,7 @@ import styles from "../styles/Results.module.css";
 import Router from "next/router";
 import TwitterShare from "../components/TwitterShare";
 import Feedback from '../components/Feedback'
+import JoinDiscord from "../components/JoinDiscord";
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
@@ -138,6 +139,7 @@ export default function Results() {
               {!address ? "Connect to be Charisma OG" : address === searchAddr ? "Thanks for connecting!" : "You don't own this account"}
             </button>
             <TwitterShare />
+            <JoinDiscord />
           </div>
           {address && address === searchAddr && <Feedback address={address}/>}
           {searchAddr &&
