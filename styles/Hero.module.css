@@ -10,8 +10,8 @@
   /* filter: blur(5px); */
 }
 
-.Hero > h1,
-.Hero > p .Hero > .SearchWrapper {
+.Hero>h1,
+.Hero>p .Hero>.SearchWrapper {
   margin-bottom: 2rem;
 }
 
@@ -48,7 +48,7 @@
   /* flex-direction: column; */
 }
 
-.SearchWrapper > * {
+.SearchWrapper>* {
   font-family: "DM Mono", monospace;
   font-weight: 500;
 }
@@ -81,6 +81,7 @@
   bottom: 0;
   left: 0;
 }
+
 .placeHolder {
   min-height: 50px;
   margin-top: 1rem;
@@ -199,8 +200,34 @@
   filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
 }
 
-@media screen and (max-width: 920px) {
-  
+@media screen and (max-width: 1440px) {
+  .house {
+    top: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .doodle {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .doodle {
+    transform: scale(0.6);
+  }
+
+  .greensquig {
+    top: 0px;
+  }
+
+  .diamond {
+    left: 10px;
+  }
+
+  .pokerchip {
+    bottom: 50px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -208,7 +235,7 @@
     /* min-height: unset; */
   }
 
-  .Hero > h1 {
+  .Hero>h1 {
     margin-top: 3rem;
     /* margin: 0; */
   }
@@ -262,23 +289,30 @@
   }
 
   .toiletpaper {
-    top: 250px;
+    top: 200px;
     left: 350px;
     width: 50px;
     transform: rotate(15deg);
   }
 
-  .greensquig{
+  .greensquig {
     width: 50px;
-    top: 225px;
+    top: 125px;
   }
+
   .pot {
     right: 300px;
     bottom: -25px;
   }
 
-  
 
+
+}
+
+@media screen and (max-width: 425px) {
+  .toiletpaper {
+    top: 120px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -286,7 +320,8 @@
     justify-content: flex-start;
     min-height: unset;
   }
-  .Hero > h1 {
+
+  .Hero>h1 {
     /* margin-top: 0; */
     /* font-size: 18px; */
   }
@@ -294,6 +329,7 @@
   .TagLine {
     font-size: 32px;
   }
+
   .toiletpaper {
     display: none;
   }
