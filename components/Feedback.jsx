@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "../styles/Feedback.module.css";
-const apiUrl = "https://api.charismasocial.xyz";
+const apiUrl = "https://api-prod.charismasocial.xyz";
 
 export default function Feedback({ address }) {
     const [submitted, setSubmitted] = useState(false);
