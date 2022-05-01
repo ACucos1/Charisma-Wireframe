@@ -7,6 +7,7 @@ import Router from "next/router";
 import TwitterShare from "../components/TwitterShare";
 import Feedback from '../components/Feedback'
 import JoinDiscord from "../components/JoinDiscord";
+import ConnectWallet from '../components/ConnectWallet';
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
@@ -132,12 +133,14 @@ export default function Results() {
             </div>
           </div>
           <div className={styles.interactWrapper}>
-            <button
+            <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
+            {/* <button
               className={`btn-secondary ${styles.mintBtn}`}
               onClick={handleWhitelistClick}
             >
               {!address ? "Connect to be Charisma OG" : address === searchAddr ? "Thanks for connecting!" : "You don't own this account"}
-            </button>
+            </button> */}
+            <ConnectWallet handleWhitelistClick={handleWhitelistClick} address={address}/>
             <TwitterShare />
             <JoinDiscord />
           </div>

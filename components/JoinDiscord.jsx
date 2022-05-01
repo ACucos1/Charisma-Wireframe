@@ -6,7 +6,7 @@ const DISCORD_URL = 'https://discord.gg/7zuYcy4v2q';
 export default function JoinDiscord() {
   return (
     <div className={styles.share}>
-      <div className={styles.shareText}>Meet frens on our Discord!</div>
+      <div className={styles.shareText}>3. Join our Discord to meet frens!</div>
       <a
         href={`${DISCORD_URL}`}
         target="_blank"

@@ -30,7 +30,7 @@ const TwitterShare = () => {
 
   return (
     <div className={styles.share}>
-      <div className={styles.shareText}>Share your result on Twitter!</div>
+      <div className={styles.shareText}>2. Share your result on Twitter!</div>
       <a
         href={`${TWITTER_URL}?text=${encodedText}`}
         target="_blank"

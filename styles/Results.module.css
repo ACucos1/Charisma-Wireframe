@@ -129,9 +129,17 @@
 
 .interactWrapper {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 2rem 0;
   /* background-color: #fff; */
+  color: white;
+}
 
+.interactWrapper > * {
+  margin: 1rem 0;
+  font-weight: 200;
 }
 
 
