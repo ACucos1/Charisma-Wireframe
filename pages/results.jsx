@@ -11,7 +11,6 @@ import ConnectWallet from '../components/ConnectWallet';
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
-  const [result, setResult] = useState({});
   const [selectedTrait, setSelectedTrait] = useState(1);
   const traitInfoRef = useRef();
   const { handleConnectClick, address, searchAddr, setSearchAddr, wpi } =
@@ -21,7 +20,7 @@ export default function Results() {
     if (!address) {
       handleConnectClick();
     }
-    console.log(searchAddr, address);
+    // console.log(searchAddr, address);
   };
 
   
@@ -29,8 +28,8 @@ export default function Results() {
     let seconds = 0;
     const checkWpiInterval = setInterval(() => {
       if (wpi && seconds >= 3) {
-        console.log(`Results.jsx: WPI is ${Object.keys(wpi)}`);
-        console.log("Done Loading");
+        // console.log(`Results.jsx: WPI is ${Object.keys(wpi)}`);
+        // console.log("Done Loading");
         setLoading(false);
         clearInterval(checkWpiInterval);
       }

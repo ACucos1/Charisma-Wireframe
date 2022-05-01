@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
       return res.status;
     } catch (err) {
       // console.log(Object.keys(err));
-      console.log(err.response.status, err.response.statusText);
+      // console.log(err.response.status, err.response.statusText);
       if (err.response.status === 403) {
         getJwt();
         throw {
@@ -83,9 +83,9 @@ function MyApp({ Component, pageProps }) {
 
   const getResult = async (addr) => {
     const { data } = await axios.get(`${apiUrl}/result/${addr}`);
-    console.log(Object.keys(data).length);
+    // console.log(Object.keys(data).length);
     if (Object.keys(data).length > 1) setWpi(data);
-    console.log(data);
+    // console.log(data);
   };
 
   const web3ModalRef = useRef();
@@ -140,7 +140,7 @@ function MyApp({ Component, pageProps }) {
       lookupEnsName(address);
       setWalletConnected(true);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -201,11 +201,11 @@ function MyApp({ Component, pageProps }) {
         try {
           const res = await axios.get(`${apiUrl}/result/${searchAddr}`);
           if (res.status === 200) {
-            console.log(res);
+            // console.log(res);
             const data = await res.data;
             console.log(data);
             if (Object.keys(data).length > 1) {
-              console.log("setting wpi");
+              // console.log("setting wpi");
               setWpi(data);
               if (searchAddr) {
                 Router.push("/results");

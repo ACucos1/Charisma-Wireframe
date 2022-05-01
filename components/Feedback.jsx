@@ -15,7 +15,7 @@ export default function Feedback({ address }) {
         }
         if(submitted === false){
             const res = await axios.post(`${apiUrl}/feedback`, payload);
-            console.log(res);
+            // console.log(res);
             if(res.status === 200){
                 setSubmitted(true)
             }

@@ -21,7 +21,7 @@ export default function Hero() {
     setErr,
   } = useContext(Web3Context);
   const handleSearchChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setSearchAddr(e.target.value);
   };
 
@@ -29,14 +29,14 @@ export default function Hero() {
     setWpi({});
     startWpi(query)
       .then((status) => {
-        console.log(status);
+        // console.log(status);
         if (status === 200 || status === 201 || status === 302) {
           setSearchStarted(true);
           
         }
       })
       .catch(({ err, text }) => {
-        console.log("Error: ", err, text);
+        // console.log("Error: ", err, text);
         setSearchAddr("");
         setErr(`${text}`);
         setTimeout(() => {
