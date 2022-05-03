@@ -49,20 +49,20 @@ export default function Navbar() {
 
           <li className={styles.NavLink}>
             <a
-              href="https://charisma-social.notion.site/Traits-Season-0-Alpha-f3787fed16614460a0bb69a898f16ef6"
+              href="https://docs.google.com/spreadsheets/d/1DIRvy4ow9E19Rn0k2tmJ70cZoi0jFmHQqGyrHkD_52A/edit#gid=0"
               target="_blank"
               rel="noreferrer"
             >
-              LEARN ABOUT THE TRAITS
+              CELEBRITY PERSONALITIES
             </a>
           </li>
           <li className={styles.NavLink}>
             <a
-              href="https://charisma-social.notion.site/Methodology-35d599c5f2bd4d01a91cb68a9a3084ba"
+              href="https://charisma-social.notion.site/Traits-Methodology-f3787fed16614460a0bb69a898f16ef6"
               target="_blank"
               rel="noreferrer"
             >
-              METHODOLOGY
+              TRAITS &amp; METHODOLOGY
             </a>
           </li>
           <li className={styles.NavLink}>
