@@ -11,6 +11,7 @@ export default function LoadingSpinner() {
         alt="loading..."
         height="128px"
         width="128px"
+        priority={true}
       />
       <p>Loading...</p>
     </div>
