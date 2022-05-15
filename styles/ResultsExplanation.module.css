@@ -118,6 +118,7 @@
   @media screen and (max-width: 920px) {
     .resultExplanation {
       margin-top: 3rem;
+      max-height: unset;
     }
   
   }
@@ -126,5 +127,6 @@
     .resultExplanation {
       margin: 2rem;
       min-height: 610px;
+      
     }
   }

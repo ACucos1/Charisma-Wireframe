@@ -62,12 +62,6 @@ export default function Results() {
           </div>
           <div className={styles.interactWrapper}>
             <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
-            {/* <button
-              className={`btn-secondary ${styles.mintBtn}`}
-              onClick={handleWhitelistClick}
-            >
-              {!address ? "Connect to be Charisma OG" : address === searchAddr ? "Thanks for connecting!" : "You don't own this account"}
-            </button> */}
             <ConnectWallet handleWhitelistClick={handleWhitelistClick} address={address}/>
             <TwitterShare />
             <JoinDiscord />
@@ -78,7 +72,7 @@ export default function Results() {
             address.toLowerCase() !== searchAddr.toLowerCase() && (
               <div className={styles.errorWrapper}>
                 <h3>
-                  The wallet you connected does not match the one we analyzed.{" "}
+                  The wallet you connected does not match the one we analyzed.
                   <br />
                   Try connecting with a different wallet.
                 </h3>
