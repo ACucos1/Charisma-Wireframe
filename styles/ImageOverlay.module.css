@@ -1,0 +1,166 @@
+.imagesWrapper {
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    /* top: 100px;*/
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .doodle {
+    position: absolute;
+    /* width: 150px; */
+    width: 100px;
+    z-index: -1;
+  }
+  
+  .greensquig {
+    left: 0;
+    top: 150px;
+    width: 100px;
+  }
+  
+  .diamond {
+    left: 250px;
+    top: 400px;
+    filter: invert(62%) sepia(30%) saturate(1840%) hue-rotate(178deg) brightness(102%) contrast(90%);
+  }
+  
+  .yellowsquig {
+    top: 90px;
+    left: 500px;
+    display: none;
+  }
+  
+  .upchart {
+    top: 600px;
+    right: 600px;
+    transform: scale(1.3);
+    filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg) brightness(98%) contrast(87%);
+  }
+  
+  .house {
+    right: 250px;
+    top: 100px;
+    /* width: 200px; */
+    transform: scale(1.5);
+    filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg) brightness(101%) contrast(101%);
+  }
+  
+  
+  .pokerchip {
+    right: 100px;
+    bottom: 300px;
+    filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
+  }
+  
+  .butterfly {
+    bottom: 75px;
+    left: 600px;
+    transform: scale(2) rotate(20deg);
+    filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg) brightness(95%) contrast(77%);
+  }
+  
+  .toiletpaper {
+    left: 450px;
+    top: 75px;
+    filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
+  }
+
+  @media screen and (max-width: 1440px) {
+    .house {
+      top: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .doodle {
+      transform: scale(0.8);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .doodle {
+      transform: scale(0.6);
+    }
+  
+    .greensquig {
+      top: 0px;
+    }
+  
+    .diamond {
+      left: 10px;
+    }
+  
+    .pokerchip {
+      bottom: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+  
+    .error {
+      width: 80%;
+    }
+  
+    .house {
+      top: 75px;
+      width: 50px;
+      left: 20px;
+    }
+  
+    .diamond {
+      left: unset;
+      width: 75px;
+      right: 25px;
+  
+    }
+  
+    .bluesquig {
+      display: none;
+    }
+  
+    .pokerchip {
+      bottom: 50px;
+    }
+  
+    .toiletpaper {
+      top: 200px;
+      left: 350px;
+      width: 50px;
+      transform: rotate(15deg);
+    }
+  
+    .greensquig {
+      width: 50px;
+      top: 125px;
+    }
+  
+    .pot {
+      right: 300px;
+      bottom: -25px;
+    }
+  
+  
+  
+  }
+  
+  @media screen and (max-width: 425px) {
+    .toiletpaper {
+      top: 120px;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+  
+    .toiletpaper {
+      display: none;
+    }
+  
+    .foot {
+      top: 80px;
+      right: 0px;
+    }
+  }

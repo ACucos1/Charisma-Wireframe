@@ -4,6 +4,8 @@ import Badge from "../components/Badge";
 import styles from "../styles/Hero.module.css";
 import Router from "next/router";
 import PasswordModal from "./PasswordModal";
+import SearchBar from "./SearchBar";
+import ImageOverlay from "./ImageOverlay";
 
 export default function Hero() {
   const {
@@ -12,8 +14,6 @@ export default function Hero() {
     setSearchAddr,
     signInAddr,
     startWpi,
-    getResult,
-    wpi,
     setSearchStarted,
     resolveEnsDomain,
     setWpi,
@@ -77,73 +77,14 @@ export default function Hero() {
         Analyze your personality through your NFT holdings and onchain activity.
       </p>
 
-      <div className={styles.bigConnect}>
-        {/* <button className={`btn-secondary ${styles.connectBtn}`} onClick={handleWalletSearch}>{address != null ? truncateAddress(address) : "CONNECT WALLET TO FIND OUT"}</button> */}
-      </div>
-      {/* <span className={styles.Desc}>OR</span> */}
-      <div className={styles.SearchWrapper}>
-        <input
-          className={styles.SearchInput}
-          onChange={handleSearchChange}
-          value={searchAddr}
-          type="text"
-          placeholder="ENS or ETH address"
-        />
-        <button
-          className={`btn-secondary ${styles.searchBtn}`}
-          onClick={handleSearch}
-        >
-          Find out
-        </button>
-      </div>
+      <SearchBar handleSearchChange={handleSearchChange} searchAddr={searchAddr} handleSearch={handleSearch}/>
+
       {err ? (
         <div className={styles.error}>{err}</div>
       ) : (
         <div className={styles.placeHolder}></div>
       )}
-      <div className={styles.imagesWrapper}>
-        <img
-          className={`doodle ${styles.doodle} ${styles.diamond}`}
-          src="./images/diamond.svg"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.house}`}
-          src="./images/house.svg"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.greensquig}`}
-          src="./images/greensquig.png"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.pokerchip}`}
-          src="./images/pokerchip.svg"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.butterfly}`}
-          src="./images/butterfly.svg"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.toiletpaper}`}
-          src="./images/toiletpaper.svg"
-          alt=""
-        />
-        <img
-          className={`doodle ${styles.doodle} ${styles.upchart}`}
-          src="./images/upchart.svg"
-          alt=""
-        />
-
-        <img
-          className={`doodle ${styles.doodle} ${styles.yellowsquig}`}
-          src="./images/yellowsquig.png"
-          alt=""
-        />
-      </div>
+      <ImageOverlay />
     </div>
   );
 }
