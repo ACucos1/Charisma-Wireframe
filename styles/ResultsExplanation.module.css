@@ -1,0 +1,130 @@
+.resultExplanation {
+    margin-left: 3rem;
+    /* margin-top: 4rem; */
+    max-height: 382px;
+    max-width: 600px;
+    border: 2px solid #444444;
+    border-radius: 25px;
+    padding: 2rem;
+  }
+  
+  .resultExplanation > h2 {
+    color: white;
+    font-weight: 300;
+    font-size: 26px;
+  }
+  
+  .resultExplanation > h1 {
+    font-weight: 300;
+  }
+  
+  .resultInfo {
+    letter-spacing: 1.5px;
+    /* word-spacing: 1.5px; */
+    margin-bottom: 1rem;
+  }
+  
+  .traitInfo {
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    color: rgb(170, 170, 170);
+    opacity: 0;
+    animation: fadeIn 0.2s ease forwards;
+  }
+  
+  .tip {
+    font-size: 14px;
+    line-height: 5px;
+    color: rgb(134, 134, 134);
+  }
+  
+  .exit {
+    animation: fadeOut 0.2s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .selected {
+    transform: scale(1.2);
+  }
+  
+  .trait {
+    cursor: pointer;
+    display: inline-block;
+    transition: all .2s ease-in-out;
+  }
+  
+  .trait:hover {
+    transform: scale(1.2);
+  }
+  
+  .D {
+    color: #50b2f2;
+  }
+  
+  .P{
+    color: black;
+    filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
+  }
+  
+  .H {
+    color: black;
+    filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg) brightness(98%) contrast(87%);
+  }
+  
+  .S {
+    color: black;
+    filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg) brightness(95%) contrast(77%);
+  }
+  
+  .B {
+    color: black;
+    filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
+  }
+  
+  .F {
+    color: black;
+    filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg) brightness(101%) contrast(101%);
+  }
+  
+  .U {
+    color: black;
+    filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg) brightness(96%) contrast(90%);
+  }
+  
+  .L {
+    color: black;
+    filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg) brightness(103%) contrast(106%);
+  }
+
+  @media screen and (max-width: 920px) {
+    .resultExplanation {
+      margin-top: 3rem;
+    }
+  
+  }
+
+  @media screen and (max-width: 500px) {
+    .resultExplanation {
+      margin: 2rem;
+      min-height: 610px;
+    }
+  }

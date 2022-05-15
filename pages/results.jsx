@@ -8,11 +8,10 @@ import TwitterShare from "../components/TwitterShare";
 import Feedback from '../components/Feedback'
 import JoinDiscord from "../components/JoinDiscord";
 import ConnectWallet from '../components/ConnectWallet';
+import ResultsExplanation from "../components/ResultsExplanation";
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
-  const [selectedTrait, setSelectedTrait] = useState(1);
-  const traitInfoRef = useRef();
   const { handleConnectClick, address, searchAddr, setSearchAddr, wpi } =
     useContext(Web3Context);
 
@@ -35,24 +34,8 @@ export default function Results() {
       }
       seconds += 0.5;
     }, 500);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (loading === false) {
-      setTimeout(() => {
-        const preview = setInterval(() => {
-          setSelectedTrait((prev) => {
-            if (prev >= 2) {
-              clearInterval(preview);
-              return 1;
-            } else {
-              return prev + 1;
-            }
-          });
-        }, 1000);
-      }, 1000);
-    }
-  }, [loading]);
 
   useEffect(() => {
     if (!address && !searchAddr) {
@@ -64,9 +47,7 @@ export default function Results() {
     if (!searchAddr) setSearchAddr(address);
   }, [address, setSearchAddr, searchAddr]);
 
-  useEffect(() => {
-    // traitInfoRef.current.styles
-  }, [selectedTrait]);
+  
 
   return (
     <main className={`container ${styles.results}`}>
@@ -76,60 +57,8 @@ export default function Results() {
         <>
           <div className={styles.resultsWrapper}>
             <ResultDisplay wpi={wpi} />
-            <div className={styles.resultExplanation}>
-              <h2>
-                The results are in. <br /> Your wallet personailty type is
-              </h2>
-              <span className={styles.tip}>Click the letters to read more about each trait</span>
-              <h1 className={styles.wpi}>
-                <span
-                  className={`${styles.trait} ${
-                    selectedTrait === 1 && styles.selected} ${wpi && wpi["1"].info.Value == "D" ? styles.D : styles.P}`}
-                  onClick={() => {
-                    setSelectedTrait(1);
-                  }}
-                >
-                  {wpi && wpi["1"].info.Value}
-                </span>
-                <span
-                  className={`${styles.trait}  ${
-                    selectedTrait === 2 && styles.selected} ${wpi && wpi["2"].info.Value == "H" ? styles.H : styles.S}`}
-                  onClick={() => {
-                    setSelectedTrait(2);
-                  }}
-                >
-                  {wpi && wpi["2"].info.Value}
-                </span>
-                <span
-                  className={`${styles.trait}  ${
-                    selectedTrait === 3 && styles.selected} ${wpi && wpi["3"].info.Value == "B" ? styles.B : styles.F}`}
-                  onClick={() => {
-                    setSelectedTrait(3);
-                  }}
-                >
-                  {wpi && wpi["3"].info.Value}
-                </span>
-                <span
-                  className={`${styles.trait}  ${
-                    selectedTrait === 4 && styles.selected} ${wpi && wpi["4"].info.Value == "U" ? styles.U : styles.L}`}
-                  onClick={() => {
-                    setSelectedTrait(4);
-                  }}
-                >
-                  {wpi && wpi["4"].info.Value}
-                </span>
-              </h1>
-              
-              <p className={styles.resultInfo}>
-              {wpi && wpi["6"][Object.keys(wpi["6"])[0]]}
+            <ResultsExplanation wpi={wpi} loading={loading}/>
 
-              </p>
-
-              <p className={styles.traitInfo} ref={traitInfoRef}>
-                {wpi && wpi[selectedTrait].info.Message}
-                <br />
-              </p>
-            </div>
           </div>
           <div className={styles.interactWrapper}>
             <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
