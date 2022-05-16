@@ -197,6 +197,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (searchStarted === true) {
+      Router.push("/results");
       const resultCheckInterval = setInterval(async () => {
         try {
           const res = await axios.get(`${apiUrl}/result/${searchAddr}`);
@@ -207,9 +208,6 @@ function MyApp({ Component, pageProps }) {
             if (Object.keys(data).length > 1) {
               // console.log("setting wpi");
               setWpi(data);
-              if (searchAddr) {
-                Router.push("/results");
-              }
               clearInterval(resultCheckInterval);
             }
           }
@@ -225,10 +223,6 @@ function MyApp({ Component, pageProps }) {
       setSearchStarted(false);
     }
   }, [searchStarted, wpi, searchAddr]);
-
-  useEffect(() => {
-    console.log("UseEffect App.js: " + Object.keys(wpi));
-  }, [wpi]);
 
   useEffect(() => {
     if (window.ethereum) {

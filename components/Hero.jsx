@@ -32,7 +32,6 @@ export default function Hero() {
         // console.log(status);
         if (status === 200 || status === 201 || status === 302) {
           setSearchStarted(true);
-          
         }
       })
       .catch(({ err, text }) => {
