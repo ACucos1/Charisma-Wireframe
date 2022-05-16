@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useState } from "react";
 import { Web3Context } from "../contexts/Web3Context";
 import Link from "next/link";
@@ -84,7 +85,7 @@ export default function Navbar() {
               className={`btn-secondary ${styles.disconnect} ${address ? styles.visible : ""}`}
               onClick={handleDisconnect}
             >
-              Disconnect
+              <img className={styles.disconnectIcon} src="./images/powerIcon.svg" alt="disconnect" />
             </button>
           </li>
         </ul>

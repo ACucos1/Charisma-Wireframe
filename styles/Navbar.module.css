@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 5rem;
+  /* padding: 0rem 0 0 2rem; */
+  padding: 0 2rem;
   
   /* height: 100px; */
   /* background-color: orange; */
@@ -18,13 +19,13 @@
 }
 
 .LogoWrapper > div:nth-child(2){
-    font-family: 'DM Mono', sans-serif;
-    text-transform: uppercase;
-    border: 1px solid #50b1f2;
-    border-radius: 100px;
-    line-height: 15px;
-    padding: .8rem 2rem;
-    margin-top: 15px;
+  font-family: 'DM Mono', sans-serif;
+  text-transform: uppercase;
+  border: 1px solid #50b1f2;
+  border-radius: 100px;
+  line-height: 15px;
+  padding: .8rem 2rem;
+  margin-top: 15px;
 
 }
 
@@ -58,8 +59,8 @@
   color: #f9f8f4;
   font-weight: 500;
   margin-left: 1rem;
-  font-size: 14px;
-  padding: 0 1.5rem;
+  font-size: 12px;
+  padding: 0 1rem;
   text-transform: capitalize;
   font-family: "DM Mono", sans-serif;
   transition: all 0.25s ease;
@@ -78,19 +79,34 @@
 }
 
 .connect {
-  width: 250px;
+  width: 150px;
+  font-size: 14px !important;
   font-family: "DM Mono", sans-serif;
 }
 
 .disconnect{
   visibility: hidden;
   background-color: rgb(112, 30, 30) !important;
-  font-size: 14px;
+  font-size: 14px !important;
+  /* width: 50px; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.disconnectIcon {
+  height: 25px;
+  width: 25px;
+  filter: invert(100%) sepia(0%) saturate(1652%) hue-rotate(282deg) brightness(108%) contrast(108%);
 }
 
 .disconnect:hover {
   background-color: rgb(56, 15, 15) !important;
   color: rgb(94, 94, 94);
+}
+
+.disconnect:hover .disconnectIcon {
+  filter: invert(36%) sepia(0%) saturate(0%) hue-rotate(157deg) brightness(99%) contrast(90%);
 }
 
 .visible {
