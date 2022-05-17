@@ -27,8 +27,6 @@ export default function Results() {
     let seconds = 0;
     const checkWpiInterval = setInterval(() => {
       if (wpi && seconds >= 3) {
-        // console.log(`Results.jsx: WPI is ${Object.keys(wpi)}`);
-        // console.log("Done Loading");
         setLoading(false);
         clearInterval(checkWpiInterval);
       }

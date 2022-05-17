@@ -30,3 +30,21 @@
     border-radius: 25px;
     margin-left: -30px;
   }
+
+
+  @media screen and (max-width: 500px) {
+    .SearchWrapper {
+      flex-direction: column;
+    }
+  
+    .SearchInput {
+      min-width: 300px;
+      max-width: 100px;
+      border-radius: 25px 25px 25px 25px;
+      margin-right: 0;
+    }
+  
+    .searchBtn {
+      margin: 2rem 2rem 0 2rem;
+    }
+  }
