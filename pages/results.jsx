@@ -26,7 +26,7 @@ export default function Results() {
   useEffect(() => {
     let seconds = 0;
     const checkWpiInterval = setInterval(() => {
-      if (wpi && seconds >= 3) {
+      if (seconds >= 3) {
         setLoading(false);
         clearInterval(checkWpiInterval);
       }
@@ -49,7 +49,7 @@ export default function Results() {
 
   return (
     <main className={`container ${styles.results}`}>
-      {loading ? (
+      {loading || !wpi["1"] ? (
         <LoadingSpinner />
       ) : (
         <>
