@@ -246,6 +246,7 @@ function MyApp({ Component, pageProps }) {
         value={{
           handleConnectClick,
           address,
+          setAddress,
           signer,
           searchAddr,
           setSearchAddr,
