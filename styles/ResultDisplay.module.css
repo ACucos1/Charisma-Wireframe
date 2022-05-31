@@ -184,3 +184,89 @@
     right: 10px;
   }
 }
+
+/* Celeb Twin */
+.lowerContainer {
+  display: flex;
+}
+.twitterProfileContainer {
+  height: 300px;
+  width: 200px;
+}
+.twitterInnerProfileContainer {
+  position: relative;
+}
+.upperHalfBg {
+  height: 70px;
+  width: 180px;
+  background-color: black;
+}
+.lowerHalfBg {
+  height: 150px;
+  width: 180px;
+  background-color: white;
+}
+.avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px white;
+  top: 50%;
+  left: 5%;
+  position: absolute;
+  transform: translateY(-90px);
+}
+
+.celebContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.celebItem {
+  width: 50%;
+  height: 250px;
+  position: relative;
+}
+.traitsList2 {
+  margin: 1rem 0 0.5rem 1rem;
+  font-size: 22px;
+}
+.celebText {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  left: 10px;
+  top: 20%;
+}
+.twitterDetails {
+  padding: 50px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.name {
+  font-weight: bold;
+}
+.username {
+  font-weight: lighter;
+  font-size: 0.75rem;
+}
+.twitterDetails div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.twitterDetails div img {
+  height: 20px;
+}
+.swirl {
+  position: absolute;
+  z-index: -999;
+}
+#swirl1 {
+  bottom: -20px;
+  left: 40%;
+}
+#swirl2 {
+  bottom: 50%;
+  right: -20px;
+}
