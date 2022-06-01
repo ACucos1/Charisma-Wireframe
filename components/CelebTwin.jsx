@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import styles from "../styles/ResultDisplay.module.css";
+import celebStyles from '../styles/CelebTwin.module.css'
 
 export default function CelebTwin({ wpi }) {
   return (
     <div className={styles.resultDisplayWrapper}>
       <div className={styles.resultDisplay}>
-        <ul className={styles.traitsList2}>
+        {/* <ul className={styles.traitsList2}>
           <li
             className={`${styles.trait} ${
               wpi && wpi["1"].info.Value == "D" ? styles.D : styles.P
@@ -35,14 +36,15 @@ export default function CelebTwin({ wpi }) {
           >
             {wpi["4"].info.Value}: {wpi["4"].info.LongDesc}
           </li>
-        </ul>
+        </ul> */}
         <div className={styles.celebContainer}>
-          <div className={styles.celebItem}>
-            <img
+          <div className={celebStyles.celebItem}>
+            {/* <img
               className={styles.celebText}
               src="/images/celebText.png"
               alt="My Charisma twin is"
-            />
+            /> */}
+            <h3>Your Celebrity <br/> Charisma twin is...</h3>
           </div>
           <div className={styles.celebItem}>
             <TwitterProfile twitterObj={wpi["7"]}/>

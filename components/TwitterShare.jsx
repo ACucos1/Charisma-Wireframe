@@ -4,6 +4,7 @@ import encodeUrl from "encodeurl";
 import personalityIcons from "../public/icons.json";
 import styles from "../styles/TwitterShare.module.css";
 
+
 const CHARISMA_TWITTER_NAME = "Charisma_Social";
 const WAITLIST_SIGNUP_LINK = "https://bit.ly/3LnB414";
 const TWITTER_URL = "https://twitter.com/intent/tweet";

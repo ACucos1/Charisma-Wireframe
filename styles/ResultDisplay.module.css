@@ -190,19 +190,23 @@
 .twitterProfileContainer {
   height: 300px;
   width: 200px;
+  
 }
 .twitterInnerProfileContainer {
   position: relative;
+  
 }
 .upperHalfBg {
   height: 70px;
   width: 180px;
   background-color: black;
+  border-radius: 5px 5px 0 0;
 }
 .lowerHalfBg {
   height: 150px;
   width: 180px;
   background-color: white;
+  border-radius: 0 0 5px 5px;
 }
 .avatar {
   height: 100px;
@@ -217,6 +221,8 @@
 
 .celebContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 .celebItem {
