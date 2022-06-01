@@ -1,0 +1,21 @@
+.metrics {
+    /* margin-left: 3rem; */
+    /* margin-top: 4rem; */
+    max-height: 382px;
+    max-width: 400px;
+    border: 2px solid #444444;
+    border-radius: 25px;
+    padding: 2rem;
+    color: white;
+    flex: 1 1 400px;
+}
+
+.metrics > *, .metrics > * > * {
+    font-family: "DM Mono", sans-serif;
+}
+
+.metrics h3 {
+    color: #50b1f2;
+    font-weight: 300;
+    
+}

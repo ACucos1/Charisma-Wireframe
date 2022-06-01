@@ -9,6 +9,7 @@ import Feedback from '../components/Feedback'
 import JoinDiscord from "../components/JoinDiscord";
 import ConnectWallet from '../components/ConnectWallet';
 import ResultsExplanation from "../components/ResultsExplanation";
+import Metrics from "../components/Metrics";
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
@@ -55,15 +56,16 @@ export default function Results() {
         <>
           <div className={styles.resultsWrapper}>
             <ResultDisplay wpi={wpi} />
-            <ResultsExplanation wpi={wpi} loading={loading}/>
-
+            {/* <ResultsExplanation wpi={wpi} loading={loading}/> */}
+            <Metrics wpi={wpi}/>
+            <div className={styles.interactWrapper}>
+              <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
+              <ConnectWallet handleWhitelistClick={handleWhitelistClick} address={address}/>
+              <TwitterShare />
+              <JoinDiscord />
+            </div>
           </div>
-          <div className={styles.interactWrapper}>
-            <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
-            <ConnectWallet handleWhitelistClick={handleWhitelistClick} address={address}/>
-            <TwitterShare />
-            <JoinDiscord />
-          </div>
+          
           {address && address === searchAddr && <Feedback address={address}/>}
           {searchAddr &&
             address &&

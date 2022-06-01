@@ -4,18 +4,28 @@
 
 .resultsWrapper {
   display: flex;
-  margin-top: 6rem;
-  /* justify-content: space-between; */
+  /* margin-top: 6rem; */
+  align-items: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 6rem auto 0 auto;
+}
+
+.resultsWrapper > * {
+  margin: 0 1rem;
 }
 
 .interactWrapper {
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   margin: 2rem 0;
   /* background-color: #fff; */
   color: white;
+  flex-grow: 0;
 }
 
 .interactWrapper > * {

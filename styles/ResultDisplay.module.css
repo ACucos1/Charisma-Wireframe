@@ -1,17 +1,15 @@
 .resultDisplayWrapper {
   display: flex;
   flex-direction: column;
+  flex: 1 1 400px;
 }
 
 .resultDisplay {
-  min-width: 400px;
+  width: 400px;
   height: 382px;
   background-color: transparent;
   /* border: 1px solid #f9f8f43f; */
   border: 2px solid #444444;
-  /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; */
   overflow: hidden;
   border-radius: 25px;
   flex-shrink: none;
