@@ -2,6 +2,13 @@
   min-height: calc(100vh - 100px);
 }
 
+.results > h2 {
+  color: white;
+  font-weight: 300;
+  font-size: 34px;
+  margin: 3rem 0 0 8rem;
+}
+
 .resultsWrapper {
   display: flex;
   /* margin-top: 6rem; */
@@ -9,7 +16,7 @@
   /* justify-content: center; */
   flex-wrap: wrap;
   max-width: 900px;
-  margin: 6rem auto 0 auto;
+  margin: 2rem auto 0 auto;
 }
 
 .resultsWrapper > * {

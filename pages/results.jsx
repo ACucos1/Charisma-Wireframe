@@ -55,6 +55,9 @@ export default function Results() {
         <LoadingSpinner />
       ) : (
         <>
+          <h2>
+            The results are in. <br /> Your wallet personailty type is...
+          </h2>
           <div className={styles.resultsWrapper}>
             <ResultDisplay wpi={wpi} />
             {/* <ResultsExplanation wpi={wpi} loading={loading}/> */}
