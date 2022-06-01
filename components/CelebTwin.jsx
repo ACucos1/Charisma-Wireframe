@@ -45,7 +45,7 @@ export default function CelebTwin({ wpi }) {
             />
           </div>
           <div className={styles.celebItem}>
-            <TwitterProfile />
+            <TwitterProfile twitterObj={wpi["7"]}/>
           </div>
         </div>
         <img
@@ -71,17 +71,19 @@ const TwitterProfile = ({ twitterObj }) => {
       <div className={styles.twitterInnerProfileContainer}>
         <div className={styles.upperHalfBg}></div>
         <div className={styles.lowerHalfBg}>
-          <div className={styles.twitterDetails}>
+          <div className={styles.twitterDetails} style={{overflow: 'hidden'}}>
             <div>
-              <span className={styles.name}>tydollar.eth</span>
-              <img src="/images/verified.png" alt="verfied-tick" />
+              <span className={styles.name}>{twitterObj.info.ensName}</span>
+              {twitterObj.info.twitterIsVerified && <img src="/images/verified.png" alt="verfied-tick" />}
             </div>
-            <span className={styles.username}>@tydollar</span>
+            <span className={styles.username}>{twitterObj.info.twitterHandle}</span>
+            <span style={{fontSize: '12px', fontWeight: 300}}>{twitterObj.info.twitterFollowersCount} followers</span>
+            <p style={{color: "black", fontSize: 10, fontFamily: 'DM Mono, sansSerif', lineHeight: 1, wordBreak: 'break-word'}}>{twitterObj.info.twitterBio}</p>
           </div>
         </div>
         <img
           className={styles.avatar}
-          src="https://gradle.org/images/gradle-400x400.png"
+          src={twitterObj.info.twitterProfileUrl}
           alt="avatar"
         />
       </div>
