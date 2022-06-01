@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from '../styles/ConnectWallet.module.css'
 
@@ -10,7 +12,7 @@ export default function JoinDiscord({handleWhitelistClick, address}) {
           <img
             className={styles.twitterLogo}
             src="./images/wallet.png"
-          />{" "}
+          />
         </button>
     </div>
   )

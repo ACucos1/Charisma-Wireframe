@@ -5,7 +5,7 @@
 }
 
 .resultDisplay {
-  width: 400px;
+  min-width: 400px;
   height: 382px;
   background-color: transparent;
   /* border: 1px solid #f9f8f43f; */
@@ -156,11 +156,11 @@
   font-family: "DM Mono", sans-serif;
 }
 
-/* @media screen and (max-width: 920px){
-    .resultDisplay{
-        flex-direction: column;
+@media screen and (max-width: 920px){
+    .resultDisplayWrapper {
+      max-width: 400px;
     }
-} */
+}
 
 @media screen and (max-width: 500px) {
   .resultDisplay {

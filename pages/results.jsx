@@ -10,6 +10,7 @@ import JoinDiscord from "../components/JoinDiscord";
 import ConnectWallet from '../components/ConnectWallet';
 import ResultsExplanation from "../components/ResultsExplanation";
 import Metrics from "../components/Metrics";
+import CelebTwin from "../components/CelebTwin";
 
 export default function Results() {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ export default function Results() {
             <ResultDisplay wpi={wpi} />
             {/* <ResultsExplanation wpi={wpi} loading={loading}/> */}
             <Metrics wpi={wpi}/>
+            <CelebTwin wpi={wpi}/>
             <div className={styles.interactWrapper}>
               <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
               <ConnectWallet handleWhitelistClick={handleWhitelistClick} address={address}/>
