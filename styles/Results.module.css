@@ -4,18 +4,29 @@
 
 .resultsWrapper {
   display: flex;
-  margin-top: 6rem;
-  /* justify-content: space-between; */
+  /* margin-top: 6rem; */
+  align-items: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 6rem auto 0 auto;
+}
+
+.resultsWrapper > * {
+  margin: 1rem 1rem;
 }
 
 .interactWrapper {
+  max-width: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0;
+  justify-content: space-around;
+  /* align-items: center; */
+  /* margin: 2rem 0; */
   /* background-color: #fff; */
   color: white;
+  flex-grow: 0;
 }
 
 .interactWrapper > * {
@@ -86,14 +97,9 @@
 
 @media screen and (max-width: 920px) {
   .resultsWrapper {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-  }
-
-  .interactWrapper {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
+    justify-content: center;
   }
 }
 
@@ -108,10 +114,6 @@
 
   .shareText {
     width: 80%;
-  }
-
-  .shareBtn {
-    /* margin: 0; */
   }
 
   .mintBtn {

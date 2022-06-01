@@ -17,12 +17,10 @@
     height: 40px;
     color: rgb(158, 158, 158);
     margin-right: -35px;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
+    width: 100%;
 }
 
-.shareBtn {
-    /* width: 100px; */
-}
 
 .twitterLogo {
     height: 1.2rem;

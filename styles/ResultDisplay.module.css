@@ -1,6 +1,7 @@
 .resultDisplayWrapper {
   display: flex;
   flex-direction: column;
+  flex: 1 1 400px;
 }
 
 .resultDisplay {
@@ -9,9 +10,6 @@
   background-color: transparent;
   /* border: 1px solid #f9f8f43f; */
   border: 2px solid #444444;
-  /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; */
   overflow: hidden;
   border-radius: 25px;
   flex-shrink: none;
@@ -158,11 +156,11 @@
   font-family: "DM Mono", sans-serif;
 }
 
-/* @media screen and (max-width: 920px){
-    .resultDisplay{
-        flex-direction: column;
+@media screen and (max-width: 920px){
+    .resultDisplayWrapper {
+      max-width: 400px;
     }
-} */
+}
 
 @media screen and (max-width: 500px) {
   .resultDisplay {
