@@ -79,7 +79,7 @@ const TwitterProfile = ({ twitterObj }) => {
               {twitterObj.info.twitterIsVerified && <img src="/images/verified.png" alt="verfied-tick" />}
             </div>
             <span className={styles.username}>{twitterObj.info.twitterHandle}</span>
-            <span style={{fontSize: '12px', fontWeight: 300}}>{twitterObj.info.twitterFollowersCount} followers</span>
+            <span style={{fontSize: '12px', fontWeight: 300}}>{parseInt(twitterObj.info.twitterFollowersCount).toLocaleString('en-US')} followers</span>
             <p style={{color: "black", fontSize: 10, fontFamily: 'DM Mono, sansSerif', lineHeight: 1, wordBreak: 'break-word'}}>{twitterObj.info.twitterBio}</p>
           </div>
         </div>
