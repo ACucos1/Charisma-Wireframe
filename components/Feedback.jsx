@@ -14,11 +14,15 @@ export default function Feedback({ address }) {
             message: ""
         }
         if(submitted === false){
+           try {
             const res = await axios.post(`${apiUrl}/feedback`, payload);
             // console.log(res);
             if(res.status === 200){
                 setSubmitted(true)
             }
+           } catch (err) {
+             console.log('Feedback submission failed')  
+           }
         }
         
         
