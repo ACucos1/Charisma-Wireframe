@@ -198,15 +198,17 @@
 }
 .upperHalfBg {
   height: 70px;
-  width: 180px;
+  /* width: 180px; */
   background-color: black;
   border-radius: 5px 5px 0 0;
 }
 .lowerHalfBg {
   height: 150px;
-  width: 180px;
+  /* width: 180px; */
   background-color: white;
   border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  line-height: 1.01rem;
 }
 .avatar {
   height: 100px;
@@ -236,7 +238,7 @@
 }
 .celebText {
   position: absolute;
-  width: 150px;
+  /* width: 150px; */
   height: auto;
   left: 10px;
   top: 20%;
@@ -245,8 +247,22 @@
   padding: 50px 0 0 10px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  /* gap: 2px; */
+
+  -webkit-line-clamp: 3 "...";
+  width: 180px;
 }
+
+.twitterDetails p {
+  
+  font-size: 12px;
+  font-family: 'DM Mono', sans-serif;
+  color: black;
+  line-clamp: 1 "...";
+  
+  
+}
+
 .name {
   font-weight: bold;
 }
