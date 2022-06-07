@@ -166,19 +166,25 @@
   .resultDisplay {
     /* min-width: 350px; */
     min-width: unset;
+    height: auto;
     margin: 0 2rem;
+  }
+
+  .images img {
+    opacity: 50%;
   }
 
   .upchart {
     left: 100px;
   }
 
+
   .house {
     right: 70px;
   }
 
-
   .timeStamp {
+    bottom: -10px;
     right: 10px;
   }
 }

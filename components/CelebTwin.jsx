@@ -7,36 +7,7 @@ export default function CelebTwin({ wpi }) {
   return (
     <div className={styles.resultDisplayWrapper}>
       <div className={styles.resultDisplay}>
-        {/* <ul className={styles.traitsList2}>
-          <li
-            className={`${styles.trait} ${
-              wpi && wpi["1"].info.Value == "D" ? styles.D : styles.P
-            }`}
-          >
-            {wpi["1"].info.Value}: {wpi["1"].info.LongDesc}
-          </li>
-          <li
-            className={`${styles.trait} ${
-              wpi && wpi["2"].info.Value == "H" ? styles.H : styles.S
-            }`}
-          >
-            {wpi["2"].info.Value}: {wpi["2"].info.LongDesc}
-          </li>
-          <li
-            className={`${styles.trait} ${
-              wpi && wpi["3"].info.Value == "B" ? styles.B : styles.F
-            }`}
-          >
-            {wpi["3"].info.Value}: {wpi["3"].info.LongDesc}
-          </li>
-          <li
-            className={`${styles.trait} ${
-              wpi && wpi["4"].info.Value == "U" ? styles.U : styles.L
-            }`}
-          >
-            {wpi["4"].info.Value}: {wpi["4"].info.LongDesc}
-          </li>
-        </ul> */}
+        
         <div className={styles.celebContainer}>
           <div className={celebStyles.celebItem}>
             {/* <img
@@ -80,7 +51,7 @@ const TwitterProfile = ({ twitterObj }) => {
             </div>
             <span className={styles.username}>{twitterObj.info.twitterHandle}</span>
             <span style={{fontSize: '12px', fontWeight: 300}}>{parseInt(twitterObj.info.twitterFollowersCount).toLocaleString('en-US')} followers</span>
-            <p style={{color: "black", fontSize: 10, fontFamily: 'DM Mono, sansSerif', lineHeight: 1, wordBreak: 'break-word'}}>{twitterObj.info.twitterBio}</p>
+            <p>{twitterObj.info.twitterBio}</p>
           </div>
         </div>
         <img
