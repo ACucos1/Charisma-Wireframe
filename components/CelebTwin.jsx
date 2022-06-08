@@ -32,6 +32,12 @@ export default function CelebTwin({ wpi }) {
           src="/images/swirl2.png"
           alt="swirl"
         />
+        <img
+          className={styles.swirl}
+          id={styles.swirl3}
+          src="/images/swirl3.png"
+          alt="swirl"
+        />
       </div>
     </div>
   );
