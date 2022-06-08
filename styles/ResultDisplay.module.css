@@ -5,7 +5,7 @@
 }
 
 .resultDisplay {
-  min-width: 400px;
+  max-width: 400px;
   height: 382px;
   background-color: transparent;
   /* border: 1px solid #f9f8f43f; */
@@ -163,21 +163,24 @@
 }
 
 @media screen and (max-width: 500px) {
+  .resultDisplayWrapper {
+    flex: unset;
+  }
+
   .resultDisplay {
     /* min-width: 350px; */
     min-width: unset;
     height: auto;
-    margin: 0 2rem;
   }
 
-  .images img {
+  .images .img {
     opacity: 50%;
+    margin-bottom: 10%;
   }
 
   .upchart {
     left: 100px;
   }
-
 
   .house {
     right: 70px;
@@ -187,112 +190,4 @@
     bottom: -10px;
     right: 10px;
   }
-}
-
-/* Celeb Twin */
-.lowerContainer {
-  display: flex;
-}
-.twitterProfileContainer {
-  height: 300px;
-  width: 200px;
-  
-}
-.twitterInnerProfileContainer {
-  position: relative;
-  
-}
-.upperHalfBg {
-  height: 70px;
-  /* width: 180px; */
-  background-color: black;
-  border-radius: 5px 5px 0 0;
-}
-.lowerHalfBg {
-  height: 150px;
-  /* width: 180px; */
-  background-color: white;
-  border-radius: 0 0 5px 5px;
-  overflow: hidden;
-  line-height: 1.01rem;
-}
-.avatar {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: solid 2px white;
-  top: 50%;
-  left: 5%;
-  position: absolute;
-  transform: translateY(-90px);
-}
-
-.celebContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.celebItem {
-  width: 50%;
-  height: 250px;
-  position: relative;
-}
-.traitsList2 {
-  margin: 1rem 0 0.5rem 1rem;
-  font-size: 22px;
-}
-.celebText {
-  position: absolute;
-  /* width: 150px; */
-  height: auto;
-  left: 10px;
-  top: 20%;
-}
-.twitterDetails {
-  padding: 50px 0 0 10px;
-  display: flex;
-  flex-direction: column;
-  /* gap: 2px; */
-
-  -webkit-line-clamp: 3 "...";
-  width: 180px;
-}
-
-.twitterDetails p {
-  
-  font-size: 12px;
-  font-family: 'DM Mono', sans-serif;
-  color: black;
-  line-clamp: 1 "...";
-  
-  
-}
-
-.name {
-  font-weight: bold;
-}
-.username {
-  font-weight: lighter;
-  font-size: 0.75rem;
-}
-.twitterDetails div {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-.twitterDetails div img {
-  height: 20px;
-}
-.swirl {
-  position: absolute;
-  z-index: -999;
-}
-#swirl1 {
-  bottom: -20px;
-  left: 40%;
-}
-#swirl2 {
-  bottom: 50%;
-  right: -20px;
 }
