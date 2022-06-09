@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }) {
     });
     localStorage.setItem("token", data.access_token);
     setJwtToken(data.access_token);
-    console.log("Jwt: " + data.access_token);
+    // console.log("Jwt: " + data.access_token);
   };
 
   const startWpi = async (addr) => {
@@ -204,7 +204,7 @@ function MyApp({ Component, pageProps }) {
           if (res.status === 200) {
             // console.log(res);
             const data = await res.data;
-            console.log(data);
+            // console.log(data);
             if (Object.keys(data).length > 1) {
               // console.log("setting wpi");
               setWpi(data);
@@ -239,8 +239,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Charisma</title>
-        <meta name="description" content="Wallet Personality Analysis" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Wallet Personality Analysis' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Web3Context.Provider
         value={{
@@ -265,8 +265,7 @@ function MyApp({ Component, pageProps }) {
           setLoggedIn,
           err,
           setErr,
-        }}
-      >
+        }}>
         <Navbar />
         <Component {...pageProps} />
         {/* {pathname !== '/' ? <Footer /> : <></>} */}

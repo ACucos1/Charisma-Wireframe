@@ -13,130 +13,155 @@
   overflow: hidden;
   border-radius: 25px;
   position: relative;
-  
 }
 
-.celebItem h3{
-    font-family: 'DM Mono', sans-serif;
-    color: #50b1f2;
-    font-size: 24px;
-    font-weight: 300;
-    margin-right: 5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+.celebItem h3 {
+  font-family: "DM Mono", sans-serif;
+  color: #50b1f2;
+  font-size: 24px;
+  font-weight: 300;
+  margin-right: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-  .lowerContainer {
-    display: flex;
-  }
-  .twitterProfileContainer {
-    height: 300px;
-    width: 200px;
-    
-  }
-  .twitterInnerProfileContainer {
-    position: relative;
-    
-  }
-  .upperHalfBg {
-    height: 70px;
-    /* width: 180px; */
-    background-color: black;
-    border-radius: 5px 5px 0 0;
-  }
-  .lowerHalfBg {
-    height: 150px;
-    /* width: 180px; */
-    background-color: white;
-    border-radius: 0 0 5px 5px;
-    overflow: hidden;
-    line-height: 1.01rem;
-  }
-  .avatar {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: solid 2px white;
-    top: 50%;
-    left: 5%;
-    position: absolute;
-    transform: translateY(-90px);
-  }
-  
-  .celebContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+.lowerContainer {
+  display: flex;
+}
+.twitterProfileContainer {
+  height: 300px;
+  width: 200px;
+}
+.twitterInnerProfileContainer {
+  position: relative;
+}
+.upperHalfBg {
+  height: 70px;
+  /* width: 180px; */
+  background-color: black;
+  border-radius: 5px 5px 0 0;
+}
+.lowerHalfBg {
+  height: 150px;
+  /* width: 180px; */
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  line-height: 1.01rem;
+}
+.avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px white;
+  top: 50%;
+  left: 5%;
+  position: absolute;
+  transform: translateY(-90px);
+}
 
-  .traitsList2 {
-    margin: 1rem 0 0.5rem 1rem;
-    font-size: 22px;
-  }
-  .celebText {
-    position: absolute;
-    /* width: 150px; */
-    height: auto;
-    left: 10px;
-    top: 20%;
-  }
-  .twitterDetails {
-    padding: 50px 0 0 10px;
-    display: flex;
-    flex-direction: column;
-    /* gap: 2px; */
-  
-    -webkit-line-clamp: 3 "...";
-    width: 180px;
-  }
-  
-  .twitterDetails p {
-    
-    font-size: 12px;
-    font-family: 'DM Mono', sans-serif;
-    color: black;
-    line-clamp: 1 "...";
-    
-    
-  }
-  
-  .name {
-    font-weight: bold;
-  }
-  .username {
-    font-weight: lighter;
-    font-size: 0.75rem;
-  }
-  .twitterDetails div {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
-  .twitterDetails div img {
-    height: 20px;
-  }
-  .swirl {
-    position: absolute;
-    z-index: -999;
-  }
-  #swirl1 {
-    bottom: 150px;
-    left: 0;
-  }
-  #swirl2 {
-    bottom: 20%;
-    right: -40px;
-    width: 120px;
-    transform: rotate(270deg);
-  }
+.celebContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  #swirl3 {
-    left: 0px;
-    bottom: -10px;
-  }
+.traitsList2 {
+  margin: 1rem 0 0.5rem 1rem;
+  font-size: 22px;
+}
+.celebText {
+  position: absolute;
+  /* width: 150px; */
+  height: auto;
+  left: 10px;
+  top: 20%;
+}
+.twitterDetails {
+  padding: 50px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2px; */
 
-@media screen and (max-width: 920px){
+  -webkit-line-clamp: 3"...";
+  width: 180px;
+}
+
+.twitterDetails p {
+  font-size: 12px;
+  font-family: "DM Mono", sans-serif;
+  color: black;
+  line-clamp: 1"...";
+}
+
+.name {
+  font-weight: bold;
+}
+.username {
+  font-weight: lighter;
+  font-size: 0.75rem;
+}
+.twitterDetails div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.twitterDetails div img {
+  height: 20px;
+}
+.swirl {
+  position: absolute;
+  z-index: -999;
+}
+#swirl1 {
+  bottom: 150px;
+  left: 0;
+}
+#swirl2 {
+  bottom: 20%;
+  right: -40px;
+  width: 120px;
+  transform: rotate(270deg);
+}
+
+#swirl3 {
+  left: 0px;
+  bottom: -10px;
+}
+
+.celebExplanation {
+  position: absolute;
+  cursor: default;
+  font: inherit;
+  top: 10px;
+  right: 20px;
+  color: white;
+}
+
+.celebExplanationTooltip {
+  position: absolute;
+  font-size: 12px;
+  width: 150px;
+  color: rgb(172, 172, 172);
+  font-family: inherit;
+  opacity: 0;
+  top: 20px;
+  right: 10px;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 2px solid #444444;
+  z-index: 10;
+  background-color: #181818;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.562);
+  transition: opacity 0.2s ease;
+}
+
+.celebExplanation:hover > .celebExplanationTooltip {
+  opacity: 1;
+}
+
+@media screen and (max-width: 920px) {
   .resultDisplayWrapper {
     max-width: 400px;
   }
