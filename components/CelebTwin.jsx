@@ -16,7 +16,7 @@ export default function CelebTwin({ wpi }) {
             <h3>
               Your Celebrity <br /> Charisma twin is...{" "}
               <div className={styles.celebExplanation}>
-                &#128712;
+                <img src='./images/infotooltip.svg' alt='info' />
                 <div className={styles.celebExplanationTooltip}>
                   Calculated by finding the nearest wallet birthday of top ETH
                   Leaderboard wallets with your personality type
