@@ -7,7 +7,7 @@ export default function ImageOverlay() {
     <div className={styles.imagesWrapper}>
         <img
           className={`doodle ${styles.doodle} ${styles.diamond}`}
-          src="./public/images/diamond.svg"
+          src="./images/diamond.svg"
           alt=""
         />
         <img
