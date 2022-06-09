@@ -18,8 +18,9 @@ export default function CelebTwin({ wpi }) {
               <div className={styles.celebExplanation}>
                 <img src='./images/infotooltip.svg' alt='info' />
                 <div className={styles.celebExplanationTooltip}>
-                  Calculated by finding the nearest wallet birthday of top ETH
-                  Leaderboard wallets with your personality type
+                  Your Charisma Celebrity Twin is the person on Top 250 of
+                  Ethleaderboard.xyz with the same personality type and closest
+                  wallet birthday.
                 </div>
               </div>
             </h3>
@@ -74,7 +75,7 @@ const TwitterProfile = ({ twitterObj }) => {
                 ? `${parseInt(
                     twitterObj.info.twitterFollowersCount
                   ).toLocaleString("en-US")} followers`
-                : "Looks like you' a real OG!"}{" "}
+                : "Looks like you're a real OG!"}
             </span>
             <p>
               {twitterObj

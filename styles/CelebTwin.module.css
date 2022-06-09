@@ -149,7 +149,6 @@
 .celebExplanationTooltip {
   position: absolute;
   font-size: 12px;
-  width: 150px;
   color: rgb(172, 172, 172);
   font-family: inherit;
   opacity: 0;
