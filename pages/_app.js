@@ -268,8 +268,7 @@ function MyApp({ Component, pageProps }) {
         }}>
         <Navbar />
         <Component {...pageProps} />
-        {/* {pathname !== '/' ? <Footer /> : <></>} */}
-        {loggedIn && <Footer />}
+        <Footer />
       </Web3Context.Provider>
     </>
   );
