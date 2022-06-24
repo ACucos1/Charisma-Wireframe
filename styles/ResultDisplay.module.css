@@ -14,7 +14,6 @@
   border-radius: 25px;
   flex-shrink: none;
   position: relative;
-  
 }
 
 .descriptionSmall {
@@ -33,36 +32,43 @@
   color: #50b2f2;
 }
 
-.P{
-  filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
+.P {
+  filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg)
+    brightness(105%) contrast(96%);
 }
 
 .H {
-  filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg) brightness(98%) contrast(87%);
+  filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg)
+    brightness(98%) contrast(87%);
 }
 
 .S {
   color: black;
-  filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg) brightness(95%) contrast(77%);
+  filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg)
+    brightness(95%) contrast(77%);
 }
 
 .B {
   color: black;
-  filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
+  filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg)
+    brightness(97%) contrast(90%);
 }
 
 .F {
   color: black;
-  filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg) brightness(101%) contrast(101%);
+  filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg)
+    brightness(101%) contrast(101%);
 }
 
 .U {
   color: black;
-  filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg) brightness(96%) contrast(90%);
+  filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg)
+    brightness(96%) contrast(90%);
 }
 
 .L {
-  filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg) brightness(103%) contrast(106%);
+  filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg)
+    brightness(103%) contrast(106%);
 }
 
 .trait2 {
@@ -96,13 +102,15 @@
 .pokerchip {
   bottom: 50px;
   left: -17px;
-  filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg) brightness(97%) contrast(90%);
+  filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg)
+    brightness(97%) contrast(90%);
 }
 
 .chick {
   bottom: 50px;
   left: -17px;
-  filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg) brightness(101%) contrast(101%);
+  filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg)
+    brightness(101%) contrast(101%);
 }
 
 .upchart {
@@ -110,7 +118,8 @@
   left: 125px;
   transform-origin: center;
   transform: rotate(15deg);
-  filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg) brightness(96%) contrast(90%);
+  filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg)
+    brightness(96%) contrast(90%);
 }
 
 .downchart {
@@ -118,33 +127,38 @@
   left: 125px;
   transform-origin: center;
   transform: rotate(15deg);
-  filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg) brightness(103%) contrast(106%);
+  filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg)
+    brightness(103%) contrast(106%);
 }
 
 .house {
   right: 0;
   bottom: 70px;
-  filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg) brightness(98%) contrast(87%);
+  filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg)
+    brightness(98%) contrast(87%);
 }
 
 .butterfly {
   right: 0;
   bottom: 70px;
-  filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg) brightness(95%) contrast(77%);
+  filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg)
+    brightness(95%) contrast(77%);
 }
 
 .diamond {
   right: -50px;
   top: 100px;
   transform: scaleX(-1);
-  filter: invert(62%) sepia(30%) saturate(1840%) hue-rotate(178deg) brightness(102%) contrast(90%);
+  filter: invert(62%) sepia(30%) saturate(1840%) hue-rotate(178deg)
+    brightness(102%) contrast(90%);
 }
 
 .toiletpaper {
   right: -15px;
   top: 80px;
   transform: scaleX(-1);
-  filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg) brightness(105%) contrast(96%);
+  filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg)
+    brightness(105%) contrast(96%);
 }
 
 .timeStamp {
@@ -156,10 +170,10 @@
   font-family: "DM Mono", sans-serif;
 }
 
-@media screen and (max-width: 920px){
-    .resultDisplayWrapper {
-      max-width: 400px;
-    }
+@media screen and (max-width: 920px) {
+  .resultDisplayWrapper {
+    max-width: 400px;
+  }
 }
 
 @media screen and (max-width: 500px) {

@@ -1,0 +1,170 @@
+.Methodology {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Methodology h1 {
+  font-size: 36px;
+  align-self: start;
+  font-weight: 300;
+  margin: 3rem 0;
+}
+
+.MethodologyGrid {
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4rem 8rem;
+  margin-top: 2rem;
+  /* background-color: red; */
+}
+
+.Border {
+  position: absolute;
+  top: -20px;
+  right: -25px;
+  height: 110%;
+  width: 122%;
+  pointer-events: none;
+}
+
+.GridItem {
+  position: relative;
+  /* background-color: #fff; */
+  display: flex;
+  height: 300px;
+  width: 300px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  justify-self: center;
+  flex-direction: column;
+  font-family: "DM Mono", sans-serif;
+  font-size: 12px;
+}
+
+.TraitList {
+  /* list-style: disc; */
+  font: inherit;
+  margin-left: 0.5rem;
+}
+
+.TraitList li {
+  font: inherit;
+}
+
+.GridItemTopHalf,
+.GridItemBottomHalf {
+  border-radius: 25px;
+
+  /* height: 80%; */
+  width: 100%;
+  height: 50%;
+  margin: 0.5rem;
+  padding: 1rem;
+  color: var(--text-color);
+  /* background-color: #fff; */
+  font: inherit;
+}
+
+.GridItemTopHalf {
+  display: flex;
+  align-items: center;
+}
+
+.GridItemBottomHalf {
+  /* background-color: ; */
+  /* color: black; */
+  border: 2px solid #444444;
+}
+
+.TraitImage {
+  width: 100px;
+  height: 100px;
+}
+
+.diamond {
+  filter: invert(62%) sepia(30%) saturate(1840%) hue-rotate(178deg)
+    brightness(102%) contrast(90%);
+}
+.upchart {
+  filter: invert(53%) sepia(61%) saturate(414%) hue-rotate(96deg)
+    brightness(96%) contrast(90%);
+}
+.downchart {
+  filter: invert(17%) sepia(38%) saturate(6034%) hue-rotate(329deg)
+    brightness(103%) contrast(106%);
+}
+.house {
+  filter: invert(66%) sepia(90%) saturate(2331%) hue-rotate(330deg)
+    brightness(98%) contrast(87%);
+}
+.chick {
+  filter: invert(86%) sepia(61%) saturate(448%) hue-rotate(333deg)
+    brightness(101%) contrast(101%);
+}
+.pokerchip {
+  filter: invert(51%) sepia(80%) saturate(7473%) hue-rotate(224deg)
+    brightness(97%) contrast(90%);
+}
+.butterfly {
+  filter: invert(37%) sepia(33%) saturate(3054%) hue-rotate(335deg)
+    brightness(95%) contrast(77%);
+}
+.toiletpaper {
+  filter: invert(79%) sepia(43%) saturate(2770%) hue-rotate(292deg)
+    brightness(105%) contrast(96%);
+}
+
+@media screen and (max-width: 1200px) {
+  .GridItem {
+    height: fit-content;
+    /* width: 250px; */
+  }
+  .Methodology h1 {
+    margin: 5rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Methodology h1 {
+    align-self: center;
+    text-align: center;
+  }
+
+  .MethodologyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Methodology h1 {
+    font-size: 24px;
+    margin: 3rem 1rem;
+  }
+  .MethodologyGrid {
+    row-gap: 0;
+  }
+
+  .GridItem {
+    height: fit-content;
+    width: 300px;
+    /* font-size: 10px; */
+    align-self: center;
+    /* margin: 0 1rem; */
+    transform: scale(0.8);
+  }
+
+  .TraitImage {
+    width: 75px;
+    height: 75px;
+  }
+
+  .GridItemBottomHalf {
+    width: 220px;
+    padding: 1rem;
+  }
+}
