@@ -5,9 +5,9 @@ import { Web3Context } from "../contexts/Web3Context";
 import styles from "../styles/Results.module.css";
 import Router from "next/router";
 import TwitterShare from "../components/TwitterShare";
-import Feedback from '../components/Feedback'
+import Feedback from "../components/Feedback";
 import JoinDiscord from "../components/JoinDiscord";
-import ConnectWallet from '../components/ConnectWallet';
+import ConnectWallet from "../components/ConnectWallet";
 import ResultsExplanation from "../components/ResultsExplanation";
 import Metrics from "../components/Metrics";
 import CelebTwin from "../components/CelebTwin";
@@ -24,7 +24,6 @@ export default function Results() {
     // console.log(searchAddr, address);
   };
 
-  
   useEffect(() => {
     let seconds = 0;
     const checkWpiInterval = setInterval(() => {
@@ -34,7 +33,7 @@ export default function Results() {
       }
       seconds += 0.5;
     }, 500);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -47,8 +46,6 @@ export default function Results() {
     if (!searchAddr) setSearchAddr(address);
   }, [address, setSearchAddr, searchAddr]);
 
-  
-
   return (
     <main className={`container ${styles.results}`}>
       {loading || !wpi["1"] ? (
@@ -56,22 +53,26 @@ export default function Results() {
       ) : (
         <>
           <h2>
-            The results are in. <br /> Your wallet personailty type is...
+            We have analyzed the on-chain information of your wallet. Here are
+            your results: <br /> Your wallet personailty type is...
           </h2>
           <div className={styles.resultsWrapper}>
             <ResultDisplay wpi={wpi} />
             {/* <ResultsExplanation wpi={wpi} loading={loading}/> */}
-            <Metrics wpi={wpi}/>
-            <CelebTwin wpi={wpi}/>
+            <Metrics wpi={wpi} />
+            <CelebTwin wpi={wpi} />
             <div className={styles.interactWrapper}>
-              <h2>Complete all 3 steps below  to claim Charisma Alpha Role</h2>
-              <ConnectWallet handleWhitelistClick={handleWhitelistClick} address={address}/>
+              <h2>Complete all 3 steps below to claim Charisma Alpha Role</h2>
+              <ConnectWallet
+                handleWhitelistClick={handleWhitelistClick}
+                address={address}
+              />
               <TwitterShare />
               <JoinDiscord />
             </div>
           </div>
-          
-          {address && address === searchAddr && <Feedback address={address}/>}
+
+          {address && address === searchAddr && <Feedback address={address} />}
           {searchAddr &&
             address &&
             address.toLowerCase() !== searchAddr.toLowerCase() && (
