@@ -53,8 +53,8 @@ export default function Results() {
       ) : (
         <>
           <h2>
-            We have analyzed the on-chain information of your wallet. Here are
-            your results: <br /> Your wallet personailty type is...
+            We&apos;ve analyzed your wallet&apos;s on-chain data.
+            <br /> Here are your results:
           </h2>
           <div className={styles.resultsWrapper}>
             <ResultDisplay wpi={wpi} />

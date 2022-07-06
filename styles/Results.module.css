@@ -5,7 +5,7 @@
 .results > h2 {
   color: white;
   font-weight: 300;
-  font-size: 34px;
+  font-size: 28px;
   margin: 3rem 0 0 8rem;
 }
 
@@ -40,7 +40,6 @@
   margin: 1rem 0;
   font-weight: 200;
 }
-
 
 .mintBtn {
   width: 400px;
@@ -118,7 +117,6 @@
 }
 
 @media screen and (max-width: 500px) {
-
   .share {
     /* background-color: #fff; */
     margin: 0;
