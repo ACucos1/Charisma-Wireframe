@@ -28,6 +28,11 @@
   font-size: 28px;
 }
 
+.trait {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
 .D {
   color: #50b2f2;
 }
