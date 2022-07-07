@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 import Router from "next/router";
 import "../styles/globals.css";
 
-const apiUrl = "https://api-dev.charismasocial.xyz";
+const apiUrl = "https://api-prod.charismasocial.xyz";
 
 axios.interceptors.request.use(
   (config) => {

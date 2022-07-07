@@ -76,7 +76,11 @@ export default function Hero() {
         Analyze your personality through your NFT holdings and onchain activity.
       </p>
 
-      <SearchBar handleSearchChange={handleSearchChange} searchAddr={searchAddr} handleSearch={handleSearch}/>
+      <SearchBar
+        handleSearchChange={handleSearchChange}
+        searchAddr={searchAddr}
+        handleSearch={handleSearch}
+      />
 
       {err ? (
         <div className={styles.error}>{err}</div>

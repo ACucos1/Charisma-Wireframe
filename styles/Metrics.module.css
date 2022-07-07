@@ -1,50 +1,49 @@
 .metrics {
-    /* margin-left: 3rem; */
-    /* margin-top: 4rem; */
-    max-width: 400px;
-    height: 382px;
-    border: 2px solid #444444;
-    border-radius: 25px;
-    padding: 2rem;
-    color: white;
-    flex: 1 1 400px;
+  /* margin-left: 3rem; */
+  /* margin-top: 4rem; */
+  max-width: 400px;
+  height: 382px;
+  border: 2px solid #444444;
+  border-radius: 25px;
+  padding: 2rem;
+  color: white;
+  flex: 1 1 400px;
 }
 
-.metrics > *, .metrics > * > * {
-    font-family: "DM Mono", sans-serif;
+.metrics > *,
+.metrics > * > * {
+  font-family: "DM Mono", sans-serif;
 }
 
 .metrics h3 {
-    color: #50b1f2;
-    font-weight: 300;
-    font-size: 24px;
-    text-align: center;
+  color: #50b1f2;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
 }
 
 .metrics ul {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .metrics li:first-child {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .bigValue {
-    font-family: 'DM Mono', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
+  font-family: "DM Mono", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
 }
 
+@media screen and (max-width: 500px) {
+  .metrics {
+    min-width: unset;
+    height: auto;
+    flex: unset;
+  }
 
-@media screen and (max-width: 500px){
-    .metrics {
-        min-width: unset;
-        height: auto;
-        flex: unset;
-    }
-
-    .metrics li:first-child {
-        white-space: unset;
-
-    }
+  .metrics li:first-child {
+    white-space: unset;
+  }
 }
