@@ -265,6 +265,7 @@ function MyApp({ Component, pageProps }) {
           setLoggedIn,
           err,
           setErr,
+          walletConnected,
         }}>
         <Navbar />
         <Component {...pageProps} />
