@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   const [wpi, setWpi] = useState({});
   const [searchStarted, setSearchStarted] = useState(false);
   const [ens, setEns] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [err, setErr] = useState("");
 
   const getJwt = async () => {
