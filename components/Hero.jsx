@@ -68,7 +68,7 @@ export default function Hero() {
 
   return (
     <div className={`${styles.Hero} full-screen`}>
-      <PasswordModal />
+      {/* <PasswordModal /> */}
       <h1 className={styles.TagLine}>
         What does your wallet <br /> say about you?
       </h1>
